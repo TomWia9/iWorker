@@ -11,7 +11,7 @@
 .logo {
     text-align: center;
     margin: 1em;
-    font-size: 25px;
+    font-size: 40px;
     font-weight: bold;
 }
 
@@ -25,14 +25,9 @@
     font-weight: bold;
 }
 
-.content {
-    margin: 2em;
-    background: #AAAAAA;
-}
-
 .sidenav {
     min-width: 15%;
-    background: #AAAAAA;
+    background: #A9A9A9;
 }
 
 .list {

@@ -1,0 +1,64 @@
+<form [formGroup]="form" (submit)="onSubmit(form.value)">
+    <mat-card class="container">
+        <mat-card-header class="header">
+            <mat-card-title>
+                <h1>Nowy raport</h1>
+                <mat-divider></mat-divider>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="content">
+
+            <div class="data">
+                <mat-form-field>
+                    <mat-label>Numer pracownika</mat-label>
+                    <input matInput type="number" formControlName="id" readonly>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Imie</mat-label>
+                    <input matInput type="text" formControlName="name" readonly>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Nazwisko</mat-label>
+                    <input matInput type="text" formControlName="surname" readonly>
+                </mat-form-field>
+            </div>
+            <div class="data">
+                <mat-form-field>
+                    <mat-label>Data</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Liczba godzin pracy</mat-label>
+                    <input matInput formControlName="hours" type="number" step="0.25">
+                </mat-form-field>
+            </div>
+            <div class="data">
+                <mat-form-field>
+                    <mat-label>Wykonywana praca</mat-label>
+                    <mat-select formControlName="workName">
+                        <mat-option *ngFor="let work of works" [value]="work.name">
+                            {{ work.name }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Sektor</mat-label>
+                    <mat-select formControlName="sector">
+                        <mat-option *ngFor="let sector of sectors" [value]="sector.sector">
+                            {{ sector.sector }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Ilość</mat-label>
+                    <input matInput formControlName="amount" type="number" step="any">
+                </mat-form-field>
+            </div>
+        </mat-card-content>
+        <mat-card-actions class="actions">
+            <button class="button" mat-raised-button type="submit">Dodaj raport</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

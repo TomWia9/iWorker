@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 4em;
+    background: #A9A9A9;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    margin: 2em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    width: 30%;
+    padding: 2%;
+    background: forestgreen;
+    color: azure;
+    font-size: 100%;
+}
+
+mat-form-field {
+    text-align: center;
+}
+
+.header {
+    justify-content: center;
+    color: forestgreen;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 40px;
+}
