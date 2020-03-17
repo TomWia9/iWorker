@@ -33,10 +33,6 @@
     font-size: 100%;
 }
 
-mat-form-field {
-    text-align: center;
-}
-
 .header {
     justify-content: center;
     color: forestgreen;
@@ -45,4 +41,24 @@ mat-form-field {
 h1 {
     font-weight: bold;
     font-size: 40px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white;
+}
+
+mat-form-field.mat-form-field {
+    font-size: 20px;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: forestgreen!important;
+}
+
+::ng-deep .mat-form-field-label {
+    color: forestgreen;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: forestgreen!important;
 }

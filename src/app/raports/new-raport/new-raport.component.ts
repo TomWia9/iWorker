@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Work } from '../work';
 import { Sector } from '../sector';
+import { Chest } from '../chest';
 
 @Component({
   selector: 'app-new-raport',
@@ -25,6 +26,14 @@ export class NewRaportComponent implements OnInit {
     {sector: "C3"}, 
   ]
 
+  chests: Chest[] = [
+    {name: "8x250"},
+    {name: "16x250"},
+    {name: "8x500"},
+    {name: "10x200"},
+    {name: "20x100"},
+  ]
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -37,6 +46,7 @@ export class NewRaportComponent implements OnInit {
       amount: '',
       hours: '',
       date: '',
+      chests: '',
     });
   }
 

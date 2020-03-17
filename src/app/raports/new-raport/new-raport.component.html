@@ -9,33 +9,27 @@
         <mat-card-content class="content">
 
             <div class="data">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                     <mat-label>Numer pracownika</mat-label>
                     <input matInput type="number" formControlName="id" readonly>
                 </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Imie</mat-label>
+                <mat-form-field appearance="outline">
+                    <mat-label>Imię</mat-label>
                     <input matInput type="text" formControlName="name" readonly>
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                     <mat-label>Nazwisko</mat-label>
                     <input matInput type="text" formControlName="surname" readonly>
                 </mat-form-field>
             </div>
             <div class="data">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                     <mat-label>Data</mat-label>
                     <input matInput [matDatepicker]="picker" formControlName="date">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Liczba godzin pracy</mat-label>
-                    <input matInput formControlName="hours" type="number" step="0.25">
-                </mat-form-field>
-            </div>
-            <div class="data">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                     <mat-label>Wykonywana praca</mat-label>
                     <mat-select formControlName="workName">
                         <mat-option *ngFor="let work of works" [value]="work.name">
@@ -43,7 +37,13 @@
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Liczba godzin pracy</mat-label>
+                    <input matInput formControlName="hours" type="number" step="0.25">
+                </mat-form-field>
+            </div>
+            <div class="data">
+                <mat-form-field appearance="outline">
                     <mat-label>Sektor</mat-label>
                     <mat-select formControlName="sector">
                         <mat-option *ngFor="let sector of sectors" [value]="sector.sector">
@@ -51,7 +51,15 @@
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Rodzaj skrzynek</mat-label>
+                    <mat-select formControlName="chests">
+                        <mat-option *ngFor="let chest of chests" [value]="chest.name">
+                            {{ chest.name }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
                     <mat-label>Ilość</mat-label>
                     <input matInput formControlName="amount" type="number" step="any">
                 </mat-form-field>
