@@ -11,7 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 
 
@@ -22,13 +22,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { NewRaportComponent } from './raports/new-raport/new-raport.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PlanComponent } from './plan/plan.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
-    NewRaportComponent
+    NewRaportComponent,
+    PlanComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +53,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   providers: [
     MatDatepickerModule, 
+    {provide: MAT_DATE_LOCALE, useValue: 'pl-PL'},
   ],
   bootstrap: [AppComponent]
 })

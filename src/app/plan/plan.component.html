@@ -1,0 +1,35 @@
+<form [formGroup]="form">
+    <mat-card class="container">
+        <mat-card-header class="header">
+            <mat-card-title>
+                <h1>Plan pracy</h1>
+                <mat-divider></mat-divider>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="content">
+            <mat-form-field class="formField" appearance="outline">
+                <mat-label>Wybierz dzień</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="date" (dateInput)="showPlan()" disabled>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker disabled="false"></mat-datepicker>
+            </mat-form-field>
+
+            <div class="plan" *ngIf="isDateEntered">
+                <h2>Twój plan na wybrany dzień:</h2>
+                <mat-form-field class="formField" appearance="outline">
+                    <mat-label>Wykonywana praca</mat-label>
+                    <input matInput formControlName="workName" readonly>
+                </mat-form-field>
+                <mat-form-field class="formField" appearance="outline">
+                    <mat-label>Sektor</mat-label>
+                    <input matInput formControlName="sector" readonly>
+                </mat-form-field>
+                <mat-form-field class="formField" appearance="outline">
+                    <mat-label>Godziny pracy</mat-label>
+                    <input matInput formControlName="hours" readonly>
+                </mat-form-field>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+</form>

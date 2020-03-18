@@ -7,30 +7,15 @@
 
 .content {
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin: 2em;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.data {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: auto;
-}
-
-.actions {
-    display: flex;
-    justify-content: center;
-}
-
-.button {
+.formField {
     width: 30%;
-    padding: 2%;
-    background: forestgreen;
-    color: azure;
-    font-size: 100%;
 }
 
 .header {
@@ -41,4 +26,15 @@
 h1 {
     font-weight: bold;
     font-size: 40px;
+}
+
+.plan {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+}
+
+.plan .formField {
+    width: 100%;
 }

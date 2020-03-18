@@ -13,3 +13,19 @@ body {
 a {
     text-decoration: none;
 }
+
+mat-form-field.mat-form-field {
+    font-size: 20px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: forestgreen!important;
+}
+
+.mat-form-field-label {
+    color: forestgreen!important;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+    color: forestgreen!important;
+}
