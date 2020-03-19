@@ -3,6 +3,9 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { Work } from '../work';
 import { Sector } from '../sector';
 import { Chest } from '../chest';
+import { RaportService } from 'src/app/services/raport.service';
+import { RaportDetails } from '../raport-details/raportDetails';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-raport',
@@ -34,7 +37,7 @@ export class NewRaportComponent implements OnInit {
     {name: "20x100"},
   ]
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private raportService: RaportService, private router: Router) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -53,6 +56,12 @@ export class NewRaportComponent implements OnInit {
   onSubmit(value){
     if (value.id != '' && value.name !== '' && value.surname !== '' && value.date !== '' && value.hours !== '' && value.workName !== '' 
         && value.sector !== '' && value.amount !== ''){
+          
+          const newRaport = value as RaportDetails; 
+          this.raportService.createRaport(newRaport).subscribe(x=> {
+            this.router.navigate(['/raport',x]);
+          })
+      
       console.log("Dodano raport");
       } else{
         console.log("Nie udało się dodać raportu")

@@ -27,6 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PlanComponent } from './plan/plan.component';
 import { RaportsListComponent } from './raports/raports-list/raports-list.component';
 import { RaportDetailsComponent } from './raports/raport-details/raport-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { RaportDetailsComponent } from './raports/raport-details/raport-details.
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
