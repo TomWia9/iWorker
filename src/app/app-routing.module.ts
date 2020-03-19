@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { NewRaportComponent } from './raports/new-raport/new-raport.component';
 import { PlanComponent } from './plan/plan.component';
+import { RaportsListComponent } from './raports/raports-list/raports-list.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
           // {path: '', component: DashboardComponent},
           {path: 'new-raport', component: NewRaportComponent},
           {path: 'plan', component: PlanComponent},
+          {path: 'raports-list', component: RaportsListComponent},
         ]
       },
     ]

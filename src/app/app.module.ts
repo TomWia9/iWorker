@@ -13,6 +13,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+
 
 
 
@@ -23,6 +25,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { NewRaportComponent } from './raports/new-raport/new-raport.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PlanComponent } from './plan/plan.component';
+import { RaportsListComponent } from './raports/raports-list/raports-list.component';
 
 
 @NgModule({
@@ -30,7 +33,8 @@ import { PlanComponent } from './plan/plan.component';
     AppComponent,
     SidenavComponent,
     NewRaportComponent,
-    PlanComponent
+    PlanComponent,
+    RaportsListComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,7 @@ import { PlanComponent } from './plan/plan.component';
     MatDatepickerModule,
     MatNativeDateModule ,
     MatButtonModule,
-
+    MatTableModule
   ],
   providers: [
     MatDatepickerModule, 

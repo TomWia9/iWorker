@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 4em;
+    background: #A9A9A9;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    margin: 2em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.header {
+    justify-content: center;
+    color: forestgreen;
+}
+
+.table {
+    background: #A9A9A9;
+    width: 100%;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 40px;
+}
