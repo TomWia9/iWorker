@@ -1,4 +1,4 @@
-export class RaportItem{
+export class RaportList{
     id: number;
     date: string;
     workName: string;

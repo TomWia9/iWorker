@@ -26,6 +26,7 @@ import { NewRaportComponent } from './raports/new-raport/new-raport.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PlanComponent } from './plan/plan.component';
 import { RaportsListComponent } from './raports/raports-list/raports-list.component';
+import { RaportDetailsComponent } from './raports/raport-details/raport-details.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { RaportsListComponent } from './raports/raports-list/raports-list.compon
     SidenavComponent,
     NewRaportComponent,
     PlanComponent,
-    RaportsListComponent
+    RaportsListComponent,
+    RaportDetailsComponent
   ],
   imports: [
     BrowserModule,
