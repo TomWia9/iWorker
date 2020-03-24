@@ -15,9 +15,6 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 
-
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,6 +25,7 @@ import { PlanComponent } from './plan/plan.component';
 import { RaportsListComponent } from './raports/raports-list/raports-list.component';
 import { RaportDetailsComponent } from './raports/raport-details/raport-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -37,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     NewRaportComponent,
     PlanComponent,
     RaportsListComponent,
-    RaportDetailsComponent
+    RaportDetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,120 @@
+.container {
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    background: #393d41;
+    width: 30%;
+    top: 20%;
+}
+
+.header {
+    justify-content: center;
+    color: forestgreen;
+}
+
+.header,
+h1 {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    width: 30%;
+    padding: 2%;
+    background: forestgreen;
+    color: azure;
+    font-size: 100%;
+}
+
+.err {
+    padding: 20px;
+    background-color: mistyrose;
+    border: 1px solid red;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.logo {
+    display: flex;
+    margin: 1em;
+    font-weight: bold;
+    justify-content: center;
+    padding: 20px;
+}
+
+.logo-left {
+    font-size: 80px;
+    color: darkslategray;
+}
+
+.logo-right {
+    font-size: 80px;
+    color: forestgreen;
+}
+
+.view {
+    display: flex;
+    flex-direction: row;
+}
+
+.social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    margin: 2em;
+    margin-left: 20%;
+}
+
+.social h2 {
+    color: forestgreen;
+}
+
+.fb {
+    margin-top: 2em;
+    padding: 20px;
+    border: 3px solid blue;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.tw {
+    margin-top: 2em;
+    padding: 20px;
+    border: 3px solid darkblue;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.ig {
+    margin-top: 2em;
+    padding: 20px;
+    border: 3px solid purple;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+ ::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: green !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
