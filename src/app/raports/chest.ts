@@ -1,3 +1,3 @@
-export class Chest{
+export interface Chest{
     name: string;
 }

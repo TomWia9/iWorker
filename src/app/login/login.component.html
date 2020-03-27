@@ -5,42 +5,60 @@
         <h1 class="logo-right">Worker</h1>
     </div>
 
-    <div class="view">
-        <mat-card class="container">
-            <mat-card-header class="header">
-                <mat-card-title>
-                    <h1>Zaloguj się</h1>
-                </mat-card-title>
-            </mat-card-header>
-            <mat-card-content class="content">
-                <mat-form-field>
-                    <mat-label>Numer pracownika</mat-label>
-                    <input matInput type="number" formControlName="id" min="1">
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Hasło</mat-label>
-                    <input matInput type="password" formControlName="password">
-                </mat-form-field>
-                <span class="err" *ngIf="wrong">Podane Login lub hasło są niepoprawne</span>
-            </mat-card-content>
-            <mat-card-actions class="actions">
-                <button class="button" type="submit" mat-raised-button>Zaloguj</button>
-            </mat-card-actions>
-        </mat-card>
+    <mat-divider></mat-divider>
 
-        <div class="social"> //here will be real icons in the future
-            <h2>Znajdź nas na: </h2>
-            <mat-list>
-                <mat-list-item class="fb">
-                    <h3>Facebook</h3>
-                </mat-list-item>
-                <mat-list-item class="tw">
-                    <h3>Twitter</h3>
-                </mat-list-item>
-                <mat-list-item class="ig">
-                    <h3>Instagram</h3>
-                </mat-list-item>
-            </mat-list>
+    <div class="view">
+
+        <div class="social">
+            <mat-card class="container">
+                <mat-card-header class="header">
+                    <mat-card-title>
+                        <h1>Znajdź nas na:</h1>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="content">
+                    <mat-list>
+                        <mat-list-item class="socialList">
+                            <a href="/login" class="fa fa-facebook"></a>
+                        </mat-list-item>
+                        <mat-list-item class="socialList">
+                            <a href="/login" class="fa fa-twitter"></a>
+                        </mat-list-item>
+                        <mat-list-item class="socialList">
+                            <a href="/login" class="fa fa-instagram"></a>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div class="login">
+            <mat-card class="container">
+                <mat-card-header class="header">
+                    <mat-card-title>
+                        <h1>Zaloguj się</h1>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="content">
+                    <mat-form-field>
+                        <mat-label>Numer pracownika</mat-label>
+                        <input matInput type="number" formControlName="id" min="1">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Hasło</mat-label>
+                        <input matInput type="password" formControlName="password">
+                    </mat-form-field>
+                    <span class="err" *ngIf="wrong">Podane Login lub hasło są niepoprawne</span>
+                </mat-card-content>
+                <mat-card-actions class="actions">
+                    <button class="button" type="submit" mat-raised-button>Zaloguj</button>
+                </mat-card-actions>
+            </mat-card>
         </div>
     </div>
+
+    <div class="footer">
+        <p>W przypadku braku przypisanego numeru pracownika lub innych problemów proszę skontaktować się z pracodawcą</p>
+    </div>
+
 </form>

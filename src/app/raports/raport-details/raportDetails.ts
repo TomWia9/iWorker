@@ -1,4 +1,4 @@
-export class RaportDetails{
+export interface RaportDetails{
     id: number;
     name: string;
     surname: string;

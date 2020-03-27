@@ -9,7 +9,7 @@ import { RaportService } from 'src/app/services/raport.service';
   styleUrls: ['./raport-details.component.css']
 })
 export class RaportDetailsComponent implements OnInit {
-  raport: RaportDetails = new RaportDetails();
+  raport: RaportDetails;
   constructor(private route: ActivatedRoute, private raportService: RaportService) { } //it will be a service in the future
 
   ngOnInit(): void {
@@ -17,7 +17,6 @@ export class RaportDetailsComponent implements OnInit {
     this.raportService.getDetails(id).subscribe(x => {
       this.raport = x;
     })
-
   }
 
 }

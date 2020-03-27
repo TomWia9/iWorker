@@ -1,4 +1,4 @@
-export class RaportList{
+export interface RaportList{
     id: number;
     date: string;
     workName: string;

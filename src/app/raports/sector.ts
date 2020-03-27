@@ -1,3 +1,3 @@
-export class Sector{
+export interface Sector{
     sector: string;
 }
