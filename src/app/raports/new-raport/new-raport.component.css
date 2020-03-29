@@ -28,17 +28,26 @@
 .button {
     width: 30%;
     padding: 2%;
-    background: forestgreen;
+    background: brown;
     color: azure;
     font-size: 100%;
 }
 
 .header {
     justify-content: center;
-    color: forestgreen;
+    color: brown;
 }
 
 h1 {
     font-weight: bold;
     font-size: 40px;
+}
+
+::ng-deep.mat-select-panel {
+    background-color: brown;
+}
+
+::ng-deep .mat-select-value {
+    color: brown!important;
+    font-weight: bold;
 }

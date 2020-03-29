@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { RaportDetails } from '../raports/raport-details/raportDetails';
+import { RaportList } from '../raports/RaportList';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class RaportService {
   }
 
   createRaport(newRaport: RaportDetails): Observable<Number>{
-    return this.http.post<number>('https://localhost:50011/api/raport', 
+    return this.http.post<number>('https://localhost:5001/api/raport', 
     {
       id: newRaport.id,
       name: newRaport.name,
@@ -29,4 +30,9 @@ export class RaportService {
 
     })
   }
+
+  getRaportsList(): Observable<RaportList[]>{
+    return this.http.get<RaportList[]>('https://localhost:5001/api/raport');
+  }
+
 }

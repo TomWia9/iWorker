@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 4em;
+    background: #25272a;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    margin: 2em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.header {
+    justify-content: center;
+    color: brown;
+}
+
+::ng-deep.mat-select-panel {
+    background-color: brown;
+}
+
+::ng-deep .mat-select-value {
+    color: brown!important;
+    font-weight: bold;
+}

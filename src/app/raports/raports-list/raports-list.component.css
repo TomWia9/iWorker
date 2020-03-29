@@ -15,7 +15,7 @@
 
 .header {
     justify-content: center;
-    color: forestgreen;
+    color: brown;
 }
 
 .table {
@@ -26,4 +26,21 @@
 h1 {
     font-weight: bold;
     font-size: 40px;
+}
+
+mat-header-cell {
+    color: brown;
+    font-size: 30px;
+    justify-content: center;
+}
+
+.element {
+    color: brown;
+    /* background: aliceblue; */
+    font-weight: bold;
+    justify-content: right;
+}
+
+mat-cell {
+    justify-content: center;
 }

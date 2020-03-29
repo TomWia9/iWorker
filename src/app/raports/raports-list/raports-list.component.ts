@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RaportList} from '../RaportList';
+import { RaportService } from 'src/app/services/raport.service';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-raports-list',
@@ -7,15 +8,16 @@ import { RaportList} from '../RaportList';
   styleUrls: ['./raports-list.component.css']
 })
 export class RaportsListComponent implements OnInit {
-  raports: RaportList[] = [
-    {id: 1, date: "19.03.2020", workName: "Maliny"},
-    {id: 2, date: "18.03.2020", workName: "Maliny"},
-    {id: 3, date: "17.03.2020", workName: "Truskawki"}
-  ];
+  raports;
   displayedColumns = ['number', 'date', 'workName']
-  constructor() { }
+
+  constructor(private raportService: RaportService) { }
 
   ngOnInit(): void {
+    this.raports = this.raportService.getRaportsList().subscribe(x  => {
+      this.raports = new MatTableDataSource(x); //propably it should be new MatTableDataSource(x);, I will se when API will be ready
+  });
   }
 
 }
+

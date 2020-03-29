@@ -4,6 +4,7 @@ html,
 body {
     height: 100%;
     background: #2E3134;
+    color: white;
 }
 
 body {
@@ -17,16 +18,18 @@ a {
 
 mat-form-field.mat-form-field {
     font-size: 20px;
+    color: brown;
+    font-weight: bold;
 }
 
 .mat-form-field-appearance-outline .mat-form-field-outline {
-    color: forestgreen!important;
+    color: brown!important;
 }
 
 .mat-form-field-label {
-    color: forestgreen!important;
+    color: brown!important;
 }
 
 .mat-form-field.mat-focused .mat-form-field-label {
-    color: forestgreen!important;
+    color: brown!important;
 }

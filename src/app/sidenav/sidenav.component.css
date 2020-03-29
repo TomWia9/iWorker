@@ -17,12 +17,12 @@
 }
 
 .logo-left {
-    color: darkslategray;
+    color: #393d41;
     font-weight: bold;
 }
 
 .logo-right {
-    color: forestgreen;
+    color: brown;
     font-weight: bold;
 }
 
@@ -33,5 +33,5 @@
 
 .listItem {
     font-weight: bold;
-    color: forestgreen;
+    color: brown;
 }
