@@ -18,6 +18,20 @@ export class WeekAmountChartComponent implements OnInit {
     }
   ];
 
+  public pieChartOptions: any = {
+    responsive: true,
+    
+  plugins: {
+    datalabels: {
+      color: 'white',
+      font: {
+       weight: 'bold',
+       size: 10
+    }
+  }
+
+}}
+
   pieChartType= 'doughnut';
 
   ngOnInit(): void {

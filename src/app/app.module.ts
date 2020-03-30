@@ -14,6 +14,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { ChartsModule } from 'ng2-charts';
+
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,8 +32,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { WeekRankingChartComponent } from './statistics/charts/week-ranking-chart/week-ranking-chart.component';
-import { ChartsModule } from 'ng2-charts';
 import { WeekAmountChartComponent } from './statistics/charts/week-amount-chart/week-amount-chart.component';
+import { WeekHoursChartComponent } from './statistics/charts/week-hours-chart/week-hours-chart.component';
+import { MainChartsComponent } from './statistics/main-charts/main-charts.component';
+
 
 
 @NgModule({
@@ -43,7 +49,9 @@ import { WeekAmountChartComponent } from './statistics/charts/week-amount-chart/
     LoginComponent,
     StatisticsComponent,
     WeekRankingChartComponent,
-    WeekAmountChartComponent
+    WeekAmountChartComponent,
+    WeekHoursChartComponent,
+    MainChartsComponent
   ],
   imports: [
     BrowserModule,

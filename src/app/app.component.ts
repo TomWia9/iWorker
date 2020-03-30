@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'IWorker';
-}
+
+    public barChartPlugins = [ChartDataLabels];
+
+  }

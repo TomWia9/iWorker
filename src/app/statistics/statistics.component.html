@@ -22,27 +22,13 @@
                 </mat-form-field>
             </div>
             <div class="allStatistics">
-                <button mat-raised-button>Ranking pracowników</button>
-                <button mat-raised-button>Średnie zbiory</button>
-                <button mat-raised-button>Średnia ilość godzin</button>
+                <button class="btn" mat-raised-button>Sczegółowe statystki rankingu</button>
+                <button class="btn" mat-raised-button>Szczegółowe statystyki zbiorów</button>
+                <button class="btn" mat-raised-button>Szczegółowe statystyki godzin pracy</button>
             </div>
 
-            <div class="break">
-                <h2>Ostatni tydzień</h2>
-            </div>
-            <div class="charts">
-                <div class="rankingChart">
-                    <h3>Twoje miejsca w rankingu</h3>
-                    <app-week-ranking-chart></app-week-ranking-chart>
-                </div>
-                <div class="amountChart">
-                    <h3>Ilość zebranych owoców</h3>
-                    <app-week-amount-chart></app-week-amount-chart>
-                </div>
-                <div class="hoursChart">
-                    <h3>Ilość przepracowanych godzin</h3>
-                </div>
-            </div>
+            <app-main-charts></app-main-charts>
+
         </mat-card-content>
     </mat-card>
 </form>
