@@ -7,6 +7,7 @@ import { PlanComponent } from './plan/plan.component';
 import { RaportsListComponent } from './raports/raports-list/raports-list.component';
 import { RaportDetailsComponent } from './raports/raport-details/raport-details.component';
 import { LoginComponent } from './login/login.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
           {path: 'plan', component: PlanComponent},
           {path: 'raports-list', component: RaportsListComponent},
           {path: 'raport/:id', component: RaportDetailsComponent},
+          {path: 'statistics', component: StatisticsComponent},
         ]
       },
       {path: 'login', component: LoginComponent}

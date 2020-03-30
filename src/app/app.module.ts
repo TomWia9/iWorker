@@ -26,6 +26,10 @@ import { RaportsListComponent } from './raports/raports-list/raports-list.compon
 import { RaportDetailsComponent } from './raports/raport-details/raport-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { StatisticsComponent } from './statistics/statistics.component';
+import { WeekRankingChartComponent } from './statistics/charts/week-ranking-chart/week-ranking-chart.component';
+import { ChartsModule } from 'ng2-charts';
+import { WeekAmountChartComponent } from './statistics/charts/week-amount-chart/week-amount-chart.component';
 
 
 @NgModule({
@@ -36,7 +40,10 @@ import { LoginComponent } from './login/login.component';
     PlanComponent,
     RaportsListComponent,
     RaportDetailsComponent,
-    LoginComponent
+    LoginComponent,
+    StatisticsComponent,
+    WeekRankingChartComponent,
+    WeekAmountChartComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +63,8 @@ import { LoginComponent } from './login/login.component';
     MatDatepickerModule,
     MatNativeDateModule ,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    ChartsModule,
   ],
   providers: [
     MatDatepickerModule, 

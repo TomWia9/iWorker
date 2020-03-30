@@ -1,0 +1,48 @@
+<form [formGroup]="form">
+    <mat-card class="container">
+        <mat-card-header class="header">
+            <mat-card-title>
+                <h2>Statystyki</h2>
+                <mat-divider></mat-divider>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="content">
+            <div class="mainStatistics">
+                <mat-form-field appearance="outline">
+                    <mat-label>Miejsce w rankingu pracowników</mat-label>
+                    <input matInput readonly formControlName="rankingPosition">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Łączna ilośc zebranych owoców (w kg)</mat-label>
+                    <input matInput readonly formControlName="totalAmount">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Łączna ilośc przepracowanych godzin</mat-label>
+                    <input matInput readonly formControlName="totalHours">
+                </mat-form-field>
+            </div>
+            <div class="allStatistics">
+                <button mat-raised-button>Ranking pracowników</button>
+                <button mat-raised-button>Średnie zbiory</button>
+                <button mat-raised-button>Średnia ilość godzin</button>
+            </div>
+
+            <div class="break">
+                <h2>Ostatni tydzień</h2>
+            </div>
+            <div class="charts">
+                <div class="rankingChart">
+                    <h3>Twoje miejsca w rankingu</h3>
+                    <app-week-ranking-chart></app-week-ranking-chart>
+                </div>
+                <div class="amountChart">
+                    <h3>Ilość zebranych owoców</h3>
+                    <app-week-amount-chart></app-week-amount-chart>
+                </div>
+                <div class="hoursChart">
+                    <h3>Ilość przepracowanych godzin</h3>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</form>
