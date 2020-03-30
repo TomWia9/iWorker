@@ -32,8 +32,8 @@
                 <mat-form-field appearance="outline">
                     <mat-label>Wykonywana praca</mat-label>
                     <mat-select formControlName="workName">
-                        <mat-option *ngFor="let work of works" [value]="work.name">
-                            {{ work.name }}
+                        <mat-option *ngFor="let work of works" [value]="work">
+                            {{ work }}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -46,16 +46,16 @@
                 <mat-form-field appearance="outline">
                     <mat-label>Sektor</mat-label>
                     <mat-select formControlName="sector">
-                        <mat-option *ngFor="let sector of sectors" [value]="sector.sector">
-                            {{ sector.sector }}
+                        <mat-option *ngFor="let sector of sectors" [value]="sector">
+                            {{ sector }}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Rodzaj skrzynek</mat-label>
                     <mat-select formControlName="chests">
-                        <mat-option *ngFor="let chest of chests" [value]="chest.name">
-                            {{ chest.name }}
+                        <mat-option *ngFor="let chest of chests" [value]="chest">
+                            {{ chest }}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>

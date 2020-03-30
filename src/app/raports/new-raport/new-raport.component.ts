@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { Work } from '../work';
-import { Sector } from '../sector';
-import { Chest } from '../chest';
 import { RaportService } from 'src/app/services/raport.service';
 import { RaportDetails } from '../raport-details/raportDetails';
 import { Router } from '@angular/router';
@@ -14,28 +11,9 @@ import { Router } from '@angular/router';
 })
 export class NewRaportComponent implements OnInit {
   form: FormGroup;
-  works: Work[] = [
-    {name: "Maliny"},
-    {name: "Truskawki"},
-    {name: "Jerzyny"},
-    {name: "Borówki"},
-  ]
-
-  sectors: Sector[] = [
-    {sector: "A1"}, 
-    {sector: "B12"}, 
-    {sector: "EZ"}, 
-    {sector: "ES"}, 
-    {sector: "C3"}, 
-  ]
-
-  chests: Chest[] = [
-    {name: "8x250"},
-    {name: "16x250"},
-    {name: "8x500"},
-    {name: "10x200"},
-    {name: "20x100"},
-  ]
+  works: string[] = ['Maliny', 'Truskawki', 'Jerzyny', 'Borówki'];
+  sectors: string[] = ['A1', 'B12', 'EZ', 'ES', 'C3'];
+  chests: string[] = ['8x250', '16x250', '8x500', '10x200', '20x100'];
 
   constructor(private fb: FormBuilder, private raportService: RaportService, private router: Router) { }
 
