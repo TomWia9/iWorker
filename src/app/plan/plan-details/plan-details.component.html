@@ -1,0 +1,14 @@
+<form [formGroup]="form">
+    <mat-form-field class="formField" appearance="outline">
+        <mat-label>Wykonywana praca</mat-label>
+        <input matInput formControlName="workName" readonly>
+    </mat-form-field>
+    <mat-form-field class="formField" appearance="outline">
+        <mat-label>Sektor</mat-label>
+        <input matInput formControlName="sector" readonly>
+    </mat-form-field>
+    <mat-form-field class="formField" appearance="outline">
+        <mat-label>Godziny pracy</mat-label>
+        <input matInput formControlName="hours" readonly>
+    </mat-form-field>
+</form>

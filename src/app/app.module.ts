@@ -35,6 +35,8 @@ import { WeekRankingChartComponent } from './statistics/charts/week-ranking-char
 import { WeekAmountChartComponent } from './statistics/charts/week-amount-chart/week-amount-chart.component';
 import { WeekHoursChartComponent } from './statistics/charts/week-hours-chart/week-hours-chart.component';
 import { MainChartsComponent } from './statistics/main-charts/main-charts.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PlanDetailsComponent } from './plan/plan-details/plan-details.component';
 
 
 
@@ -51,7 +53,9 @@ import { MainChartsComponent } from './statistics/main-charts/main-charts.compon
     WeekRankingChartComponent,
     WeekAmountChartComponent,
     WeekHoursChartComponent,
-    MainChartsComponent
+    MainChartsComponent,
+    DashboardComponent,
+    PlanDetailsComponent
   ],
   imports: [
     BrowserModule,

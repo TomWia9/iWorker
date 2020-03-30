@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+    background: #25272a;
+}
+
+.header {
+    justify-content: center;
+    color: brown;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em;
+    justify-content: center;
+    flex-wrap: wrap;
+}

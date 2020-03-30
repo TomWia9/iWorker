@@ -8,6 +8,7 @@ import { RaportsListComponent } from './raports/raports-list/raports-list.compon
 import { RaportDetailsComponent } from './raports/raport-details/raport-details.component';
 import { LoginComponent } from './login/login.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,7 @@ const routes: Routes = [
         path: '',
         component: SidenavComponent,
         children: [
-          // {path: '', component: DashboardComponent},
+          {path: '', component: DashboardComponent},
           {path: 'new-raport', component: NewRaportComponent},
           {path: 'plan', component: PlanComponent},
           {path: 'raports-list', component: RaportsListComponent},
