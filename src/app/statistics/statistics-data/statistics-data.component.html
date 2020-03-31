@@ -1,1 +1,43 @@
-<p>statistics-data works!</p>
+<form [formGroup]="form">
+    <mat-card class="container">
+        <mat-card-header class="header">
+            <mat-card-title>Statystyki {{ name }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="content">
+            <div class="stats">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>MAX</mat-label>
+                    <input matInput formControlName="max" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>ŁĄCZNIE</mat-label>
+                    <!--Dla rankingu powinno być "obecny ranking", trzeba dac potem ngIf czy cos-->
+                    <input matInput formControlName="total" readonly>
+                    <!--Albo! po prostu zrobic @input klasy zawierajacej wszystkie te pola-->
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>MIN</mat-label>
+                    <input matInput formControlName="min" readonly>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>ŚREDNIA</mat-label>
+                    <input matInput formControlName="avg" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>ŚREDNIA MIESIĘCZNA</mat-label>
+                    <input matInput formControlName="avgMonth" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>ŚREDNIA TYGODNIOWA</mat-label>
+                    <input matInput formControlName="avgWeek" readonly>
+                </mat-form-field>
+
+            </div>
+            <div class="chart">
+                <app-line-chart [chartData]="SAMPLE_LINE_CHART_DATA" [chartLabels]="SAMPLE_LABELS"></app-line-chart>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</form>

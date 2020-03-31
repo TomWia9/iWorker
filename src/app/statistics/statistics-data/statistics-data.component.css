@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+    background: #25272a;
+}
+
+.header {
+    justify-content: center;
+    color: brown;
+}
+
+.content {
+    display: flex;
+    margin: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.chart {
+    width: 70%;
+}
+
+mat-form-field {
+    width: 25%;
+    margin: 1em;
+}

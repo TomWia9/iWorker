@@ -22,13 +22,13 @@
                 </mat-form-field>
             </div>
             <div class="allStatistics">
-                <button class="btn" mat-raised-button>Sczegółowe statystki rankingu</button>
-                <button class="btn" mat-raised-button>Szczegółowe statystyki zbiorów</button>
-                <button class="btn" mat-raised-button>Szczegółowe statystyki godzin pracy</button>
+                <a class="btn" mat-raised-button [routerLink]="['/statistics/ranking']">Szczegółowe statystyki rankingu</a>
+                <a class="btn" mat-raised-button [routerLink]="['/statistics/amount']">Szczegółowe statystyki zbiorów</a>
+                <a class="btn" mat-raised-button [routerLink]="['/statistics/hours']">Szczegółowe statystyki godzin pracy</a>
             </div>
 
-            <div class="mainCharts">
-                <app-main-charts></app-main-charts>
+            <div class="mainStatistics">
+                <app-main-statistics></app-main-statistics>
             </div>
         </mat-card-content>
     </mat-card>

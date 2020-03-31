@@ -1,11 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-const SAMPLE_LINE_CHART_DATA: any[] = [
-  { data: [65, 59, 80, 81, 56, 54, 30, 10], label: 'Pozycja w rankingu', pointRadius: 8},
-  
-  ];
-  
-const SAMPLE_LINE_CHART_LABELS: string[] = ['23.03.20', '24.03.20', '25.03.20', '26.03.20', '27.03.20', '28.03.20', '29.03.20'];
+import { Component, OnInit, Input } from '@angular/core';
 
 const LINE_CHART_COLORS = [{
   backgroundColor: 'rgba(15,78,133,0.2)',
@@ -19,11 +12,14 @@ const LINE_CHART_COLORS = [{
 
 
 @Component({
-  selector: 'app-week-ranking-chart',
-  templateUrl: './week-ranking-chart.component.html',
-  styleUrls: ['./week-ranking-chart.component.css']
+  selector: 'app-line-chart',
+  templateUrl: './line-chart.component.html',
+  styleUrls: ['./line-chart.component.css']
 })
-export class WeekRankingChartComponent implements OnInit {
+export class LineChartComponent implements OnInit {
+
+  @Input() chartData: any [];
+  @Input() chartLabels: string [];
 
   constructor() { }
 
@@ -34,8 +30,8 @@ export class WeekRankingChartComponent implements OnInit {
     }
   ];
 
-  public lineChartData: any[] = SAMPLE_LINE_CHART_DATA;
-  public lineChartLabels: string[] = SAMPLE_LINE_CHART_LABELS;
+  public lineChartData: any[]; 
+  public lineChartLabels: string[]; 
   public lineChartType = 'line';
   public lineChartLegend = false;
   public lineChartColors = LINE_CHART_COLORS;
@@ -65,10 +61,13 @@ export class WeekRankingChartComponent implements OnInit {
       }
     }
     
-      
   }
 
   ngOnInit(): void {
+
+    this.lineChartData = this.chartData;
+    this.lineChartLabels = this.chartLabels;
+
   }
 
 }

@@ -31,10 +31,10 @@ import { RaportDetailsComponent } from './raports/raport-details/raport-details.
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { StatisticsComponent } from './statistics/statistics.component';
-import { WeekRankingChartComponent } from './statistics/charts/week-ranking-chart/week-ranking-chart.component';
-import { WeekAmountChartComponent } from './statistics/charts/week-amount-chart/week-amount-chart.component';
-import { WeekHoursChartComponent } from './statistics/charts/week-hours-chart/week-hours-chart.component';
-import { MainChartsComponent } from './statistics/main-charts/main-charts.component';
+import { LineChartComponent } from './statistics/charts/line-chart/line-chart.component';
+import { PieChartComponent } from './statistics/charts/pie-chart/pie-chart.component';
+import { BarChartComponent } from './statistics/charts/bar-chart/bar-chart.component';
+import { MainStatisticsComponent } from './statistics/main-statistics/main-statistics.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PlanDetailsComponent } from './plan/plan-details/plan-details.component';
 import { StatisticsDataComponent } from './statistics/statistics-data/statistics-data.component';
@@ -54,10 +54,10 @@ import { HoursStatisticsComponent } from './statistics/hours-statistics/hours-st
     RaportDetailsComponent,
     LoginComponent,
     StatisticsComponent,
-    WeekRankingChartComponent,
-    WeekAmountChartComponent,
-    WeekHoursChartComponent,
-    MainChartsComponent,
+    LineChartComponent,
+    PieChartComponent,
+    BarChartComponent,
+    MainStatisticsComponent,
     DashboardComponent,
     PlanDetailsComponent,
     StatisticsDataComponent,
