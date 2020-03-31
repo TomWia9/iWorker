@@ -47,6 +47,10 @@
     white-space: normal;
 }
 
+.mainCharts {
+    margin: 2em;
+}
+
 mat-form-field {
     width: 30%;
 }

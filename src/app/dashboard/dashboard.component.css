@@ -10,11 +10,58 @@
     color: brown;
 }
 
+h2 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.planContainer,
+.statsContainer>h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: brown;
+    text-align: center;
+    /* margin-bottom: 1em; */
+}
+
 .content {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin: 2em;
-    justify-content: center;
+    justify-content: space-around;
+    /* margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em; */
     flex-wrap: wrap;
+}
+
+.planContainer {
+    /* background: azure; */
+    width: 30%;
+    margin-top: 1em;
+    margin-right: 1em;
+}
+
+.raportContainer {
+    display: flex;
+    width: 50%;
+    margin-top: 1em;
+    margin-left: 1em;
+    text-align: center;
+}
+
+.btn {
+    background: brown;
+    white-space: normal;
+    padding: 10%;
+    margin: 1em;
+}
+
+.statsContainer {
+    /* width: 60%; */
+}
+
+mat-form-field.mat-form-field {
+    font-size: 20px;
+    color: brown;
+    font-weight: bold;
 }

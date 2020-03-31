@@ -1,25 +1,24 @@
-.container {
-    width: 100%;
-}
-
 .charts {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     text-align: center;
-    margin-top: 2em;
+    /* margin-top: 2em; */
 }
 
 .chartItem {
     color: brown;
-    margin: 2em;
+    margin-bottom: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
 }
 
-.info h2 {
+
+/* .info h2 {
     text-align: center;
     color: brown;
     font-size: 25px;
     font-weight: bold;
     margin-top: 2em;
-}
+} */

@@ -7,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  date: any;
   constructor() { }
 
-  ngOnInit(): void {
-    
+  date = new Date();
+  dateString: String;
+
+  ngOnInit(): void {  
+    this.date.setDate(this.date.getDate() + 1);
+    this.dateString = this.date.toLocaleDateString();
   }
 
 }
