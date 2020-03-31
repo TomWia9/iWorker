@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, Input, ViewContainerRef, ComponentRef, ComponentFactoryResolver } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { Plan } from './plan';
 import { PlanDetailsComponent } from './plan-details/plan-details.component';
 
 @Component({
