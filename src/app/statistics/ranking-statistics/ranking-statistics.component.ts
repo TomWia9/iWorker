@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RankingStatisticsComponent implements OnInit {
 
+  type: string = "ranking";
+
   constructor() { }
 
   ngOnInit(): void {

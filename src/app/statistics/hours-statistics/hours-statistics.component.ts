@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hours-statistics.component.css']
 })
 export class HoursStatisticsComponent implements OnInit {
-
+  type: string = 'hours';
   constructor() { }
 
   ngOnInit(): void {
