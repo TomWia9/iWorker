@@ -82,6 +82,6 @@ import { PlanDetailsComponent } from './plan/plan-details/plan-details.component
     MatDatepickerModule, 
     {provide: MAT_DATE_LOCALE, useValue: 'pl-PL'},
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

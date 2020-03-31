@@ -13,10 +13,10 @@
             <mat-datepicker #picker disabled="false"></mat-datepicker>
         </mat-form-field>
 
-        <div class="plan" *ngIf="isDateEntered">
-            <!--Have to fix, when (dateInput) it should remove this components if exists and create new with others date -->
+
+        <div class="plan" #parent>
             <h2>Twój plan na wybrany dzień:</h2>
-            <app-plan-details [date]="date"></app-plan-details>
+            <template #dynamicPlanDetailsComponent></template>
         </div>
 
     </mat-card-content>
