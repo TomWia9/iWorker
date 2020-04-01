@@ -14,9 +14,9 @@ export class RaportsListComponent implements OnInit {
   constructor(private raportService: RaportService) { }
 
   ngOnInit(): void {
-    this.raports = this.raportService.getRaportsList().subscribe(x  => {
-      this.raports = new MatTableDataSource(x); //propably it should be new MatTableDataSource(x);, I will se when API will be ready
-  });
+  //   this.raports = this.raportService.getRaportsList(this.userID).subscribe(x  => {
+  //     this.raports = new MatTableDataSource(x); //propably it should be new MatTableDataSource(x);, I will se when API will be ready
+  // });
   }
 
 }

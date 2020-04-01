@@ -11,12 +11,12 @@ export class RaportService {
 
   constructor(private http: HttpClient) { }
 
-  getDetails(id): Observable<RaportDetails>{
-    return this.http.get<RaportDetails>(`https://localhost:5001/api/raport/${id}}`);
+  getDetails(userID, id): Observable<RaportDetails>{
+    return this.http.get<RaportDetails>(`https://localhost:5001/api/raport/${userID}/${id}`);
   }
 
-  createRaport(newRaport: RaportDetails): Observable<Number>{
-    return this.http.post<number>('https://localhost:5001/api/raport', 
+  createRaport(userID, newRaport: RaportDetails): Observable<Number>{
+    return this.http.post<number>(`https://localhost:5001/api/raport/${userID}`, 
     {
       id: newRaport.id,
       name: newRaport.name,
@@ -27,12 +27,11 @@ export class RaportService {
       hours: newRaport.hours,
       date: newRaport.date,
       chests: newRaport.chests
-
     })
   }
 
-  getRaportsList(): Observable<RaportList[]>{
-    return this.http.get<RaportList[]>('https://localhost:5001/api/raport');
+  getRaportsList(userID): Observable<RaportList[]>{
+    return this.http.get<RaportList[]>(`https://localhost:5001/api/raport/${userID}`);
   }
 
 }

@@ -1,7 +1,7 @@
 <div class="charts">
     <div class="chartItem">
         <h3>Twoje miejsca w rankingu</h3>
-        <app-line-chart [chartData]="SAMPLE_LINE_CHART_DATA" [chartLabels]="SAMPLE_LABELS"></app-line-chart>
+        <app-line-chart [chartData]="lineChartData" [chartLabels]="chartLabels"></app-line-chart>
     </div>
     <div class="chartItem">
         <h3>Ilość zebranych owoców (w kg)</h3>
@@ -9,6 +9,6 @@
     </div>
     <div class="chartItem">
         <h3>Ilość przepracowanych godzin</h3>
-        <app-bar-chart [chartData]="SAMPLE_BARCHART_DATA" [chartLabels]="SAMPLE_LABELS"></app-bar-chart>
+        <app-bar-chart [chartData]="barChartData" [chartLabels]="chartLabels"></app-bar-chart>
     </div>
 </div>

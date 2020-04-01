@@ -1,7 +1,7 @@
 <form [formGroup]="form">
     <mat-card class="container">
         <mat-card-header class="header">
-            <mat-card-title>Statystyki {{ type }}</mat-card-title>
+            <mat-card-title>Statystyki TU BEDZIE TYP</mat-card-title>
         </mat-card-header>
         <mat-card-content class="content">
             <div class="stats">
@@ -36,7 +36,7 @@
 
             </div>
             <div class="chart">
-                <app-line-chart [chartData]="SAMPLE_LINE_CHART_DATA" [chartLabels]="SAMPLE_LABELS"></app-line-chart>
+                <app-line-chart [chartData]="chartData" [chartLabels]="chartLabels"></app-line-chart>
             </div>
         </mat-card-content>
     </mat-card>

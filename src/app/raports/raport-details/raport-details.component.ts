@@ -12,12 +12,12 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class RaportDetailsComponent implements OnInit {
   form: FormGroup;
   raport: RaportDetails = new RaportDetails();
-  id: string;
+  id: number;
   constructor(private fb: FormBuilder, private route: ActivatedRoute, private raportService: RaportService) { } 
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
-    // this.raportService.getDetails(this.id).subscribe(x => {
+    // this.raportService.getDetails(this.userID, this.id).subscribe(x => {
     //   this.raport = x;
     // })
 

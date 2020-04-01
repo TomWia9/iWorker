@@ -18,7 +18,7 @@ export class PlanDetailsComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.date);
     console.log(this.isInDashboard);
-    // this.planService.getPlanDetails(this.date).subscribe(x => {
+    // this.planService.getPlanDetails(this.userID, this.date).subscribe(x => {
     //   this.plan = x;
     // });
     this.form = this.fb.group({

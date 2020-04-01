@@ -38,9 +38,6 @@ import { MainStatisticsComponent } from './statistics/main-statistics/main-stati
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PlanDetailsComponent } from './plan/plan-details/plan-details.component';
 import { StatisticsDataComponent } from './statistics/statistics-data/statistics-data.component';
-import { RankingStatisticsComponent } from './statistics/ranking-statistics/ranking-statistics.component';
-import { AmountStatisticsComponent } from './statistics/amount-statistics/amount-statistics.component';
-import { HoursStatisticsComponent } from './statistics/hours-statistics/hours-statistics.component';
 
 
 
@@ -61,9 +58,6 @@ import { HoursStatisticsComponent } from './statistics/hours-statistics/hours-st
     DashboardComponent,
     PlanDetailsComponent,
     StatisticsDataComponent,
-    RankingStatisticsComponent,
-    AmountStatisticsComponent,
-    HoursStatisticsComponent
   ],
   imports: [
     BrowserModule,

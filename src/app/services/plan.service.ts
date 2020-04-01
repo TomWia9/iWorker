@@ -10,7 +10,7 @@ export class PlanService {
 
   constructor(private http: HttpClient) { }
 
-  getPlanDetails(date): Observable<PlanDetails>{
-    return this.http.get<PlanDetails>(`https://localhost:5001/api/raport/${date}}`);
+  getPlanDetails(userID, date): Observable<PlanDetails>{
+    return this.http.get<PlanDetails>(`https://localhost:5001/api/raport/${userID}/${date}}`);
   }
 }

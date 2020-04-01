@@ -35,10 +35,10 @@ export class NewRaportComponent implements OnInit {
     if (value.id != '' && value.name !== '' && value.surname !== '' && value.date !== '' && value.hours !== '' && value.workName !== '' 
         && value.sector !== '' && value.amount !== ''){
           
-          const newRaport = value as RaportDetails; 
-          this.raportService.createRaport(newRaport).subscribe(x=> {
-            this.router.navigate(['/raport',x]);
-          })
+          // const newRaport = value as RaportDetails; 
+          // this.raportService.createRaport(this.userID, newRaport).subscribe(x=> {
+          //   this.router.navigate(['/raport',x]);
+          // })
       
       console.log("Dodano raport");
       } else{
