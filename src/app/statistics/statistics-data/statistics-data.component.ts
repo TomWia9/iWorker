@@ -27,7 +27,7 @@ export class StatisticsDataComponent implements OnInit {
     this.id = this.route.snapshot.params.id; //1 - ranking, 2 - amount, 3 - hours
     console.log(this.id);
 
-      // this.statisticsData = this.statisticsService.getDataStatistics(this.userID).subscribe(x  => {
+      // this.statisticsData = this.statisticsService.getDataStatistics(this.userID, this.id).subscribe(x  => {
       //   this.statisticsData = x; 
       // });
 

@@ -21,18 +21,18 @@ export class RaportDetailsComponent implements OnInit {
     //   this.raport = x;
     // })
 
-    this.raport.id = "Mock id"
+    this.raport.userID = "Mock id"
     this.raport.name = 'Mock name',
     this.raport.surname = 'Mock surname',
     this.raport.workName = 'Mock workName',
     this.raport.sector = 'Mock sector',
     this.raport.amount = 'Mock amount',
     this.raport.hours = 'Mock horus',
-    this.raport.date = 'Mock date',
+    this.raport.date = new Date(),
     this.raport.chests = 'Mock chests',
 
     this.form = this.fb.group({
-      id: this.raport.id,
+      userID: this.raport.userID,
       name: this.raport.name,
       surname: this.raport.surname,
       workName: this.raport.workName,

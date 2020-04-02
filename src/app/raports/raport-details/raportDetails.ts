@@ -1,11 +1,11 @@
 export class RaportDetails{
-    id: string;
+    userID: string;
     name: string;
     surname: string;
     workName: string;
     sector: string;
     amount: string;
     hours: string;
-    date: string;
+    date: Date;
     chests: string;
 }

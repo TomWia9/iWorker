@@ -15,10 +15,10 @@ export class RaportService {
     return this.http.get<RaportDetails>(`https://localhost:5001/api/raport/${userID}/${id}`);
   }
 
-  createRaport(userID, newRaport: RaportDetails): Observable<Number>{
-    return this.http.post<number>(`https://localhost:5001/api/raport/${userID}`, 
+  createRaport(newRaport: RaportDetails): Observable<Number>{
+    return this.http.post<number>('https://localhost:5001/api/raport', 
     {
-      id: newRaport.id,
+      userID: newRaport.userID,
       name: newRaport.name,
       surname: newRaport.surname,
       workName: newRaport.workName,
