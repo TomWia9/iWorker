@@ -4,8 +4,8 @@ export class RaportDetails{
     surname: string;
     workName: string;
     sector: string;
-    amount: string;
-    hours: string;
+    amount: number;
+    hours: number;
     date: Date;
     chests: string;
 }

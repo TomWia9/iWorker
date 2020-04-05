@@ -1,3 +1,11 @@
 .formField {
     width: 100%;
 }
+
+.err {
+    padding: 20px;
+    background-color: mistyrose;
+    border: 1px solid red;
+    font-weight: bold;
+    border-radius: 10px;
+}

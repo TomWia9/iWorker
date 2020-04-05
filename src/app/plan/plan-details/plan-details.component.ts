@@ -14,6 +14,7 @@ export class PlanDetailsComponent implements OnInit {
   @Input() date: Date;
   @Input() isInDashboard: boolean = false; //when this component is in dashboard, the font of form fields should be lower
   dateString: string;
+  noPlan: boolean = false;
   constructor(private fb: FormBuilder, private planService: PlanService) { }
 
   ngOnInit(): void {
@@ -24,11 +25,17 @@ export class PlanDetailsComponent implements OnInit {
     });
    console.log(this.date);
      this.planService.getPlanDetails(158, this.date).subscribe(x => {
-      this.form = this.fb.group({
-      workName: x.workName,
-      sector: x.sector,
-      hours: x.hours,
-    });
+       if(x == null){
+         console.log("null dAta");
+         this.noPlan = true;
+       } else{
+         this.noPlan = false;
+        this.form = this.fb.group({
+          workName: x.workName,
+          sector: x.sector,
+          hours: x.hours,
+       
+    });}
     });
     
   }

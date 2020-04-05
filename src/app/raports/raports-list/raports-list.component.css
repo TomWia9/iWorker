@@ -36,11 +36,25 @@ mat-header-cell {
 
 .element {
     color: brown;
-    /* background: aliceblue; */
     font-weight: bold;
-    justify-content: right;
+    font-size: 20px;
 }
 
 mat-cell {
     justify-content: center;
+}
+
+.row-hover:hover {
+    background-color: rgba(0, 0, 0, .05);
+    cursor: pointer;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: brown !important;
 }

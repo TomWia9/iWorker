@@ -16,6 +16,7 @@ export class NewRaportComponent implements OnInit {
   chests: string[] = ['8x250', '16x250', '8x500', '10x200', '20x100'];
   @ViewChild('dateString', {static: true}) dateString: ElementRef;
   date: Date;
+  cantAdd: boolean = false;
 
   constructor(private fb: FormBuilder, private raportService: RaportService, private router: Router) { }
 
@@ -36,20 +37,18 @@ export class NewRaportComponent implements OnInit {
   onSubmit(value){
    this.date = this.dateString.nativeElement.value;
    console.log(this.date);
-    if (value.userID != '' && value.name !== '' && value.surname !== '' && value.date !== '' && value.hours !== '' && value.workName !== '' 
+    if (value.userID != '' && value.name !== '' && value.surname !== '' && value.date !== '' && value.hours !== '' && value.hours <13 && value.workName !== '' 
         && value.sector !== '' && value.amount !== '' && value.chests !== ''){
-
+          this.cantAdd = false;
           const newRaport = value as RaportDetails; 
           newRaport.date = this.date;
           
-          console.log(newRaport);
           this.raportService.createRaport(newRaport).subscribe(x=> {
-            this.router.navigate(['/raport',x]);
+              this.router.navigate(['/raport',x]);
           })
       
-      console.log("Dodano raport");
       } else{
-        console.log("Nie udało się dodać raportu")
+        this.cantAdd = true;
       };
   }
   

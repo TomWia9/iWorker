@@ -1,4 +1,4 @@
-<form [formGroup]="form">
+<form [formGroup]="form" *ngIf="!noPlan">
     <mat-form-field class="formField" appearance="outline" [ngStyle]="{fontSize: isInDashboard == true ? '15px' : '20px'}">
         <mat-label>Wykonywana praca</mat-label>
         <input matInput formControlName="workName" readonly>
@@ -12,3 +12,5 @@
         <input matInput formControlName="hours" readonly>
     </mat-form-field>
 </form>
+
+<p class="err" *ngIf="noPlan">Brak planu na dany dzień</p>
