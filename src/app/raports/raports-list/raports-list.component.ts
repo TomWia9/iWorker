@@ -8,15 +8,17 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./raports-list.component.css']
 })
 export class RaportsListComponent implements OnInit {
-  raports;
+  raports = new MatTableDataSource();
   displayedColumns = ['number', 'date', 'workName']
 
   constructor(private raportService: RaportService) { }
 
   ngOnInit(): void {
-  //   this.raports = this.raportService.getRaportsList(this.userID).subscribe(x  => {
-  //     this.raports = new MatTableDataSource(x); //propably it should be new MatTableDataSource(x);, I will se when API will be ready
-  // });
+     this.raportService.getRaportsList(158).subscribe(x  => {
+      this.raports = new MatTableDataSource(x); 
+      console.log(x);
+  });
+  
   }
 
 }

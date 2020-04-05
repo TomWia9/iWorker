@@ -10,22 +10,27 @@ import { PlanService } from 'src/app/services/plan.service';
 })
 export class PlanDetailsComponent implements OnInit {
   form: FormGroup;
-  plan = { workName: "Maliny", sector: "EZ", hours: "6:30 - 18:00" }
+ // plan = { workName: "Maliny", sector: "EZ", hours: "6:30 - 18:00" }
   @Input() date: Date;
   @Input() isInDashboard: boolean = false; //when this component is in dashboard, the font of form fields should be lower
+  dateString: string;
   constructor(private fb: FormBuilder, private planService: PlanService) { }
 
   ngOnInit(): void {
-    console.log(this.date);
-    console.log(this.isInDashboard);
-    // this.planService.getPlanDetails(this.userID, this.date).subscribe(x => {
-    //   this.plan = x;
-    // });
     this.form = this.fb.group({
-      workName: this.plan.workName,
-      sector: this.plan.sector,
-      hours: this.plan.hours,
+      workName: '',
+      sector: '',
+      hours: ''
     });
+   console.log(this.date);
+     this.planService.getPlanDetails(158, this.date).subscribe(x => {
+      this.form = this.fb.group({
+      workName: x.workName,
+      sector: x.sector,
+      hours: x.hours,
+    });
+    });
+    
   }
 
 }
