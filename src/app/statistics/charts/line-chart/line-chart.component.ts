@@ -41,9 +41,9 @@ export class LineChartComponent implements OnInit {
       yAxes: [{
         ticks: {
           reverse: true,
-          suggestedMin: 10,
-          suggestedMax: 100,
-          stepSize: 10,
+          // suggestedMin: 10,
+          // suggestedMax: 100,
+          // stepSize: 10,
         }
       }]
     },

@@ -27,6 +27,17 @@
     width: 70%;
 }
 
+.err {
+    padding: 20px;
+    background-color: mistyrose;
+    border: 1px solid red;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
 mat-form-field {
     width: 25%;
     margin: 1em;

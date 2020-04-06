@@ -8,43 +8,52 @@ import { StatisticsService } from 'src/app/services/statistics.service';
 })
 export class MainStatisticsComponent implements OnInit {
 
-   lineChartData: any[] = [
-    { data: [65, 59, 80, 81, 56, 54, 30, 10], label: 'Pozycja w rankingu', pointRadius: 8},
-    
-    ];
-    
-   chartLabels: string[] = ['23.03.20', '24.03.20', '25.03.20', '26.03.20', '27.03.20', '28.03.20', '29.03.20'];
-
-    barChartData: any[] = [
-    { data: [10, 11, 9.5, 8.75, 10, 6.5, 6], label: 'Ilość godzin'},
-    ];
-
-    pieChartData: number[] = [350, 450, 120, 169];
-    pieChartLabels: string[] = ['Maliny', 'Truskawki', 'Jerzyny', 'Borówki' ];
+  userID: string = '158';
+  data;
+  labels;
+  lineChartData: any[] = [];
+  pieChartData: any[] = [];
+  barChartData: any[] = [];
+  chartLabels: string[] = [];
+  pieChartLabels: string[] = [];
     
   constructor(private statisticsService: StatisticsService) { }
 
   ngOnInit(): void {
+    
+    // for line chart
+    this.data = this.statisticsService.getChartData(this.userID, 'week', 1).subscribe(x  => {
+          this.data = x; 
+     });
 
-    // this.lineChartData = this.statisticsService.getLineChartData(this.userID).subscribe(x  => {
-    //       this.lineChartData = x; 
-    //  });
+    this.labels = this.statisticsService.getChartLabels(this.userID, 'week', 1).subscribe(x  => {
+      this.labels = x; 
+    });
 
-    //  this.chartLabels = this.statisticsService.getChartLabels(this.userID).subscribe(x  => {
-    //   this.chartLabels = x; 
-    // });
+    this.lineChartData = [{data: this.data, label: 'Pozycja w rankingu', pointRadius: 8}];
+    this.chartLabels = this.labels;
 
-    // this.barChartData = this.statisticsService.getBarChartData(this.userID).subscribe(x  => {
-    //   this.barChartData = x; 
-    // });
+    // for pie chart
+    this.data = this.statisticsService.getChartData(this.userID, 'week', 2)
+    .subscribe(x  => {
+      this.data = x; 
+     });
 
-    // this.pieChartData = this.statisticsService.getPieChartData(this.userID).subscribe(x  => {
-    //   this.pieChartData = x; 
-    // });
+    this.labels = this.statisticsService.getChartLabels(this.userID, 'week', 2).subscribe(x  => {
+      this.labels = x; 
+    });
 
-    // this.pieChartLabels = this.statisticsService.getPieChartLabels(this.userID).subscribe(x  => {
-    //   this.pieChartLabels = x; 
-    // });
+    this.pieChartData = this.data
+    this.pieChartLabels = this.labels;
+
+    // for bar chart
+    this.data = this.statisticsService.getChartData(this.userID, 'week', 3).subscribe(x  => {
+      this.data = x; 
+    });
+
+    this.barChartData = [{data: this.data, label: 'Ilość godzin'}];
+
+    //labels will be the same as for lineChart
     
   }
 
