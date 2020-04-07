@@ -9,50 +9,47 @@ import { StatisticsService } from 'src/app/services/statistics.service';
 export class MainStatisticsComponent implements OnInit {
 
   userID: string = '158';
-  data;
-  labels;
-  lineChartData: any[] = [];
+  // data: number[] = [];
+  // labels: string[] = [];
+  lineChartData: any[] =[];
   pieChartData: any[] = [];
   barChartData: any[] = [];
   chartLabels: string[] = [];
   pieChartLabels: string[] = [];
+  canShow: number = 0;
     
-  constructor(private statisticsService: StatisticsService) { }
+  constructor(private statisticsService: StatisticsService) {}
 
   ngOnInit(): void {
     
-    // for line chart
-    this.data = this.statisticsService.getChartData(this.userID, 'week', 1).subscribe(x  => {
-          this.data = x; 
-     });
+    //for line chart
+  this.statisticsService.getChartData(this.userID, 'week', 1).subscribe( x=> {
+    this.lineChartData = [{data: x, label: 'Pozycja w rankingu', pointRadius: 8}];
+    this.canShow++;
+  });
 
-    this.labels = this.statisticsService.getChartLabels(this.userID, 'week', 1).subscribe(x  => {
-      this.labels = x; 
+    this.statisticsService.getChartLabels(this.userID, 'week', 1).subscribe(x=>{
+      this.chartLabels = x;
+      this.canShow++;
     });
 
-    this.lineChartData = [{data: this.data, label: 'Pozycja w rankingu', pointRadius: 8}];
-    this.chartLabels = this.labels;
-
-    // for pie chart
-    this.data = this.statisticsService.getChartData(this.userID, 'week', 2)
-    .subscribe(x  => {
-      this.data = x; 
-     });
-
-    this.labels = this.statisticsService.getChartLabels(this.userID, 'week', 2).subscribe(x  => {
-      this.labels = x; 
+    //for pie chart
+    this.statisticsService.getChartData(this.userID, 'week', 2).subscribe(x =>{
+      this.pieChartData = x;
+      this.canShow++;
     });
-
-    this.pieChartData = this.data
-    this.pieChartLabels = this.labels;
-
+ 
+   this.statisticsService.getChartLabels(this.userID, 'week', 2).subscribe(x =>{
+     this.pieChartLabels = x;
+     this.canShow++;
+   });
+ 
     // for bar chart
-    this.data = this.statisticsService.getChartData(this.userID, 'week', 3).subscribe(x  => {
-      this.data = x; 
+    this.statisticsService.getChartData(this.userID, 'week', 3).subscribe(x =>{
+      this.barChartData = [{data: x, label: 'Ilość godzin'}];
+      this.canShow++;
     });
-
-    this.barChartData = [{data: this.data, label: 'Ilość godzin'}];
-
+ 
     //labels will be the same as for lineChart
     
   }

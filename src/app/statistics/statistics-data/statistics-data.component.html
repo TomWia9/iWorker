@@ -35,14 +35,16 @@
                 </mat-form-field>
             </div>
 
-            <div class="chart" *ngIf="chartID == 1">
-                <app-line-chart [chartData]="chartData" [chartLabels]="chartLabels"></app-line-chart>
-            </div>
-            <div class="chart" *ngIf="chartID == 2">
-                <app-pie-chart [chartData]="chartData" [chartLabels]="chartLabels"></app-pie-chart>
-            </div>
-            <div class="chart" *ngIf="chartID == 3">
-                <app-bar-chart [chartData]="chartData" [chartLabels]="chartLabels"></app-bar-chart>
+            <div *ngIf="canShow>=2">
+                <div class="chart" *ngIf="chartID == 1">
+                    <app-line-chart [chartData]="chartData" [chartLabels]="chartLabels"></app-line-chart>
+                </div>
+                <div class="chart" *ngIf="chartID == 2">
+                    <app-pie-chart [chartData]="chartData" [chartLabels]="chartLabels"></app-pie-chart>
+                </div>
+                <div class="chart" *ngIf="chartID == 3">
+                    <app-bar-chart [chartData]="chartData" [chartLabels]="chartLabels"></app-bar-chart>
+                </div>
             </div>
 
         </mat-card-content>

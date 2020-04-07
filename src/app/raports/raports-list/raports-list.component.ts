@@ -19,6 +19,8 @@ export class RaportsListComponent implements OnInit {
       this.raports = new MatTableDataSource(x); 
       console.log(x);
   });
+
+  console.log(this.raports);
   }
 
   applyFilter(event: Event){
