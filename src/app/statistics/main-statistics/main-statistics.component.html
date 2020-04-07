@@ -1,4 +1,4 @@
-<div class="charts" *ngIf="canShow >= 5">
+<div class="charts" *ngIf="wait >=5">
     <div class="chartItem">
         <h3>Twoje miejsca w rankingu</h3>
         <app-line-chart [chartData]="lineChartData" [chartLabels]="chartLabels"></app-line-chart>

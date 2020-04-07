@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Statistics } from '../statistics/statistics';
 import { Observable } from 'rxjs';
 import { StatisticsData } from '../statistics/statistics-data/statisticsData';
+import { chartLabelsItem } from '../statistics/chartLabelsItem';
+import { ChartDataItem } from '../statistics/chartDataItem';
 
 @Injectable({
   providedIn: 'root'

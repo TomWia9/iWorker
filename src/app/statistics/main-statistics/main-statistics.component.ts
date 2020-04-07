@@ -9,49 +9,45 @@ import { StatisticsService } from 'src/app/services/statistics.service';
 export class MainStatisticsComponent implements OnInit {
 
   userID: string = '158';
-  // data: number[] = [];
-  // labels: string[] = [];
+  wait: number = 0;
   lineChartData: any[] =[];
   pieChartData: any[] = [];
   barChartData: any[] = [];
   chartLabels: string[] = [];
   pieChartLabels: string[] = [];
-  canShow: number = 0;
     
   constructor(private statisticsService: StatisticsService) {}
 
   ngOnInit(): void {
     
     //for line chart
-  this.statisticsService.getChartData(this.userID, 'week', 1).subscribe( x=> {
-    this.lineChartData = [{data: x, label: 'Pozycja w rankingu', pointRadius: 8}];
-    this.canShow++;
-  });
+    this.statisticsService.getChartData(this.userID, 7, 1).subscribe( x=> {
+      this.lineChartData = [{data: x, label: 'Pozycja w rankingu', pointRadius: 8}];
+      this.wait++;
+    });
 
-    this.statisticsService.getChartLabels(this.userID, 'week', 1).subscribe(x=>{
+    this.statisticsService.getChartLabels(this.userID, 7, 1).subscribe(x=>{
       this.chartLabels = x;
-      this.canShow++;
+      this.wait++;
+    });
+    //for pie chart
+    this.statisticsService.getChartData(this.userID, 7, 2).subscribe(x =>{
+      this.pieChartData = x;
+      this.wait++;
+    });
+ 
+    this.statisticsService.getChartLabels(this.userID, 7, 2).subscribe(x =>{
+      this.pieChartLabels = x;
+      this.wait++;
     });
 
-    //for pie chart
-    this.statisticsService.getChartData(this.userID, 'week', 2).subscribe(x =>{
-      this.pieChartData = x;
-      this.canShow++;
-    });
- 
-   this.statisticsService.getChartLabels(this.userID, 'week', 2).subscribe(x =>{
-     this.pieChartLabels = x;
-     this.canShow++;
-   });
- 
     // for bar chart
-    this.statisticsService.getChartData(this.userID, 'week', 3).subscribe(x =>{
+    this.statisticsService.getChartData(this.userID, 7, 3).subscribe(x =>{
       this.barChartData = [{data: x, label: 'Ilość godzin'}];
-      this.canShow++;
+      this.wait++;
     });
- 
+
     //labels will be the same as for lineChart
-    
   }
 
 }

@@ -13,7 +13,7 @@ export class StatisticsDataComponent implements OnInit {
   userID: string = '158';
   statsType: string;
   chartID: number;
-  canShow: number = 0;
+  wait: number = 0;
   statisticsData;
   chartData: any[] = [];
   chartLabels: string[] = [];
@@ -24,7 +24,7 @@ export class StatisticsDataComponent implements OnInit {
   
    this.chartID = this.route.snapshot.params.id; //1 - ranking, 2 - amount, 3 - hours
     
-   this.statisticsService.getChartData(this.userID, 'month', this.chartID).subscribe(x  => { 
+   this.statisticsService.getChartData(this.userID, 31, this.chartID).subscribe(x  => { 
         switch(+this.chartID){
           case 1: {
             this.statsType = 'rankingu'
@@ -42,14 +42,12 @@ export class StatisticsDataComponent implements OnInit {
             break;
           }
       }
-      console.log(this.chartData);
-        this.canShow++;
+        this.wait++;
     });
 
-    this.statisticsService.getChartLabels(this.userID, 'month', this.chartID).subscribe(x => {
+    this.statisticsService.getChartLabels(this.userID, 31, this.chartID).subscribe(x => {
         this.chartLabels = x;
-        console.log(this.chartLabels);
-        this.canShow++;
+        this.wait++;
     });
     
 
