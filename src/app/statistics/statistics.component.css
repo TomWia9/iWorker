@@ -52,6 +52,12 @@
     margin: 2em;
 }
 
+.mainStatistics h3 {
+    width: 100%;
+    color: brown;
+    text-align: center;
+}
+
 mat-form-field {
     width: 30%;
 }

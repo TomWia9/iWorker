@@ -10,17 +10,15 @@ import { Router } from '@angular/router';
 })
 export class RaportsListComponent implements OnInit {
   raports = new MatTableDataSource();
-  displayedColumns = ['number','date', 'workName']
+  displayedColumns = ['number','date', 'workName'];
 
   constructor(private raportService: RaportService, private router: Router) { }
 
   ngOnInit(): void {
      this.raportService.getRaportsList(158).subscribe(x  => {
       this.raports = new MatTableDataSource(x); 
-      console.log(x);
   });
 
-  console.log(this.raports);
   }
 
   applyFilter(event: Event){

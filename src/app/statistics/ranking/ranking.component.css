@@ -1,0 +1,64 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 4em;
+    background: #25272a;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    margin: 2em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.header {
+    justify-content: center;
+    color: brown;
+}
+
+.table {
+    background: #25272a;
+    width: 100%;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+mat-header-cell {
+    color: brown;
+    font-size: 20px;
+    justify-content: center;
+}
+
+mat-cell {
+    justify-content: center;
+    color: brown;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.row-hover:hover {
+    background-color: rgba(0, 0, 0, .05);
+    cursor: pointer;
+}
+
+.filter {
+    font-size: 15px;
+    width: 40%;
+    margin-right: 3em;
+}
+
+.date {
+    font-size: 15px;
+    width: 15%;
+    margin-left: 3em;
+}
+
+::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: brown !important;
+}

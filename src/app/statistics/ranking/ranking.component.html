@@ -1,0 +1,45 @@
+<mat-card class="container">
+    <mat-card-header class="header">
+        <mat-card-title>
+            <h1>Ranking pracowników na dzień: {{date}}</h1>
+            <mat-divider></mat-divider>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="content">
+        <mat-form-field class="filter">
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Szukaj">
+        </mat-form-field>
+        <mat-form-field class="date" appearance="outline">
+            <mat-label>Zmień dzień</mat-label>
+            <input matInput [matDatepicker]="picker" (dateInput)="changeDate()" disabled #dateInput>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker disabled="false"></mat-datepicker>
+        </mat-form-field>
+        <mat-table class="table" [dataSource]="ranking">
+            <ng-container matColumnDef="position">
+                <mat-header-cell *matHeaderCellDef>Pozycja</mat-header-cell>
+                <mat-cell *matCellDef="let element; let i = index">{{ i+1 }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="userID">
+                <mat-header-cell *matHeaderCellDef>Numer pracownika</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{ element.userID }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef>Imię</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="surname">
+                <mat-header-cell *matHeaderCellDef>Nazwisko</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{ element.surname }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="ratio">
+                <mat-header-cell *matHeaderCellDef>Wydajność</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{ element.ratio }}</mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns" class="row-hover"></mat-row>
+        </mat-table>
+
+    </mat-card-content>
+</mat-card>

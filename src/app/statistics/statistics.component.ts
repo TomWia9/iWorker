@@ -9,27 +9,29 @@ import { StatisticsService } from '../services/statistics.service';
 })
 export class StatisticsComponent implements OnInit {
   form: FormGroup;
-  statistics;
+  userID: number = 158;
+  dateString: string;
 
   constructor(private fb: FormBuilder, private statisticsService: StatisticsService) { }
 
   ngOnInit(): void {
 
-  //   this.statistics = this.statisticsService.getMainStatistics(userID).subscribe(x  => {
-  //     this.statistics = x; 
-  //  });
+  var date = new Date();
+  
+     date.setDate(date.getDate()-1);
+     this.dateString = date.toLocaleDateString();
 
-  // this.form = this.fb.group({
-  //   rankingPosition: this.statistics.rankingPosition,
-  //   totalAmount: this.statistics.totalAmount,
-  //   totalHours: this.statistics.totalHours,
-  // });
+    this.statisticsService.getMainStatistics(this.userID, this.dateString).subscribe(x  => {
+      this.form = this.fb.group({
+        rankingPosition: x.rankingPosition,
+        amount: x.amount,
+        hours: x.hours,
+      });
+   });
 
-    this.form = this.fb.group({
-      rankingPosition: '12',
-      totalAmount: '103',
-      totalHours: '123',
-    });
+  
+
+
   }
 
 }

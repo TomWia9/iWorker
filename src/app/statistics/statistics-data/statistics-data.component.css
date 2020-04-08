@@ -27,6 +27,12 @@
     width: 70%;
 }
 
+.button {
+    width: 50%;
+    background: brown;
+    margin-bottom: 3em;
+}
+
 .err {
     padding: 20px;
     background-color: mistyrose;

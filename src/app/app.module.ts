@@ -38,6 +38,7 @@ import { MainStatisticsComponent } from './statistics/main-statistics/main-stati
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PlanDetailsComponent } from './plan/plan-details/plan-details.component';
 import { StatisticsDataComponent } from './statistics/statistics-data/statistics-data.component';
+import { RankingComponent } from './statistics/ranking/ranking.component';
 
 
 
@@ -58,6 +59,7 @@ import { StatisticsDataComponent } from './statistics/statistics-data/statistics
     DashboardComponent,
     PlanDetailsComponent,
     StatisticsDataComponent,
+    RankingComponent,
   ],
   imports: [
     BrowserModule,

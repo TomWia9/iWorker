@@ -1,5 +1,5 @@
 export interface Statistics{
     rankingPosition: number;
-    totalAmount: number;
-    totalHours: number;
+    amount: number;
+   hours: number;
 }

@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StatisticsDataComponent } from './statistics/statistics-data/statistics-data.component';
+import { RankingComponent } from './statistics/ranking/ranking.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const routes: Routes = [
           {path: 'raport/:id', component: RaportDetailsComponent},
           {path: 'statistics', component: StatisticsComponent},
           {path:'statistics/data/:id', component: StatisticsDataComponent},
+          {path:'statistics/ranking', component: RankingComponent},
          
         ]
       },

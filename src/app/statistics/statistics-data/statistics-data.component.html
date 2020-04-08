@@ -10,12 +10,12 @@
                     <mat-label>MAX</mat-label>
                     <input matInput formControlName="max" readonly>
                 </mat-form-field>
-                <mat-form-field appearance="outline">
+                <mat-form-field appearance="outline" *ngIf="chartID == 2 || chartID == 3">
                     <mat-label>ŁĄCZNIE</mat-label>
-                    <!--Dla rankingu powinno być "obecny ranking", trzeba dac potem ngIf czy cos-->
                     <input matInput formControlName="total" readonly>
-                    <!--Albo! po prostu zrobic @input klasy zawierajacej wszystkie te pola-->
                 </mat-form-field>
+
+
                 <mat-form-field appearance="outline">
                     <mat-label>MIN</mat-label>
                     <input matInput formControlName="min" readonly>
@@ -33,10 +33,15 @@
                     <mat-label>ŚREDNIA TYGODNIOWA</mat-label>
                     <input matInput formControlName="avgWeek" readonly>
                 </mat-form-field>
+
             </div>
 
 
-            <div class="chart" *ngIf="chartID == 1 && wait >= 2">
+            <button *ngIf="chartID == 1" class="button" mat-raised-button [routerLink]="['/statistics/ranking']">Wyświetl ranking</button>
+
+
+
+            <div class="chart " *ngIf="chartID==1 && wait>= 2">
                 <app-line-chart [chartData]="chartData" [chartLabels]="chartLabels"></app-line-chart>
             </div>
             <div class="chart" *ngIf="chartID == 2 && wait >= 2">
