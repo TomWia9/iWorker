@@ -10,13 +10,19 @@ import { StatisticsService } from 'src/app/services/statistics.service';
 export class RankingComponent implements OnInit {
   ranking = new MatTableDataSource();
   displayedColumns = ['position','userID', 'name', 'surname', 'ratio'];
-  date: string = "07.04.2020";
   @ViewChild('dateInput', {static: true}) dateInput: ElementRef;
+  date = new Date();
+  dateString: string;
 
-  constructor(private statisticsService: StatisticsService) { }
+  constructor(private statisticsService: StatisticsService) {
+    this.date.setDate(this.date.getDate() - 1);
+    this.dateString = this.date.toLocaleDateString();
+   }
 
   ngOnInit(): void {
-    this.statisticsService.getRanking(this.date).subscribe(x  => {
+   
+  
+    this.statisticsService.getRanking(this.dateString).subscribe(x  => {
       this.ranking = new MatTableDataSource(x); 
     });
   }
@@ -27,7 +33,7 @@ export class RankingComponent implements OnInit {
     }
 
     changeDate(){
-      this.date = this.dateInput.nativeElement.value;
+      this.dateString = this.dateInput.nativeElement.value;
       this.ngOnInit();
     }
 

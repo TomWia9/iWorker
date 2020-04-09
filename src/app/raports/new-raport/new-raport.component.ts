@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { RaportService } from 'src/app/services/raport.service';
 import { RaportDetails } from '../raport-details/raportDetails';
 import { Router } from '@angular/router';
+import { User } from 'src/app/shared/user';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-new-raport',
@@ -17,14 +19,16 @@ export class NewRaportComponent implements OnInit {
   @ViewChild('dateString', {static: true}) dateString: ElementRef;
   date: Date;
   cantAdd: boolean = false;
+  userInfo: User;
 
-  constructor(private fb: FormBuilder, private raportService: RaportService, private router: Router) { }
+  constructor(private fb: FormBuilder, private raportService: RaportService, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    this.userInfo = this.userService.userInfo;
     this.form = this.fb.group({
-      userID: '158',
-      name: 'Tomasz',
-      surname: 'Wiatrowski',
+      userID: this.userInfo.userID,
+      name: this.userInfo.name,
+      surname: this.userInfo.surname,
       workName: '',
       sector: '',
       amount: '',

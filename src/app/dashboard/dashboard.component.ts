@@ -10,7 +10,7 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   date = new Date();
-  dateString: String;
+  dateString: string;
 
   ngOnInit(): void {  
     this.date.setDate(this.date.getDate() + 1);

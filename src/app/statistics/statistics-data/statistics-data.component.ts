@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { StatisticsService } from 'src/app/services/statistics.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-statistics-data',
@@ -10,7 +11,7 @@ import { StatisticsService } from 'src/app/services/statistics.service';
 })
 export class StatisticsDataComponent implements OnInit {
   form: FormGroup;
-  userID: string = '158';
+  userID: string;
   statsType: string;
   chartID: number;
   wait: number = 0;
@@ -18,9 +19,19 @@ export class StatisticsDataComponent implements OnInit {
   chartData: any[] = [];
   chartLabels: string[] = [];
     
-  constructor(private fb: FormBuilder, private route: ActivatedRoute, private statisticsService: StatisticsService) { }
+  constructor(private fb: FormBuilder, private route: ActivatedRoute, private statisticsService: StatisticsService, private userService: UserService) { }
 
   ngOnInit(): void {
+    this.userID = this.userService.userInfo.userID;
+
+    this.form = this.fb.group({
+      max: '',
+      total: '',
+      min: '',
+      avg: '',
+      avgMonth: '',
+      avgWeek: ''
+    })
   
    this.chartID = this.route.snapshot.params.id; //1 - ranking, 2 - amount, 3 - hours
     
@@ -49,25 +60,22 @@ export class StatisticsDataComponent implements OnInit {
         this.chartLabels = x;
         this.wait++;
     });
+
+    this.statisticsService.getDataStatistics(this.userID, this.chartID).subscribe(x => {
+      this.form = this.fb.group({
+        max: x.max,
+        total: x.total,
+        min: x.min,
+        avg: x.avg,
+        avgMonth: x.avgMonth,
+        avgWeek: x.avgWeek,
+      })
+    })
     
 
-      // this.form = this.fb.group({
-      //   max: this.statisticsData.max,
-      //   total: this.statisticsData.total,
-      //   min: this.statisticsData.min,
-      //   avg: this.statisticsData.avg,
-      //   avgMonth: this.statisticsData.avgMonth,
-      //   avgWeek: this.statisticsData.avgWeek,
-      // })
+      
 
-    this.form = this.fb.group({
-      max: '3',
-      total: '23',
-      min: '65',
-      avg: '20',
-      avgMonth: '17',
-      avgWeek: '22'
-    })
+    
   }
 
 }

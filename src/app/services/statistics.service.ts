@@ -29,8 +29,8 @@ export class StatisticsService {
   }
 
   //Statistics in statisticsDataComponent
-  getDataStatistics(userID): Observable<StatisticsData>{
-    return this.http.get<StatisticsData>(`https://localhost:5001/api/statistics/GetDataStatistics/${userID}`);
+  getDataStatistics(userID, statsID): Observable<StatisticsData>{
+    return this.http.get<StatisticsData>(`https://localhost:5001/api/statistics/GetDataStatistics/${userID}/${statsID}`);
   }
 
   getRanking(date): Observable<Ranking[]>{

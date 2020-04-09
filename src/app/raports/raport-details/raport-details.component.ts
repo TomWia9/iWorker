@@ -3,6 +3,7 @@ import { RaportDetails } from './raportDetails';
 import { ActivatedRoute } from '@angular/router';
 import { RaportService } from 'src/app/services/raport.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-raport-details',
@@ -12,10 +13,11 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class RaportDetailsComponent implements OnInit {
   form: FormGroup;
   id: number;
-  constructor(private fb: FormBuilder, private route: ActivatedRoute, private raportService: RaportService) { } 
+  userID: string;
+  constructor(private fb: FormBuilder, private route: ActivatedRoute, private raportService: RaportService, private userService: UserService) { } 
 
   ngOnInit(): void {
-    
+    this.userID = this.userService.userInfo.userID;
     this.form = this.fb.group({
       userID: '',
       name: '',
@@ -29,7 +31,7 @@ export class RaportDetailsComponent implements OnInit {
     });
 
     this.id = this.route.snapshot.params.id;
-    this.raportService.getDetails(158, this.id).subscribe(x => {
+    this.raportService.getDetails(this.userID, this.id).subscribe(x => {
       this.form = this.fb.group({
         userID: x.userID,
         name: x.name,

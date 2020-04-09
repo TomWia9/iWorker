@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { StatisticsService } from '../services/statistics.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-statistics',
@@ -9,12 +10,18 @@ import { StatisticsService } from '../services/statistics.service';
 })
 export class StatisticsComponent implements OnInit {
   form: FormGroup;
-  userID: number = 158;
+  userID: string;
   dateString: string;
 
-  constructor(private fb: FormBuilder, private statisticsService: StatisticsService) { }
+  constructor(private fb: FormBuilder, private statisticsService: StatisticsService, private userService: UserService) { }
 
   ngOnInit(): void {
+    this.userID = this.userService.userInfo.userID;
+    this.form = this.fb.group({
+      rankingPosition: '',
+      amount: '',
+      hours:  '',
+    });
 
   var date = new Date();
   

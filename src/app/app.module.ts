@@ -39,6 +39,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PlanDetailsComponent } from './plan/plan-details/plan-details.component';
 import { StatisticsDataComponent } from './statistics/statistics-data/statistics-data.component';
 import { RankingComponent } from './statistics/ranking/ranking.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -60,6 +61,7 @@ import { RankingComponent } from './statistics/ranking/ranking.component';
     PlanDetailsComponent,
     StatisticsDataComponent,
     RankingComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StatisticsDataComponent } from './statistics/statistics-data/statistics-data.component';
 import { RankingComponent } from './statistics/ranking/ranking.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
@@ -32,7 +33,8 @@ const routes: Routes = [
          
         ]
       },
-      {path: 'login', component: LoginComponent}
+      {path: 'login', component: LoginComponent},
+      {path: 'admin/register', component: RegisterComponent},
     ]
   }
 ];

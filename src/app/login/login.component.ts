@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from '../services/login.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   wrong: boolean = false;
 
-  constructor(private fb: FormBuilder, private router: Router, private loginService: LoginService) { }
+  constructor(private fb: FormBuilder, private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -22,10 +22,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(value){
-    if(value.login != '' && value.password != ''){
+    if(value.userID != '' && value.password != ''){
       console.log("Zalogowano");
-      this.loginService.login(value).subscribe(x => {
+      this.userService.login(value).subscribe(x => {
         if(x){
+          this.userService.setUser(x);
           this.router.navigate(['']);
         } else{
           this.wrong = true;

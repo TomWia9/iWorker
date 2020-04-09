@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StatisticsService } from 'src/app/services/statistics.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-main-statistics',
@@ -8,7 +9,7 @@ import { StatisticsService } from 'src/app/services/statistics.service';
 })
 export class MainStatisticsComponent implements OnInit {
 
-  userID: string = '158';
+  userID: string;
   wait: number = 0;
   lineChartData: any[] =[];
   pieChartData: any[] = [];
@@ -16,10 +17,11 @@ export class MainStatisticsComponent implements OnInit {
   chartLabels: string[] = [];
   pieChartLabels: string[] = [];
     
-  constructor(private statisticsService: StatisticsService) {}
+  constructor(private statisticsService: StatisticsService, private userService: UserService) {}
 
   ngOnInit(): void {
-    
+    this.userID = this.userService.userInfo.userID;
+
     //for line chart
     this.statisticsService.getChartData(this.userID, 7, 1).subscribe( x=> {
       this.lineChartData = [{data: x, label: 'Pozycja w rankingu', pointRadius: 8}];
