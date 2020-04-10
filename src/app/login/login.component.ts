@@ -23,13 +23,9 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(value){
-    console.log("click");
     if(value.userID != '' && value.password != ''){
-      console.log("dane ok");
       this.authService.login(value).subscribe(x => {
-        if(x){
-          console.log("Przyszly dane hyhy");
-         
+        if(x){         
           this.router.navigate(['']);
         } else{
           this.wrong = true;

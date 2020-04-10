@@ -28,7 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PlanComponent } from './plan/plan.component';
 import { RaportsListComponent } from './raports/raports-list/raports-list.component';
 import { RaportDetailsComponent } from './raports/raport-details/raport-details.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { LineChartComponent } from './statistics/charts/line-chart/line-chart.component';
@@ -40,6 +40,8 @@ import { PlanDetailsComponent } from './plan/plan-details/plan-details.component
 import { StatisticsDataComponent } from './statistics/statistics-data/statistics-data.component';
 import { RankingComponent } from './statistics/ranking/ranking.component';
 import { RegisterComponent } from './register/register.component';
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { ErrorInterceptor } from './interceptors/error.interceptor';
 
 
 
@@ -87,6 +89,8 @@ import { RegisterComponent } from './register/register.component';
   providers: [
     MatDatepickerModule, 
     {provide: MAT_DATE_LOCALE, useValue: 'pl-PL'},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
   ],
   bootstrap: [AppComponent],
 })
