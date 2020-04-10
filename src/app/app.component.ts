@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import { GuardService } from './services/guard.service';
 
 @Component({
   selector: 'app-root',

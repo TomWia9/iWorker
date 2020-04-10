@@ -1,4 +1,4 @@
 export interface Login{
-    userID: number;
+    userID: string;
     password: string;
 }

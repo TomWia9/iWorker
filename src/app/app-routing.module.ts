@@ -12,6 +12,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { StatisticsDataComponent } from './statistics/statistics-data/statistics-data.component';
 import { RankingComponent } from './statistics/ranking/ranking.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './auth/auth.guard';
+import { AdminGuard } from './auth/admin.guard';
 
 const routes: Routes = [
   {
@@ -21,6 +23,7 @@ const routes: Routes = [
       {
         path: '',
         component: SidenavComponent,
+        canActivate: [AuthGuard],
         children: [
           {path: '', component: DashboardComponent},
           {path: 'new-raport', component: NewRaportComponent},
@@ -33,8 +36,8 @@ const routes: Routes = [
          
         ]
       },
-      {path: 'login', component: LoginComponent},
-      {path: 'admin/register', component: RegisterComponent},
+      {path: 'login', component: LoginComponent, },
+      {path: 'admin/register', component: RegisterComponent, canActivate: [AdminGuard]},
     ]
   }
 ];

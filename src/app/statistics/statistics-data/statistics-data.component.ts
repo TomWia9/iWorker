@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { StatisticsService } from 'src/app/services/statistics.service';
-import { UserService } from 'src/app/services/user.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-statistics-data',
@@ -19,10 +19,10 @@ export class StatisticsDataComponent implements OnInit {
   chartData: any[] = [];
   chartLabels: string[] = [];
     
-  constructor(private fb: FormBuilder, private route: ActivatedRoute, private statisticsService: StatisticsService, private userService: UserService) { }
+  constructor(private fb: FormBuilder, private route: ActivatedRoute, private statisticsService: StatisticsService, private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.userID = this.userService.userInfo.userID;
+    this.userID = this.authService.getCurrentValue().userID;
 
     this.form = this.fb.group({
       max: '',

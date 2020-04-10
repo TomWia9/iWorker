@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { StatisticsService } from '../services/statistics.service';
-import { UserService } from '../services/user.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-statistics',
@@ -13,10 +13,10 @@ export class StatisticsComponent implements OnInit {
   userID: string;
   dateString: string;
 
-  constructor(private fb: FormBuilder, private statisticsService: StatisticsService, private userService: UserService) { }
+  constructor(private fb: FormBuilder, private statisticsService: StatisticsService, private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.userID = this.userService.userInfo.userID;
+    this.userID = this.authService.getCurrentValue().userID;
     this.form = this.fb.group({
       rankingPosition: '',
       amount: '',

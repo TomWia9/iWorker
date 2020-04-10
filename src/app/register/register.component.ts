@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { UserService } from '../services/user.service';
+import { RegisterService } from '../services/register.service';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
   wrong: boolean = false;
 
 
-  constructor(private fb: FormBuilder, private userService: UserService) { }
+  constructor(private fb: FormBuilder, private registerService: RegisterService) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
   onSubmit(value){
     if(value.userID != '' && value.name != '' && value.surname != '' && value.password != ''){
       console.log("Zarejestrowano");
-      this.userService.register(value).subscribe(() => {
+      this.registerService.register(value).subscribe(() => {
         this.wrong = false;
       });
     } else{

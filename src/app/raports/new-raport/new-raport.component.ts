@@ -3,8 +3,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { RaportService } from 'src/app/services/raport.service';
 import { RaportDetails } from '../raport-details/raportDetails';
 import { Router } from '@angular/router';
-import { User } from 'src/app/shared/user';
-import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/auth/user';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-new-raport',
@@ -21,10 +21,10 @@ export class NewRaportComponent implements OnInit {
   cantAdd: boolean = false;
   userInfo: User;
 
-  constructor(private fb: FormBuilder, private raportService: RaportService, private userService: UserService, private router: Router) { }
+  constructor(private fb: FormBuilder, private raportService: RaportService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    this.userInfo = this.userService.userInfo;
+    this.userInfo = this.authService.getCurrentValue();
     this.form = this.fb.group({
       userID: this.userInfo.userID,
       name: this.userInfo.name,

@@ -3,7 +3,7 @@ import { RaportDetails } from './raportDetails';
 import { ActivatedRoute } from '@angular/router';
 import { RaportService } from 'src/app/services/raport.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { UserService } from 'src/app/services/user.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-raport-details',
@@ -14,10 +14,10 @@ export class RaportDetailsComponent implements OnInit {
   form: FormGroup;
   id: number;
   userID: string;
-  constructor(private fb: FormBuilder, private route: ActivatedRoute, private raportService: RaportService, private userService: UserService) { } 
+  constructor(private fb: FormBuilder, private route: ActivatedRoute, private raportService: RaportService, private authService: AuthService) { } 
 
   ngOnInit(): void {
-    this.userID = this.userService.userInfo.userID;
+    this.userID = this.authService.getCurrentValue().userID;
     this.form = this.fb.group({
       userID: '',
       name: '',

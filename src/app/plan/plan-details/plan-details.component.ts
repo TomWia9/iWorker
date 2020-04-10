@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { PlanDetails } from '../planDetails';
 import { PlanService } from 'src/app/services/plan.service';
-import { UserService } from 'src/app/services/user.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-plan-details',
@@ -17,10 +16,10 @@ export class PlanDetailsComponent implements OnInit {
   dateString: string;
   noPlan: boolean = false;
   userID: string;
-  constructor(private fb: FormBuilder, private planService: PlanService, private userService: UserService) { }
+  constructor(private fb: FormBuilder, private planService: PlanService, private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.userID = this.userService.userInfo.userID;
+    this.userID = this.authService.getCurrentValue().userID;
     this.form = this.fb.group({
       workName: '',
       sector: '',
