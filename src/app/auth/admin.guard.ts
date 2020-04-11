@@ -17,14 +17,18 @@ export class AdminGuard implements CanActivate {
    
     if(currentUser == null){
       this.router.navigate(['/login']);
+      return false;
     }
    
     if(currentUser.userID === 'admin'){
       return true;
     } 
 
-   
-    this.router.navigate(['']);
+    else{
+      this.router.navigate(['']);
+      return false;
+    } 
+    
     
   }
   

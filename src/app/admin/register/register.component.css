@@ -47,25 +47,6 @@ h1 {
     border-radius: 10px;
 }
 
-.logo {
-    display: flex;
-    margin: 1em;
-    font-weight: bold;
-    justify-content: center;
-    padding: 20px;
-    cursor: pointer;
-}
-
-.logo-left {
-    font-size: 80px;
-    color: #393d41;
-}
-
-.logo-right {
-    font-size: 80px;
-    color: brown;
-}
-
 .mat-form-field {
     width: 50%;
 }

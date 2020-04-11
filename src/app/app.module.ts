@@ -39,9 +39,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PlanDetailsComponent } from './plan/plan-details/plan-details.component';
 import { StatisticsDataComponent } from './statistics/statistics-data/statistics-data.component';
 import { RankingComponent } from './statistics/ranking/ranking.component';
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './admin/register/register.component';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 
 
 
@@ -64,6 +66,8 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
     StatisticsDataComponent,
     RankingComponent,
     RegisterComponent,
+    AdminPanelComponent,
+    AdminDashboardComponent,
   ],
   imports: [
     BrowserModule,

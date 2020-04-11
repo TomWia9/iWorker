@@ -11,9 +11,11 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StatisticsDataComponent } from './statistics/statistics-data/statistics-data.component';
 import { RankingComponent } from './statistics/ranking/ranking.component';
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './admin/register/register.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AdminGuard } from './auth/admin.guard';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
   {
@@ -37,7 +39,15 @@ const routes: Routes = [
         ]
       },
       {path: 'login', component: LoginComponent, },
-      {path: 'admin/register', component: RegisterComponent, canActivate: [AdminGuard]},
+
+      {path: 'admin',
+       component: AdminPanelComponent,
+        canActivate: [AdminGuard],
+        children: [
+          {path: '', component: AdminDashboardComponent},
+          {path: 'register', component: RegisterComponent},
+        ]
+      },
     ]
   }
 ];
