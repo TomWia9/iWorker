@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PlanDetails } from '../plan/planDetails';
+import { PlanDetails } from '../user/plan/planDetails';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 

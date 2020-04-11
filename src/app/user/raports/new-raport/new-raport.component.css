@@ -20,9 +20,36 @@
     margin: auto;
 }
 
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    width: 30%;
+    padding: 2%;
+    background: brown;
+    color: azure;
+    font-size: 20px;
+    white-space: normal;
+}
+
 .header {
     justify-content: center;
-    color: brown;
+    color: #4E7596;
+}
+
+.err {
+    padding: 20px;
+    background-color: mistyrose;
+    border: 1px solid red;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 40px;
 }
 
 ::ng-deep.mat-select-panel {

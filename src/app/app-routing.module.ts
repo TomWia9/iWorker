@@ -1,21 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { NewRaportComponent } from './raports/new-raport/new-raport.component';
-import { PlanComponent } from './plan/plan.component';
-import { RaportsListComponent } from './raports/raports-list/raports-list.component';
-import { RaportDetailsComponent } from './raports/raport-details/raport-details.component';
+import { SidenavComponent } from './user/sidenav/sidenav.component';
+import { NewRaportComponent } from './user/raports/new-raport/new-raport.component';
+import { PlanComponent } from './user/plan/plan.component';
+import { RaportsListComponent } from './user/raports/raports-list/raports-list.component';
+import { RaportDetailsComponent } from './user/raports/raport-details/raport-details.component';
 import { LoginComponent } from './login/login.component';
-import { StatisticsComponent } from './statistics/statistics.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { StatisticsDataComponent } from './statistics/statistics-data/statistics-data.component';
-import { RankingComponent } from './statistics/ranking/ranking.component';
+import { StatisticsComponent } from './user/statistics/statistics.component';
+import { DashboardComponent } from './user/dashboard/dashboard.component';
+import { StatisticsDataComponent } from './user/statistics/statistics-data/statistics-data.component';
+import { RankingComponent } from './user/statistics/ranking/ranking.component';
 import { RegisterComponent } from './admin/register/register.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AdminGuard } from './auth/admin.guard';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { WorkersComponent } from './admin/workers/workers.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,7 @@ const routes: Routes = [
         canActivate: [AdminGuard],
         children: [
           {path: '', component: AdminDashboardComponent},
+          {path: 'workers', component: WorkersComponent},
           {path: 'register', component: RegisterComponent},
         ]
       },

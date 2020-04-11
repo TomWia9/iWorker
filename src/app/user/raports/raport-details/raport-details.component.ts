@@ -14,6 +14,7 @@ export class RaportDetailsComponent implements OnInit {
   form: FormGroup;
   id: number;
   userID: string;
+  date: Date;
   constructor(private fb: FormBuilder, private route: ActivatedRoute, private raportService: RaportService, private authService: AuthService) { } 
 
   ngOnInit(): void {
@@ -43,6 +44,9 @@ export class RaportDetailsComponent implements OnInit {
         date: x.date,
         chests: x.chests,
       });
+
+      this.date = x.date;
+
     })
   }
 

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { RaportDetails } from '../raports/raport-details/raportDetails';
-import { RaportList } from '../raports/RaportList';
+import { RaportDetails } from '../user/raports/raport-details/raportDetails';
+import { RaportList } from '../user/raports/RaportList';
 
 @Injectable({
   providedIn: 'root'

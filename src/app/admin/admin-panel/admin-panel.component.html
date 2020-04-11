@@ -1,2 +1,31 @@
-<p>admin-panel works!</p>
+<mat-toolbar class="nav">
+    <mat-toolbar-row>
+        <span class="logo-left">i</span>
+        <span class="logo-right">Worker</span>
+        <span class="spacer"></span>
+        <a class="nav-element" [routerLink]="['']">
+            <span>Dashboard</span>
+            <mat-icon class="icon" aria-hidden="false" aria-label="Dashboard">dashboard</mat-icon>
+        </a>
+        <a class="nav-element" [routerLink]="['/admin/workers']">
+            <span>Pracownicy</span>
+            <mat-icon class="icon" aria-hidden="false" aria-label="Workers">people_outline</mat-icon>
+        </a>
+        <a class="nav-element" [routerLink]="['']">
+            <span>Statystyki</span>
+            <mat-icon class="icon" aria-hidden="false" aria-label="Statistics">show_chart</mat-icon>
+        </a>
+
+        <a class="nav-element" [routerLink]="['']">
+            <span>Plan pracy</span>
+            <mat-icon class="icon" aria-hidden="false" aria-label="Plan">assignment</mat-icon>
+        </a>
+        <a class="nav-element" [routerLink]="['/login']">
+            <span>Wyloguj</span>
+            <mat-icon class="icon" aria-hidden="false" aria-label="Logout">exit_to_app</mat-icon>
+        </a>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
 <router-outlet></router-outlet>

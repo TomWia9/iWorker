@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Statistics } from '../statistics/statistics';
+import { Statistics } from '../user/statistics/statistics';
 import { Observable } from 'rxjs';
-import { StatisticsData } from '../statistics/statistics-data/statisticsData';
-import { chartLabelsItem } from '../statistics/chartLabelsItem';
-import { ChartDataItem } from '../statistics/chartDataItem';
-import { Ranking } from '../statistics/ranking/ranking';
+import { StatisticsData } from '../user/statistics/statistics-data/statisticsData';
+import { chartLabelsItem } from '../user/statistics/chartLabelsItem';
+import { ChartDataItem } from '../user/statistics/chartDataItem';
+import { Ranking } from '../user/statistics/ranking/ranking';
 
 @Injectable({
   providedIn: 'root'

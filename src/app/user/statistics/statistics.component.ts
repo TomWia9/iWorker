@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { StatisticsService } from '../services/statistics.service';
-import { AuthService } from '../services/auth.service';
+import { StatisticsService } from '../../services/statistics.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-statistics',

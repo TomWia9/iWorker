@@ -22,28 +22,30 @@ import { ChartsModule } from 'ng2-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { NewRaportComponent } from './raports/new-raport/new-raport.component';
+import { SidenavComponent } from './user/sidenav/sidenav.component';
+import { NewRaportComponent } from './user/raports/new-raport/new-raport.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PlanComponent } from './plan/plan.component';
-import { RaportsListComponent } from './raports/raports-list/raports-list.component';
-import { RaportDetailsComponent } from './raports/raport-details/raport-details.component';
+import { PlanComponent } from './user/plan/plan.component';
+import { RaportsListComponent } from './user/raports/raports-list/raports-list.component';
+import { RaportDetailsComponent } from './user/raports/raport-details/raport-details.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
-import { StatisticsComponent } from './statistics/statistics.component';
-import { LineChartComponent } from './statistics/charts/line-chart/line-chart.component';
-import { PieChartComponent } from './statistics/charts/pie-chart/pie-chart.component';
-import { BarChartComponent } from './statistics/charts/bar-chart/bar-chart.component';
-import { MainStatisticsComponent } from './statistics/main-statistics/main-statistics.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { PlanDetailsComponent } from './plan/plan-details/plan-details.component';
-import { StatisticsDataComponent } from './statistics/statistics-data/statistics-data.component';
-import { RankingComponent } from './statistics/ranking/ranking.component';
+import { StatisticsComponent } from './user/statistics/statistics.component';
+import { LineChartComponent } from './user/statistics/charts/line-chart/line-chart.component';
+import { PieChartComponent } from './user/statistics/charts/pie-chart/pie-chart.component';
+import { BarChartComponent } from './user/statistics/charts/bar-chart/bar-chart.component';
+import { MainStatisticsComponent } from './user/statistics/main-statistics/main-statistics.component';
+import { DashboardComponent } from './user/dashboard/dashboard.component';
+import { PlanDetailsComponent } from './user/plan/plan-details/plan-details.component';
+import { StatisticsDataComponent } from './user/statistics/statistics-data/statistics-data.component';
+import { RankingComponent } from './user/statistics/ranking/ranking.component';
 import { RegisterComponent } from './admin/register/register.component';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { WorkersListComponent } from './admin/workers/workers-list/workers-list.component';
+import { WorkersComponent } from './admin/workers/workers.component';
 
 
 
@@ -68,6 +70,8 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
     RegisterComponent,
     AdminPanelComponent,
     AdminDashboardComponent,
+    WorkersListComponent,
+    WorkersComponent,
   ],
   imports: [
     BrowserModule,

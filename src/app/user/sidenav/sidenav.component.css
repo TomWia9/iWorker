@@ -10,7 +10,6 @@
 }
 
 .logo {
-    text-align: center;
     margin: 1em;
     font-size: 40px;
     font-weight: bold;
@@ -22,16 +21,22 @@
 }
 
 .logo-right {
-    color: brown;
+    color: #4E7596;
     font-weight: bold;
 }
 
 .sidenav {
     min-width: 15%;
-    background: #2E3134;
+    background: brown;
 }
 
 .listItem {
-    font-weight: bold;
-    color: brown;
+    font-size: 20px;
+    color: azure;
+    width: 100%;
+}
+
+.icon {
+    font-size: 30px;
+    padding: 0 20px;
 }

@@ -1,0 +1,35 @@
+.nav {
+    background-color: brown;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.icon {
+    position: relative;
+    top: 8px;
+    font-size: 30px;
+    padding: 0 10px;
+}
+
+.logo-left {
+    color: azure;
+    font-size: 50px;
+}
+
+.logo-right {
+    color: #4E7596;
+    font-size: 50px;
+}
+
+.nav-element {
+    font-size: 22px;
+    color: azure;
+    margin-right: 1em;
+}
+
+
+/* a:hover {
+    background-color: #4E7596;
+} */

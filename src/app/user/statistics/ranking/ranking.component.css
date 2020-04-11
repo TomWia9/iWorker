@@ -15,7 +15,7 @@
 
 .header {
     justify-content: center;
-    color: brown;
+    color: #4E7596;
 }
 
 .table {
@@ -29,7 +29,7 @@ h1 {
 }
 
 mat-header-cell {
-    color: brown;
+    color: #4E7596;
     font-size: 20px;
     justify-content: center;
 }

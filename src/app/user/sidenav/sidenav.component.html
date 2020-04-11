@@ -1,0 +1,45 @@
+<mat-sidenav-container class="sidenavContainer">
+
+    <mat-sidenav mode="side" opened class="sidenav">
+        <div class="logo">
+            <span class="logo-left">i</span>
+            <span class="logo-right">Worker</span>
+        </div>
+
+        <mat-nav-list>
+            <mat-divider></mat-divider>
+            <a class="listItem" mat-list-item [routerLink]="['']">
+                <mat-icon class="icon" aria-hidden="false" aria-label="Dashboard">dashboard</mat-icon>
+                <span>Dashboard</span>
+            </a>
+            <mat-divider></mat-divider>
+            <a class="listItem" mat-list-item [routerLink]="['/raports-list']">
+                <mat-icon class="icon" aria-hidden="false" aria-label="Dashboard">list</mat-icon>
+                <span>Lista raportów</span>
+            </a>
+            <a class="listItem" mat-list-item [routerLink]="['/new-raport']">
+                <mat-icon class="icon" aria-hidden="false" aria-label="Dashboard">note_add</mat-icon>
+                <span>Nowy raport</span>
+            </a>
+            <a class="listItem" mat-list-item [routerLink]="['/plan']">
+                <mat-icon class="icon" aria-hidden="false" aria-label="Dashboard">assignment</mat-icon>
+                <span>Plan</span>
+            </a>
+            <a class="listItem" mat-list-item [routerLink]="['/statistics']">
+                <mat-icon class="icon" aria-hidden="false" aria-label="Dashboard">show_chart</mat-icon>
+                <span>Statysyki</span>
+            </a>
+            <mat-divider></mat-divider>
+            <a class="listItem" mat-list-item [routerLink]="['/login']">
+                <mat-icon class="icon" aria-hidden="false" aria-label="Dashboard">exit_to_app</mat-icon>
+                <span>Wyloguj</span>
+            </a>
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
