@@ -23,7 +23,8 @@
                 <mat-label>Hasło</mat-label>
                 <input matInput type="password" formControlName="password" required>
             </mat-form-field>
-            <span class="err" *ngIf="wrong">Sprawdź czy wszystkie pola są wypełnione</span>
+            <span class="err" *ngIf="wrong">Podany numer jest już zarejestrowany lub nie wszystkie pola są wypełnione</span>
+            <span class="err" *ngIf="wrong == false" [ngStyle]="{backgroundColor: wrong ? 'mistyrose' : 'forestgreen'}">Pomyślnie dodano użytkownika</span>
         </mat-card-content>
         <mat-card-actions class="actions">
             <button class="button" type="submit" mat-raised-button>Zarejestruj</button>

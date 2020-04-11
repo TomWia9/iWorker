@@ -10,8 +10,8 @@ export class RegisterService {
 
   constructor(private http: HttpClient) { }
 
-  register(newUser: Register): Observable<any>{
-    return this.http.post<any>('https://localhost:5001/api/register', newUser);
+  register(newUser: Register): Observable<boolean>{
+    return this.http.post<boolean>('https://localhost:5001/api/register', newUser);
   }
 
 }

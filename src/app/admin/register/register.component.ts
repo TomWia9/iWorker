@@ -9,8 +9,7 @@ import { RegisterService } from '../../services/register.service';
 })
 export class RegisterComponent implements OnInit {
   form: FormGroup;
-  wrong: boolean = false;
-
+  wrong: boolean = null;
 
   constructor(private fb: FormBuilder, private registerService: RegisterService) { }
 
@@ -25,14 +24,14 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(value){
     if(value.userID != '' && value.name != '' && value.surname != '' && value.password != ''){
-      console.log("Zarejestrowano");
-      this.registerService.register(value).subscribe(() => {
-        this.wrong = false;
+      this.registerService.register(value).subscribe(x => {
+        this.wrong = x;
       });
     } else{
-      console.log("Nie zarejestrowano");
       this.wrong = true;
     }
+
+    this.ngOnInit(); //to clear form
   }
 
 }
