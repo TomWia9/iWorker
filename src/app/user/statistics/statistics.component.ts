@@ -10,7 +10,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class StatisticsComponent implements OnInit {
   form: FormGroup;
-  userID: string;
+  userID: number;
   dateString: string;
 
   constructor(private fb: FormBuilder, private statisticsService: StatisticsService, private authService: AuthService) { }

@@ -1,5 +1,5 @@
 export class RaportDetails{
-    userID: string;
+    userID: number;
     name: string;
     surname: string;
     workName: string;

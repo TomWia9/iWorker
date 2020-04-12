@@ -17,7 +17,7 @@ h2 {
 
 .planContainer,
 .statsContainer>h2 {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     color: #4E7596;
     text-align: center;
@@ -54,10 +54,6 @@ h2 {
     white-space: normal;
     padding: 10%;
     margin: 1em;
-}
-
-.statsContainer {
-    /* width: 60%; */
 }
 
 mat-form-field.mat-form-field {

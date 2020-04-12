@@ -23,12 +23,12 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(value){
-    if(value.userID != '' && value.password != ''){
-      this.authService.login(value).subscribe(x => {
+    if(value.userID !== '' && value.password !== ''){
+      this.authService.login(value).subscribe(x => {                
         if(x){
-          if(this.authService.getCurrentValue().userID === 'admin'){         
+          if(this.authService.getCurrentValue().userID === 0){         
             this.router.navigate(['/admin']);
-          } else if(this.authService.getCurrentValue().userID !== null && this.authService.getCurrentValue().userID !== 'admin'){
+          } else if(this.authService.getCurrentValue().userID !== null && this.authService.getCurrentValue().userID !== 0){
             this.router.navigate(['']);
           }
         }

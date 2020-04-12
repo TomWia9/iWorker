@@ -8,4 +8,5 @@
     border: 1px solid red;
     font-weight: bold;
     border-radius: 10px;
+    white-space: normal;
 }

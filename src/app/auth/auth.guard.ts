@@ -20,7 +20,7 @@ export class AuthGuard implements CanActivate {
       return false;
     }
 
-    else if(currentUser.userID === 'admin'){
+    else if(currentUser.userID === 0){
       this.router.navigate(['/admin']);
       return false;
     }

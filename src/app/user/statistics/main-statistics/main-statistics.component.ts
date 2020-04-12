@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class MainStatisticsComponent implements OnInit {
 
-  userID: string;
+  userID: number;
   wait: number = 0;
   lineChartData: any[] =[];
   pieChartData: any[] = [];

@@ -1,6 +1,5 @@
-export class Ranking{
+export class UsersList{
     userID: number;
     name: string;
     surname: string;
-    ratio: number;
 }

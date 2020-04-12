@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class StatisticsDataComponent implements OnInit {
   form: FormGroup;
-  userID: string;
+  userID: number;
   statsType: string;
   chartID: number;
   wait: number = 0;

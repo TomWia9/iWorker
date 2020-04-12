@@ -15,7 +15,7 @@ export class PlanDetailsComponent implements OnInit {
   @Input() isInDashboard: boolean = false; //when this component is in dashboard, the font of form fields should be lower
   dateString: string;
   noPlan: boolean = false;
-  userID: string;
+  userID: number;
   constructor(private fb: FormBuilder, private planService: PlanService, private authService: AuthService) { }
 
   ngOnInit(): void {

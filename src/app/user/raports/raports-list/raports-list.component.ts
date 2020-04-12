@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class RaportsListComponent implements OnInit {
   raports = new MatTableDataSource();
   displayedColumns = ['number','date', 'workName'];
-  userID: string;
+  userID: number;
 
   constructor(private raportService: RaportService, private authService: AuthService, private router: Router) { }
 

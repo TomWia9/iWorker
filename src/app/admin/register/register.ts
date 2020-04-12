@@ -1,5 +1,5 @@
 export interface Register{
-    userID: string;
+    userID: number;
     name: string;
     surname: string;
     password: string;

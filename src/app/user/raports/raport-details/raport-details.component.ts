@@ -13,7 +13,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class RaportDetailsComponent implements OnInit {
   form: FormGroup;
   id: number;
-  userID: string;
+  userID: number;
   date: Date;
   constructor(private fb: FormBuilder, private route: ActivatedRoute, private raportService: RaportService, private authService: AuthService) { } 
 

@@ -20,7 +20,7 @@ export class AdminGuard implements CanActivate {
       return false;
     }
    
-    if(currentUser.userID === 'admin'){
+    if(currentUser.userID === 0){ //admin has id = 0
       return true;
     } 
 
