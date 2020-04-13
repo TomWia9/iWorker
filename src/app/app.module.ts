@@ -40,7 +40,7 @@ import { DashboardComponent } from './user/dashboard/dashboard.component';
 import { PlanDetailsComponent } from './user/plan/plan-details/plan-details.component';
 import { StatisticsDataComponent } from './user/statistics/statistics-data/statistics-data.component';
 import { RankingComponent } from './user/statistics/ranking/ranking.component';
-import { RegisterComponent } from './admin/register/register.component';
+import { RegisterDialogComponent } from './admin/register-dailog/register-dialog.component';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
@@ -68,7 +68,7 @@ import { WorkersComponent } from './admin/workers/workers.component';
     PlanDetailsComponent,
     StatisticsDataComponent,
     RankingComponent,
-    RegisterComponent,
+    RegisterDialogComponent,
     AdminPanelComponent,
     AdminDashboardComponent,
     WorkersListComponent,

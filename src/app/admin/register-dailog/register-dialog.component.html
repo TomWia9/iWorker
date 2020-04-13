@@ -1,0 +1,31 @@
+<form [formGroup]="form" (submit)="onSubmit(form.value)">
+    <mat-card-header class="header">
+        <mat-card-title>
+            <h1>Zarejestruj pracownika</h1>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="content">
+        <mat-form-field>
+            <mat-label>Numer pracownika</mat-label>
+            <input matInput type="number" formControlName="userID">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Imię</mat-label>
+            <input matInput type="text" formControlName="name">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Nazwisko</mat-label>
+            <input matInput type="text" formControlName="surname">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Hasło</mat-label>
+            <input matInput type="password" formControlName="password">
+        </mat-form-field>
+        <span class="err" *ngIf="wrong">Podany numer jest już zarejestrowany lub nie wszystkie pola są wypełnione</span>
+        <span class="err" *ngIf="wrong == false" [ngStyle]="{backgroundColor: wrong ? 'mistyrose' : 'forestgreen'}">Pomyślnie dodano użytkownika</span>
+    </mat-card-content>
+    <mat-card-actions class="actions">
+        <button class="button" type="submit" mat-raised-button>Zarejestruj</button>
+        <button class="button" mat-raised-button (click)="onExit()">Wyjdź</button>
+    </mat-card-actions>
+</form>

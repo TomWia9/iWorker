@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { RegisterDialogComponent } from '../register-dailog/register-dialog.component';
+import { WorkersService } from 'src/app/services/workers.service';
 
 @Component({
   selector: 'app-workers',
@@ -10,18 +13,30 @@ import { Router } from '@angular/router';
 export class WorkersComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) { }
+  constructor(private fb: FormBuilder, public dialog: MatDialog, private router: Router, private workersService: WorkersService) { }
 
   ngOnInit(): void {
-    this.form = this.fb.group({
-      amount: 120,
-    })
 
+    this.form = this.fb.group({
+      amount: ''
+    })
     
+   this.workersService.getWorkersAmount().subscribe(x => {
+     this.form = this.fb.group({
+       amount: x
+     })
+   })
   }
 
-addWorker(){
-  this.router.navigate(['admin/register'])
-}
+  addWorker(): void {
+    const dialogRef = this.dialog.open(RegisterDialogComponent, {
+       width: '500px',
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.ngOnInit();
+      console.log('The dialog was closed');
+    });
+  }
 
 }

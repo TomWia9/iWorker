@@ -1,10 +1,6 @@
 .container {
     text-align: center;
     background-color: #393d41;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    margin-left: 10em;
-    margin-right: 10em;
 }
 
 .header {
@@ -45,6 +41,7 @@ h1 {
     border: 1px solid red;
     font-weight: bold;
     border-radius: 10px;
+    color: black;
 }
 
 .mat-form-field {

@@ -14,11 +14,13 @@
 }
 
 .logo-left {
+    font-weight: bold;
     color: azure;
     font-size: 50px;
 }
 
 .logo-right {
+    font-weight: bold;
     color: #4E7596;
     font-size: 50px;
 }

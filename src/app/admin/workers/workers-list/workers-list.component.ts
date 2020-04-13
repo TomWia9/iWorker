@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { UsersService } from 'src/app/services/users.service';
+import { WorkersService } from 'src/app/services/workers.service';
 
 @Component({
   selector: 'app-workers-list',
@@ -12,10 +12,11 @@ export class WorkersListComponent implements OnInit {
   workers = new MatTableDataSource();
   displayedColumns = ['userID','name', 'surname'];
   userID: number;
-  constructor(private router: Router, private usersService: UsersService) { }
+  amount: number;
+  constructor(private router: Router, private workersService: WorkersService) { }
 
   ngOnInit(): void {
-     this.usersService.getUsersList().subscribe(x  => {
+     this.workersService.getWorkersList().subscribe(x  => {
       this.workers = new MatTableDataSource(x);       
     });
   }
