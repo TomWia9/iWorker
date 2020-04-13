@@ -5,7 +5,7 @@
             <mat-divider></mat-divider>
         </mat-card-title>
     </mat-card-header>
-    <mat-card-content class="content">
+    <mat-card-content class="table-container">
         <mat-form-field>
             <mat-label>Filter</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Szukaj">
@@ -23,9 +23,8 @@
                 <mat-header-cell *matHeaderCellDef>Nazwisko</mat-header-cell>
                 <mat-cell *matCellDef="let element"><a class="element">{{ element.surname }}</a> </mat-cell>
             </ng-container>
-            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns" (click)="navigateTo(row)" class="row-hover"></mat-row>
         </mat-table>
-
     </mat-card-content>
 </mat-card>

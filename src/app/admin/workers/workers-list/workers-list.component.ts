@@ -17,8 +17,7 @@ export class WorkersListComponent implements OnInit {
   ngOnInit(): void {
      this.usersService.getUsersList().subscribe(x  => {
       this.workers = new MatTableDataSource(x);       
-  });
-
+    });
   }
 
   applyFilter(event: Event){

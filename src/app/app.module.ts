@@ -14,6 +14,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ChartsModule } from 'ng2-charts';
 
 
@@ -93,6 +94,7 @@ import { WorkersComponent } from './admin/workers/workers.component';
     MatButtonModule,
     MatTableModule,
     ChartsModule,
+    MatCheckboxModule
   ],
   providers: [
     MatDatepickerModule, 

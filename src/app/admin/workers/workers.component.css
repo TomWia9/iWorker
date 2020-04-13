@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list {
+    width: 60%;
+}
+
+.info {
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    background: #25272a;
+    text-align: center;
+    width: 30%;
+    flex-wrap: wrap;
+}
+
+.actions h2 {
+    justify-content: center;
+    color: #4E7596;
+    font-size: 30px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    display: flex;
+    padding: 2%;
+    width: 50%;
+    white-space: normal;
+    background: #4E7596;
+    margin: 1em;
+}
+
+.amount {
+    margin: 1em;
+}
+
+.icon {
+    position: relative;
+    padding: 0 20px;
+}
