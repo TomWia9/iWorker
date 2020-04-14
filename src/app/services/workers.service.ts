@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { WorkersList } from '../admin/workers/workers-list/workers-list';
 import { SelectionModel } from '@angular/cdk/collections';
+import { Register } from '../admin/workers/register-dialog/register';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,9 @@ export class WorkersService {
 
   deleteWorker(userID): Observable<boolean>{
     return this.http.delete<boolean>(`https://localhost:5001/api/workers/deleteWorker/${userID}`);
+  }
+
+  editWorker(userID, newData: WorkersList): Observable<boolean>{
+    return this.http.post<boolean>(`https://localhost:5001/api/workers/editWorker/${userID}`, newData);
   }
 }

@@ -12,7 +12,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class DeleteDialogComponent implements OnInit {
   form: FormGroup;
   workers: WorkersList[];
-  deleted;
+  deleted: boolean = null;
   constructor(public dialogRef: MatDialogRef<DeleteDialogComponent>, private workersService: WorkersService, private fb: FormBuilder) { }
   
 
@@ -30,13 +30,20 @@ export class DeleteDialogComponent implements OnInit {
   }
 
   onDelete(value){
-    console.log(value.worker.userID);
-    this.workersService.deleteWorker(value.worker.userID).subscribe(x => {
-      this.deleted = x; //true or false
-    })
-    if(this.deleted != false){
+    if(value.worker != ''){
+      this.workersService.deleteWorker(value.worker.userID).subscribe(x => {
+        this.deleted = x; //true or false
+        this.dialogRef.close();  
+      })
+    } else{
+      this.deleted = false;
+    }
+
+    if(this.deleted){
       this.dialogRef.close();  
     }
+   
+    
     
    
   }

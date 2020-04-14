@@ -11,7 +11,7 @@ import { StatisticsComponent } from './user/statistics/statistics.component';
 import { DashboardComponent } from './user/dashboard/dashboard.component';
 import { StatisticsDataComponent } from './user/statistics/statistics-data/statistics-data.component';
 import { RankingComponent } from './user/statistics/ranking/ranking.component';
-import { RegisterDialogComponent } from './admin/register-dailog/register-dialog.component';
+import { RegisterDialogComponent } from './admin/workers/register-dialog/register-dialog.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AdminGuard } from './auth/admin.guard';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';

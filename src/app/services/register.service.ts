@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Register } from '../admin/register-dailog/register';
+import { Register } from '../admin/workers/register-dialog/register';
 
 @Injectable({
   providedIn: 'root'

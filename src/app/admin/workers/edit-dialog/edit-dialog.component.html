@@ -1,0 +1,30 @@
+<div class="container">
+    <form [formGroup]="form">
+        <h2>Wybierz pracownika, którego dane chcesz edytować</h2>
+        <mat-form-field appearance="outline">
+            <mat-label>Pracownik</mat-label>
+            <mat-select formControlName="worker" (selectionChange)="onSelectChange($event)">
+                <mat-option *ngFor="let worker of workers" [value]="worker">
+                    {{ worker.userID }} | {{ worker.name }} {{ worker.surname }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div class="edit" *ngIf="selected">
+            <mat-form-field appearance="outline">
+                <mat-label>Numer pracownika</mat-label>
+                <input matInput type="number" formControlName="userID">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Imię</mat-label>
+                <input matInput type="text" formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Nazwisko</mat-label>
+                <input matInput type="text" formControlName="surname">
+            </mat-form-field>
+        </div>
+        <button class="button" mat-raised-button (click)="onEdit(form.value)">Edytuj</button>
+        <button class="button" mat-raised-button (click)="onExit()">Wyjdź</button>
+        <p class="err" *ngIf="success === false">Nie udało się edytować użytkownika</p>
+    </form>
+</div>

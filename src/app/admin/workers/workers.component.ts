@@ -2,10 +2,11 @@ import { Component, OnInit, ViewChild, ViewContainerRef, ComponentRef, Component
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { RegisterDialogComponent } from '../register-dailog/register-dialog.component';
+import { RegisterDialogComponent } from './register-dialog/register-dialog.component';
 import { WorkersService } from 'src/app/services/workers.service';
 import { WorkersListComponent } from './workers-list/workers-list.component';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 
 @Component({
   selector: 'app-workers',
@@ -41,7 +42,6 @@ export class WorkersComponent implements OnInit {
     dialogRef.afterClosed().subscribe(() => {
       this.ngOnInit(); //for amount and workersList refresh
 
-      console.log('The dialog was closed');
     });
   }
 
@@ -52,8 +52,16 @@ export class WorkersComponent implements OnInit {
 
    dialogRef.afterClosed().subscribe(() => {
      this.ngOnInit(); //for amount and workersList refresh
+   });
+  }
 
-     console.log('The dialog was closed');
+  onEdit(){
+    const dialogRef = this.dialog.open(EditDialogComponent, {
+      width: '500px',
+   });
+
+   dialogRef.afterClosed().subscribe(() => {
+     this.ngOnInit(); //for amount and workersList refresh
    });
   }
 

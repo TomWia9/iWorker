@@ -28,7 +28,6 @@ export class PlanDetailsComponent implements OnInit {
    console.log(this.date);
      this.planService.getPlanDetails(this.userID, this.date).subscribe(x => {
        if(x == null){
-         console.log("null dAta");
          this.noPlan = true;
        } else{
          this.noPlan = false;
