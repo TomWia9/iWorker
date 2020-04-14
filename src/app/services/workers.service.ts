@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { WorkersList } from '../admin/workers/workers-list/workers-list';
+import { SelectionModel } from '@angular/cdk/collections';
 
 @Injectable({
   providedIn: 'root'
@@ -16,5 +17,9 @@ export class WorkersService {
 
   getWorkersAmount(): Observable<number>{
     return this.http.get<number>('https://localhost:5001/api/workers/getWorkersNumber');
+  }
+
+  deleteWorker(userID): Observable<boolean>{
+    return this.http.delete<boolean>(`https://localhost:5001/api/workers/deleteWorker/${userID}`);
   }
 }

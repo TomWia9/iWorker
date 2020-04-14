@@ -11,15 +11,11 @@
                 </mat-form-field>
             </form>
             <div class="actions">
-                <button class="btn" mat-raised-button (click)="manage()">
-                    <mat-icon class="icon" aria-hidden="false" aria-label="edit">edit</mat-icon>
-                    <span>Zarządzaj</span>
-                </button>
                 <button class="btn" mat-raised-button (click)="addWorker()">
                     <mat-icon class="icon" aria-hidden="false" aria-label="add">note_add</mat-icon>
                     <span>Dodaj pracownika</span>      
                 </button>
-                <button class="btn" mat-raised-button>
+                <button class="btn" mat-raised-button (click)="onDelete()">
                     <mat-icon class="icon" aria-hidden="false" aria-label="add">delete</mat-icon>
                     <span>Usuń pracownika</span>          
                 </button>

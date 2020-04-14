@@ -1,0 +1,16 @@
+<div class="container">
+    <form [formGroup]="form" (submit)="onDelete(form.value)">
+        <h2>Wybierz pracownika, którego chcesz usunąć</h2>
+        <mat-form-field appearance="outline">
+            <mat-label>Pracownik</mat-label>
+            <mat-select formControlName="worker">
+                <mat-option *ngFor="let worker of workers" [value]="worker">
+                    {{ worker.userID }} | {{ worker.name }} {{ worker.surname }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button type="submit">Usuń</button>
+        <button mat-raised-button (click)="onExit()">Wyjdź</button>
+        <p class="err" *ngIf="deleted === false">Nie udało się usunąć użytkownika</p>
+    </form>
+</div>

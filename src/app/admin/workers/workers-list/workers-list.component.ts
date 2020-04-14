@@ -12,20 +12,13 @@ import { SelectionModel } from '@angular/cdk/collections';
 })
 export class WorkersListComponent implements OnInit {
   workers = new MatTableDataSource();
-  displayedColumns;
+  displayedColumns = ['userID','name', 'surname'];;
   userID: number;
   amount: number;
-  @Input() showCheckBoxes: boolean;
-  selection = new SelectionModel<WorkersList>(true, []);
   constructor(private router: Router, private workersService: WorkersService) { }
 
   ngOnInit(): void {
 
-    if(this.showCheckBoxes == true)
-      this.displayedColumns = ['select', 'userID','name', 'surname'];
-    else
-      this.displayedColumns = ['userID','name', 'surname'];
-      
      this.workersService.getWorkersList().subscribe(x  => {
       this.workers = new MatTableDataSource(x);       
     });
@@ -35,4 +28,5 @@ export class WorkersListComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.workers.filter = filterValue.trim().toLowerCase();
   }
+
 }

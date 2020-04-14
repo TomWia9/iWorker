@@ -47,6 +47,7 @@ import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { WorkersListComponent } from './admin/workers/workers-list/workers-list.component';
 import { WorkersComponent } from './admin/workers/workers.component';
+import { DeleteDialogComponent } from './admin/workers/delete-dialog/delete-dialog.component';
 
 
 
@@ -73,6 +74,7 @@ import { WorkersComponent } from './admin/workers/workers.component';
     AdminDashboardComponent,
     WorkersListComponent,
     WorkersComponent,
+    DeleteDialogComponent,
   ],
   imports: [
     BrowserModule,

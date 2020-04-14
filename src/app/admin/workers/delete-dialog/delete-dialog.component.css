@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    width: 100%;
+    text-align: center;
+}
+
+button {
+    padding: 2%;
+    margin: 2em;
+    background: #4E7596;
+}
+
+.err {
+    padding: 20px;
+    background-color: mistyrose;
+    border: 1px solid red;
+    font-weight: bold;
+    border-radius: 10px;
+    color: black;
+}

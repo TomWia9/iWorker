@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { RegisterDialogComponent } from '../register-dailog/register-dialog.component';
 import { WorkersService } from 'src/app/services/workers.service';
 import { WorkersListComponent } from './workers-list/workers-list.component';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 
 @Component({
   selector: 'app-workers',
@@ -13,7 +14,6 @@ import { WorkersListComponent } from './workers-list/workers-list.component';
 })
 export class WorkersComponent implements OnInit {
   form: FormGroup;
-  showCheckBoxes: boolean = false;
   @ViewChild('dynamicWorkersListComponent', {read: ViewContainerRef, static: true}) target: ViewContainerRef;
   private componentRef: ComponentRef<any>;
 
@@ -33,11 +33,6 @@ export class WorkersComponent implements OnInit {
    })
   }
 
-  manage(){
-    this.showCheckBoxes = !this.showCheckBoxes;
-    this.showWorkersList() //for refresh
-  }
-
   addWorker(): void {
     const dialogRef = this.dialog.open(RegisterDialogComponent, {
        width: '500px',
@@ -50,15 +45,25 @@ export class WorkersComponent implements OnInit {
     });
   }
 
+  onDelete(){
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+      width: '500px',
+   });
+
+   dialogRef.afterClosed().subscribe(() => {
+     this.ngOnInit(); //for amount and workersList refresh
+
+     console.log('The dialog was closed');
+   });
+  }
+
   showWorkersList(){
     if(this.componentRef){
      this.componentRef.destroy();
     }
  
      let childComponent = this.componentFactoryResolver.resolveComponentFactory(WorkersListComponent);
-     this.componentRef = this.target.createComponent(childComponent);
-     this.componentRef.instance.showCheckBoxes = this.showCheckBoxes;
-    
+     this.componentRef = this.target.createComponent(childComponent);    
    }
 
 }

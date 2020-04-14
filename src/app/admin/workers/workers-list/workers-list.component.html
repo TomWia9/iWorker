@@ -10,14 +10,7 @@
             <mat-label>Filter</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Szukaj">
         </mat-form-field>
-
         <mat-table class="table" [dataSource]="workers">
-            <ng-container matColumnDef="select" *ngIf="showCheckBoxes">
-                <mat-header-cell *matHeaderCellDef>Zaznacz</mat-header-cell>
-                <mat-cell *matCellDef="let row">
-                    <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)"></mat-checkbox>
-                </mat-cell>
-            </ng-container>
             <ng-container matColumnDef="userID">
                 <mat-header-cell *matHeaderCellDef>Numer pracownika</mat-header-cell>
                 <mat-cell *matCellDef="let element"><a class="element">{{ element.userID }}</a> </mat-cell>
@@ -31,7 +24,7 @@
                 <mat-cell *matCellDef="let element"><a class="element">{{ element.surname }}</a> </mat-cell>
             </ng-container>
             <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: displayedColumns" (click)="selection.toggle(row)" class="row-hover"></mat-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns" class="row-hover"></mat-row>
         </mat-table>
     </mat-card-content>
 </mat-card>
