@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { SECTORS } from 'src/app/shared/sectors';
 import { MatDialog } from '@angular/material/dialog';
 import { SetPlanDialogComponent } from './set-plan-dialog/set-plan-dialog.component';
@@ -40,7 +40,7 @@ export class WorkPlanComponent implements OnInit {
   }
 
   edit(sector){
-    console.log(sector);
+    
     const dialogRef = this.dialog.open(SetPlanDialogComponent, {
       width: '950px',
       data: {sectorName: sector, plan: this.plan, workers: this.workers}
@@ -66,5 +66,26 @@ export class WorkPlanComponent implements OnInit {
 
   onReset(){
     this.ngOnInit();
+  }
+
+ async likeYesterday(){
+    let date = new Date();
+    let dateString: string;
+    date.setDate(date.getDate() - 1);
+    dateString = date.toLocaleDateString();
+    await this.planService.getFullPlan(dateString).toPromise().then(x => {
+      this.plan = x;      
+    })
+
+    this.plan.date = '';
+    this.workers = [];
+    this.form = this.fb.group({
+      date: '',
+      timeFrom: this.plan.hours.substring(0, 5),
+      timeTo: this.plan.hours.substring(8,13),
+    });
+
+    console.log(this.plan.a1);
+    
   }
 }

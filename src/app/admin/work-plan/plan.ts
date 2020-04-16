@@ -1,12 +1,12 @@
 import { WorkersList } from '../workers/workers-list/workers-list';
 
 export class Plan{
-    date: Date;
+    date: string;
     hours: string;
-    A1: WorkersList[] = [];
-    B12: WorkersList[] = [];;
-    EZ: WorkersList[] = [];;
-    ES: WorkersList[] = [];;
-    C3: WorkersList[] = [];;
-    H12: WorkersList[] = [];;
+    a1: WorkersList[] = [];
+    b12: WorkersList[] = [];;
+    ez: WorkersList[] = [];;
+    es: WorkersList[] = [];;
+    c3: WorkersList[] = [];;
+    h12: WorkersList[] = [];;
 }

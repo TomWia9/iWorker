@@ -18,4 +18,8 @@ export class PlanService {
   newPlan(plan: Plan): Observable<boolean>{
     return this.http.post<boolean>('https://localhost:5001/api/plan/newPlan', plan);
   }
+
+  getFullPlan(date): Observable<Plan>{
+    return this.http.get<Plan>(`https://localhost:5001/api/plan/getFullPlan/${date}`);
+  }
 }
