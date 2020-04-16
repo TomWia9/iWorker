@@ -5,6 +5,9 @@ import { RaportDetails } from '../raport-details/raportDetails';
 import { Router } from '@angular/router';
 import { User } from 'src/app/auth/user';
 import { AuthService } from 'src/app/services/auth.service';
+import { SECTORS } from 'src/app/shared/sectors';
+import { CHESTS } from 'src/app/shared/chests';
+import { WORKS } from 'src/app/shared/works';
 
 @Component({
   selector: 'app-new-raport',
@@ -13,9 +16,9 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NewRaportComponent implements OnInit {
   form: FormGroup;
-  works: string[] = ['Maliny', 'Truskawki', 'Jerzyny', 'Borówki'];
-  sectors: string[] = ['A1', 'B12', 'EZ', 'ES', 'C3'];
-  chests: string[] = ['8x250', '16x250', '8x500', '10x200', '20x100'];
+  works = WORKS;
+  sectors = SECTORS;
+  chests = CHESTS;
   @ViewChild('dateString', {static: true}) dateString: ElementRef;
   date: Date;
   cantAdd: boolean = false;

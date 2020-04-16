@@ -49,6 +49,8 @@ import { WorkersListComponent } from './admin/workers/workers-list/workers-list.
 import { WorkersComponent } from './admin/workers/workers.component';
 import { DeleteDialogComponent } from './admin/workers/delete-dialog/delete-dialog.component';
 import { EditDialogComponent } from './admin/workers/edit-dialog/edit-dialog.component';
+import { WorkPlanComponent } from './admin/work-plan/work-plan.component';
+import { SetPlanDialogComponent } from './admin/work-plan/set-plan-dialog/set-plan-dialog.component';
 
 
 
@@ -77,6 +79,8 @@ import { EditDialogComponent } from './admin/workers/edit-dialog/edit-dialog.com
     WorkersComponent,
     DeleteDialogComponent,
     EditDialogComponent,
+    WorkPlanComponent,
+    SetPlanDialogComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+}
+
+.table {
+    background: #25272a;
+    width: 100%;
+}
+
+h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    color: #4E7596;
+}
+
+h4 {
+    text-align: center;
+}
+
+.list {
+    margin-right: 1em;
+    width: 60%;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1em;
+    width: 30%;
+}
+
+.row-hover:hover {
+    background-color: rgba(0, 0, 0, .05);
+    cursor: pointer;
+}
+
+button {
+    width: 75%;
+    display: flex;
+    padding: 5%;
+    margin: 1em;
+    background: #4E7596;
+}
