@@ -1,15 +1,3 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    /* margin: 2em; */
-    background: #25272a;
-}
-
-.header {
-    justify-content: center;
-    color: #4E7596;
-}
-
 .table {
     background: #25272a;
     width: 100%;
@@ -44,12 +32,6 @@ mat-cell {
 .mat-form-field {
     font-size: 14px;
     width: 100%;
-}
-
-.table-container {
-    justify-content: center;
-    height: 450px;
-    overflow: auto;
 }
 
 ::ng-deep.mat-form-field-ripple {

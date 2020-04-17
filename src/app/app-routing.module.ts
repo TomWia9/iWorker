@@ -17,6 +17,7 @@ import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { WorkersComponent } from './admin/workers/workers.component';
 import { WorkPlanComponent } from './admin/work-plan/work-plan.component';
+import { AdminStatisticsComponent } from './admin/admin-statistics/admin-statistics.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,7 @@ const routes: Routes = [
           {path: '', component: AdminDashboardComponent},
           {path: 'workers', component: WorkersComponent},
           {path: 'plan', component: WorkPlanComponent},
+          {path: 'statistics', component: AdminStatisticsComponent},
         ]
       },
     ]

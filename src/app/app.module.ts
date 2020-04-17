@@ -51,6 +51,7 @@ import { DeleteDialogComponent } from './admin/workers/delete-dialog/delete-dial
 import { EditDialogComponent } from './admin/workers/edit-dialog/edit-dialog.component';
 import { WorkPlanComponent } from './admin/work-plan/work-plan.component';
 import { SetPlanDialogComponent } from './admin/work-plan/set-plan-dialog/set-plan-dialog.component';
+import { AdminStatisticsComponent } from './admin/admin-statistics/admin-statistics.component';
 
 
 
@@ -81,6 +82,7 @@ import { SetPlanDialogComponent } from './admin/work-plan/set-plan-dialog/set-pl
     EditDialogComponent,
     WorkPlanComponent,
     SetPlanDialogComponent,
+    AdminStatisticsComponent,
   ],
   imports: [
     BrowserModule,

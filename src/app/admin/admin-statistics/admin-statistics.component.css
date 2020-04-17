@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+    background: #25272a;
+}
+
+.content {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.header {
+    justify-content: center;
+    color: #4E7596;
+}
+
+.header h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.btn {
+    min-width: 30%;
+    margin: 1em;
+    text-align: center;
+    padding: 2%;
+    white-space: normal;
+    background: brown;
+}
+
+.ranking {
+    background: antiquewhite;
+    width: 40%;
+    margin-right: 2em;
+}
+
+.ranking,
+.charts,
+.otherStats h2 {
+    text-align: center;
+    color: #4E7596;
+}
+
+.charts {
+    background: antiquewhite;
+    width: 40%;
+    margin-left: 2em;
+}
+
+.otherStats {
+    width: 80%;
+    background: antiquewhite;
+    margin: 2em;
+}

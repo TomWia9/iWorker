@@ -7,6 +7,7 @@ import { WorkersService } from 'src/app/services/workers.service';
 import { WorkersListComponent } from './workers-list/workers-list.component';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { WorkersList } from './workers-list/workers-list';
 
 @Component({
   selector: 'app-workers',
@@ -17,6 +18,7 @@ export class WorkersComponent implements OnInit {
   form: FormGroup;
   @ViewChild('dynamicWorkersListComponent', {read: ViewContainerRef, static: true}) target: ViewContainerRef;
   private componentRef: ComponentRef<any>;
+  workers: WorkersList[];
 
   constructor(private fb: FormBuilder, public dialog: MatDialog, private router: Router, private workersService: WorkersService, private componentFactoryResolver: ComponentFactoryResolver) { }
 
@@ -65,13 +67,18 @@ export class WorkersComponent implements OnInit {
    });
   }
 
-  showWorkersList(){
+  async showWorkersList(){
+
+    await this.workersService.getWorkersList().toPromise().then(x => {
+      this.workers = x;
+    })
+
     if(this.componentRef){
      this.componentRef.destroy();
     }
  
      let childComponent = this.componentFactoryResolver.resolveComponentFactory(WorkersListComponent);
      this.componentRef = this.target.createComponent(childComponent);    
+     this.componentRef.instance.workers = this.workers;
    }
-
 }

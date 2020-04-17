@@ -72,10 +72,6 @@ export class StatisticsDataComponent implements OnInit {
       })
     })
     
-
-      
-
-    
   }
 
 }

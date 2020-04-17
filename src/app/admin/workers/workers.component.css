@@ -1,11 +1,11 @@
 .container {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .list {
     width: 60%;
+    margin: 2em;
 }
 
 .manage {
@@ -40,4 +40,22 @@
 .icon {
     position: relative;
     padding: 0 20px;
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    /* margin: 2em; */
+    background: #25272a;
+}
+
+.table-header {
+    justify-content: center;
+    color: #4E7596;
+}
+
+.table-content {
+    justify-content: center;
+    height: 450px;
+    overflow: auto;
 }

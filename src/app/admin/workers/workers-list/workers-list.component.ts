@@ -1,9 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { Router } from '@angular/router';
-import { WorkersService } from 'src/app/services/workers.service';
 import { WorkersList } from './workers-list';
-import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-workers-list',
@@ -11,22 +8,20 @@ import { SelectionModel } from '@angular/cdk/collections';
   styleUrls: ['./workers-list.component.css']
 })
 export class WorkersListComponent implements OnInit {
-  workers = new MatTableDataSource();
-  displayedColumns = ['userID','name', 'surname'];;
-  userID: number;
-  amount: number;
-  constructor(private router: Router, private workersService: WorkersService) { }
+  @Input() workers: WorkersList[];
+  dataSource;
+  displayedColumns = ['userID','name', 'surname'];
+  @Input() showFilter: boolean = true;
+  
+  constructor() { }
 
   ngOnInit(): void {
-
-     this.workersService.getWorkersList().subscribe(x  => {
-      this.workers = new MatTableDataSource(x);       
-    });
+    this.dataSource = new MatTableDataSource(this.workers);
   }
 
   applyFilter(event: Event){
     const filterValue = (event.target as HTMLInputElement).value;
-    this.workers.filter = filterValue.trim().toLowerCase();
+    this.dataSource.filter = filterValue.trim().toLowerCase(); 
   }
 
 }
