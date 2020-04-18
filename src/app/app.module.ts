@@ -15,6 +15,7 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ChartsModule } from 'ng2-charts';
 
 
@@ -25,21 +26,21 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavComponent } from './user/sidenav/sidenav.component';
 import { NewRaportComponent } from './user/raports/new-raport/new-raport.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PlanComponent } from './user/plan/plan.component';
 import { RaportsListComponent } from './user/raports/raports-list/raports-list.component';
 import { RaportDetailsComponent } from './user/raports/raport-details/raport-details.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { StatisticsComponent } from './user/statistics/statistics.component';
-import { LineChartComponent } from './user/statistics/charts/line-chart/line-chart.component';
-import { PieChartComponent } from './user/statistics/charts/pie-chart/pie-chart.component';
-import { BarChartComponent } from './user/statistics/charts/bar-chart/bar-chart.component';
-import { MainStatisticsComponent } from './user/statistics/main-statistics/main-statistics.component';
+import { LineChartComponent } from './shared/charts/line-chart/line-chart.component';
+import { PieChartComponent } from './shared/charts/pie-chart/pie-chart.component';
+import { BarChartComponent } from './shared/charts/bar-chart/bar-chart.component';
+import { MainStatisticsComponent } from './shared/main-statistics/main-statistics.component';
 import { DashboardComponent } from './user/dashboard/dashboard.component';
 import { PlanDetailsComponent } from './user/plan/plan-details/plan-details.component';
 import { StatisticsDataComponent } from './user/statistics/statistics-data/statistics-data.component';
-import { RankingComponent } from './user/statistics/ranking/ranking.component';
+import { RankingComponent } from './shared/ranking/ranking.component';
 import { RegisterDialogComponent } from './admin/workers/register-dialog/register-dialog.component';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
@@ -52,6 +53,8 @@ import { EditDialogComponent } from './admin/workers/edit-dialog/edit-dialog.com
 import { WorkPlanComponent } from './admin/work-plan/work-plan.component';
 import { SetPlanDialogComponent } from './admin/work-plan/set-plan-dialog/set-plan-dialog.component';
 import { AdminStatisticsComponent } from './admin/admin-statistics/admin-statistics.component';
+import { SelectWorkerDialogComponent } from './admin/admin-statistics/select-worker-dialog/select-worker-dialog.component';
+
 
 
 
@@ -83,6 +86,7 @@ import { AdminStatisticsComponent } from './admin/admin-statistics/admin-statist
     WorkPlanComponent,
     SetPlanDialogComponent,
     AdminStatisticsComponent,
+    SelectWorkerDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -104,7 +108,9 @@ import { AdminStatisticsComponent } from './admin/admin-statistics/admin-statist
     MatButtonModule,
     MatTableModule,
     ChartsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    FormsModule,
+    MatDialogModule
   ],
   providers: [
     MatDatepickerModule, 

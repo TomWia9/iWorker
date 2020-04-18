@@ -5,7 +5,8 @@ import { Observable } from 'rxjs';
 import { StatisticsData } from '../user/statistics/statistics-data/statisticsData';
 import { chartLabelsItem } from '../user/statistics/chartLabelsItem';
 import { ChartDataItem } from '../user/statistics/chartDataItem';
-import { Ranking } from '../user/statistics/ranking/ranking';
+import { Ranking } from '../shared/ranking/ranking';
+import { WorkersList } from '../admin/workers/workers-list/workers-list';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,18 @@ export class StatisticsService {
 
   getRanking(date): Observable<Ranking[]>{
     return this.http.get<Ranking[]>(`https://localhost:5001/api/statistics/GetRanking/${date}`)
+  }
+
+  getTop3(): Observable<Ranking[]>{
+    return this.http.get<Ranking[]>(`https://localhost:5001/api/statistics/getTop3`);
+  }
+
+  getTotalChartLabels(): Observable<string[]>{
+    return this.http.get<string[]>(`https://localhost:5001/api/statistics/getTotalChartLabels`);
+  }
+
+  getTotalChartData(): Observable<number[]>{
+    return this.http.get<number[]>(`https://localhost:5001/api/statistics/getTotalChartData`);
   }
 
 }

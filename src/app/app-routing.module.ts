@@ -10,7 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { StatisticsComponent } from './user/statistics/statistics.component';
 import { DashboardComponent } from './user/dashboard/dashboard.component';
 import { StatisticsDataComponent } from './user/statistics/statistics-data/statistics-data.component';
-import { RankingComponent } from './user/statistics/ranking/ranking.component';
+import { RankingComponent } from './shared/ranking/ranking.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AdminGuard } from './auth/admin.guard';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
@@ -36,11 +36,11 @@ const routes: Routes = [
           {path: 'raport/:id', component: RaportDetailsComponent},
           {path: 'statistics', component: StatisticsComponent},
           {path:'statistics/data/:id', component: StatisticsDataComponent},
-          {path:'statistics/ranking', component: RankingComponent},
-         
+          {path:'ranking', component: RankingComponent},
         ]
       },
       {path: 'login', component: LoginComponent, },
+     
 
       {path: 'admin',
        component: AdminPanelComponent,
@@ -50,6 +50,7 @@ const routes: Routes = [
           {path: 'workers', component: WorkersComponent},
           {path: 'plan', component: WorkPlanComponent},
           {path: 'statistics', component: AdminStatisticsComponent},
+          {path:'ranking', component: RankingComponent},
         ]
       },
     ]

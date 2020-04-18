@@ -7,7 +7,7 @@
 
 .content {
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -23,7 +23,7 @@
 }
 
 .btn {
-    min-width: 30%;
+    width: 50%;
     margin: 1em;
     text-align: center;
     padding: 2%;
@@ -32,9 +32,13 @@
 }
 
 .ranking {
-    background: antiquewhite;
     width: 40%;
     margin-right: 2em;
+}
+
+.mat-header-cell {
+    display: flex;
+    color: brown;
 }
 
 .ranking,
@@ -45,13 +49,22 @@
 }
 
 .charts {
-    background: antiquewhite;
     width: 40%;
     margin-left: 2em;
 }
 
 .otherStats {
-    width: 80%;
-    background: antiquewhite;
+    width: 100%;
+    text-align: center;
     margin: 2em;
+}
+
+.table {
+    background: #25272a;
+    width: 100%;
+}
+
+.row-hover:hover {
+    background-color: rgba(0, 0, 0, .05);
+    cursor: pointer;
 }

@@ -1,0 +1,12 @@
+<div class="container">
+    <h2>Wybierz pracownika, którego statystyki chcesz wyświetlić</h2>
+    <mat-form-field appearance="outline">
+        <mat-label>Pracownik</mat-label>
+        <mat-select [(ngModel)]="data.selected">
+            <mat-option *ngFor="let worker of workers" [value]="worker">
+                {{ worker.userID }} | {{ worker.name }} {{ worker.surname }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button class="button" mat-raised-button [mat-dialog-close]="data.selected">Wybierz</button>
+</div>

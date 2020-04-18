@@ -40,10 +40,11 @@ export class WorkPlanComponent implements OnInit {
   }
 
   edit(sector){
-    
     const dialogRef = this.dialog.open(SetPlanDialogComponent, {
       width: '950px',
       data: {sectorName: sector, plan: this.plan, workers: this.workers}
+      
+      
    });
 
    dialogRef.afterClosed().subscribe(() => {
@@ -84,8 +85,6 @@ export class WorkPlanComponent implements OnInit {
       timeFrom: this.plan.hours.substring(0, 5),
       timeTo: this.plan.hours.substring(8,13),
     });
-
-    console.log(this.plan.a1);
     
   }
 }
