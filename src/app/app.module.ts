@@ -54,6 +54,10 @@ import { WorkPlanComponent } from './admin/work-plan/work-plan.component';
 import { SetPlanDialogComponent } from './admin/work-plan/set-plan-dialog/set-plan-dialog.component';
 import { AdminStatisticsComponent } from './admin/admin-statistics/admin-statistics.component';
 import { SelectWorkerDialogComponent } from './admin/admin-statistics/select-worker-dialog/select-worker-dialog.component';
+import { MessagesComponent } from './admin/messages/messages.component';
+import { NewMessageDialogComponent } from './admin/messages/new-message-dialog/new-message-dialog.component';
+import { NewMessageToAllDialogComponent } from './admin/messages/new-message-to-all-dialog/new-message-to-all-dialog.component';
+import { MessageDialogComponent } from './admin/messages/message-dialog/message-dialog.component';
 
 
 
@@ -87,6 +91,10 @@ import { SelectWorkerDialogComponent } from './admin/admin-statistics/select-wor
     SetPlanDialogComponent,
     AdminStatisticsComponent,
     SelectWorkerDialogComponent,
+    MessagesComponent,
+    NewMessageDialogComponent,
+    NewMessageToAllDialogComponent,
+    MessageDialogComponent,
   ],
   imports: [
     BrowserModule,
