@@ -7,7 +7,7 @@ import { MessageDialogComponent } from './message-dialog/message-dialog.componen
 
 const MESSAGES = [  //it will be replaced with data from api
   {worker: {userID: 158, name: "Tomasz",surname: "Wiatrowski"}, date: "19.04.2020 | 18:30"},
-  {worker: {userID: 2, name: "Karolina", surname: "Chruścińska"}, date: "19.04.2020 | 18:30"},
+  {worker: {userID: 168, name: "Karolina", surname: "Chruścińska"}, date: "19.04.2020 | 18:30"},
 ] 
 
 @Component({

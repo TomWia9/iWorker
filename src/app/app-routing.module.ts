@@ -19,6 +19,7 @@ import { WorkersComponent } from './admin/workers/workers.component';
 import { WorkPlanComponent } from './admin/work-plan/work-plan.component';
 import { AdminStatisticsComponent } from './admin/admin-statistics/admin-statistics.component';
 import { MessagesComponent } from './admin/messages/messages.component';
+import { UserMessagesComponent } from './user/user-messages/user-messages.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,7 @@ const routes: Routes = [
           {path: 'statistics', component: StatisticsComponent},
           {path:'statistics/data/:id', component: StatisticsDataComponent},
           {path:'ranking', component: RankingComponent},
+          {path:'messages', component: UserMessagesComponent},
         ]
       },
       {path: 'login', component: LoginComponent, },

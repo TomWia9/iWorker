@@ -1,1 +1,24 @@
-<p>new-message-dialog works!</p>
+<div class="container">
+    <div class="message">
+        <form [formGroup]="form">
+            <mat-form-field appearance="outline">
+                <mat-label>Wiadomość do: </mat-label>
+                <mat-select formControlName="worker" (selectionChange)="onChange()">
+                    <mat-option *ngFor="let worker of workers" [value]="worker">
+                        {{ worker.userID }} | {{ worker.name }} {{ worker.surname }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Wpisz swoją wiadomość tutaj</mat-label>
+                <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="10" formControlName="message"></textarea>
+            </mat-form-field>
+        </form>
+        <p class="err" *ngIf="error">Nie udało się wysłać wiadomosći</p>
+    </div>
+
+    <div class="actions">
+        <button mat-raised-button class="btn" (click)="onSend(form.value.message)">Wyślij</button>
+        <button mat-raised-button class="btn" (click)="onExit()">Wyjdź</button>
+    </div>
+</div>

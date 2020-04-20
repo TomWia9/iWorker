@@ -58,6 +58,9 @@ import { MessagesComponent } from './admin/messages/messages.component';
 import { NewMessageDialogComponent } from './admin/messages/new-message-dialog/new-message-dialog.component';
 import { NewMessageToAllDialogComponent } from './admin/messages/new-message-to-all-dialog/new-message-to-all-dialog.component';
 import { MessageDialogComponent } from './admin/messages/message-dialog/message-dialog.component';
+import { UserMessagesComponent } from './user/user-messages/user-messages.component';
+import { UserNewMessageDialogComponent } from './user/user-messages/user-new-message-dialog/user-new-message-dialog.component';
+import { UserMessageDialogComponent } from './user/user-messages/user-message-dialog/user-message-dialog.component';
 
 
 
@@ -95,6 +98,9 @@ import { MessageDialogComponent } from './admin/messages/message-dialog/message-
     NewMessageDialogComponent,
     NewMessageToAllDialogComponent,
     MessageDialogComponent,
+    UserMessagesComponent,
+    UserNewMessageDialogComponent,
+    UserMessageDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    width: 100%;
+    text-align: center;
+}
+
+.actions {
+    width: 100%;
+    text-align: center;
+}
+
+.btn {
+    margin: 1em;
+}
+
+mat-form-field.mat-form-field {
+    width: 90%;
+}
+
+.err {
+    padding: 20px;
+    background-color: mistyrose;
+    border: 1px solid red;
+    font-weight: bold;
+    border-radius: 10px;
+    color: black;
+}
