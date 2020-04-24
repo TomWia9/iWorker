@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { WorkersService } from 'src/app/services/workers.service';
 import { WorkersList } from '../../workers/workers-list/workers-list';
+import { MessagesService } from 'src/app/services/messages.service';
 
 @Component({
   selector: 'app-new-message-dialog',
@@ -16,7 +17,7 @@ export class NewMessageDialogComponent implements OnInit {
   selected: boolean = false;
   error: boolean = false;
 
-  constructor(public dialogRef: MatDialogRef<NewMessageDialogComponent>, private fb: FormBuilder, private workersService: WorkersService) { }
+  constructor(public dialogRef: MatDialogRef<NewMessageDialogComponent>, private fb: FormBuilder, private workersService: WorkersService, private messagesService: MessagesService) { }
 
 
   ngOnInit(): void {
@@ -31,11 +32,16 @@ export class NewMessageDialogComponent implements OnInit {
     });
   }
 
-  onSend(value){
+  onSend(value, worker){
     if(value !== '' && this.selected === true){
-      console.log(value);
-      //serwis -> send
-      this.dialogRef.close();
+      console.log("Wysłano do " + worker + ", wiadomość: " + value);
+      this.messagesService.sendToUser(value, worker).subscribe(x => {
+        this.error = x;
+      })
+      if(!this.error){
+        this.dialogRef.close();
+      }
+    
     }
     
     else{

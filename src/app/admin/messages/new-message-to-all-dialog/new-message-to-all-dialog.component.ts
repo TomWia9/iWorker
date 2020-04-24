@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MessagesService } from 'src/app/services/messages.service';
 
 @Component({
   selector: 'app-new-message-to-all-dialog',
@@ -11,8 +12,7 @@ export class NewMessageToAllDialogComponent implements OnInit {
   form: FormGroup;
   error: boolean = false;
 
-  constructor(public dialogRef: MatDialogRef<NewMessageToAllDialogComponent>, private fb: FormBuilder) { }
-
+  constructor(public dialogRef: MatDialogRef<NewMessageToAllDialogComponent>, private fb: FormBuilder, private messagesService: MessagesService) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -22,9 +22,14 @@ export class NewMessageToAllDialogComponent implements OnInit {
 
   onSend(value){
     if(value !== ''){
-      console.log(value);
+      console.log("Wysłano: " + value);
+      this.messagesService.sendToAll(value).subscribe(x => {
+        this.error = x;
+      })
       //serwis -> send
-      this.dialogRef.close();
+      if(!this.error){
+        this.dialogRef.close();
+      }
     }
     
     else{
