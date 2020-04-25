@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MessagesService } from 'src/app/services/messages.service';
+import { MessageItem } from 'src/app/shared/messageItem';
 
 @Component({
   selector: 'app-new-message-to-all-dialog',
@@ -9,6 +10,7 @@ import { MessagesService } from 'src/app/services/messages.service';
   styleUrls: ['./new-message-to-all-dialog.component.css']
 })
 export class NewMessageToAllDialogComponent implements OnInit {
+  message: MessageItem = new MessageItem();
   form: FormGroup;
   error: boolean = false;
 
@@ -23,7 +25,8 @@ export class NewMessageToAllDialogComponent implements OnInit {
   onSend(value){
     if(value !== ''){
       console.log("Wysłano: " + value);
-      this.messagesService.sendToAll(value).subscribe(x => {
+      this.message.message = value;
+      this.messagesService.sendToAll(this.message).subscribe(x => {
         this.error = x;
       })
       //serwis -> send

@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { WorkersService } from 'src/app/services/workers.service';
 import { WorkersList } from '../../workers/workers-list/workers-list';
 import { MessagesService } from 'src/app/services/messages.service';
+import { MessageItem } from 'src/app/shared/messageItem';
 
 @Component({
   selector: 'app-new-message-dialog',
@@ -11,7 +12,7 @@ import { MessagesService } from 'src/app/services/messages.service';
   styleUrls: ['./new-message-dialog.component.css']
 })
 export class NewMessageDialogComponent implements OnInit {
-
+  message: MessageItem = new MessageItem();
   form: FormGroup;
   workers: WorkersList[];
   selected: boolean = false;
@@ -35,7 +36,8 @@ export class NewMessageDialogComponent implements OnInit {
   onSend(value, worker){
     if(value !== '' && this.selected === true){
       console.log("Wysłano do " + worker + ", wiadomość: " + value);
-      this.messagesService.sendToUser(value, worker).subscribe(x => {
+      this.message.message = value;
+      this.messagesService.sendToUser(this.message, 0, worker).subscribe(x => {
         this.error = x;
       })
       if(!this.error){
