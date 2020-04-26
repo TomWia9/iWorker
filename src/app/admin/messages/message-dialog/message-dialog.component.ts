@@ -13,11 +13,9 @@ export class MessageDialogComponent implements OnInit {
   message: MessageItem = new MessageItem();
 
   constructor(public dialogRef: MatDialogRef<MessageDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder, private messagesService: MessagesService) { }
+    @Inject(MAT_DIALOG_DATA) public data: any, private messagesService: MessagesService) { }
 
-  ngOnInit(): void {
-    console.log(this.data.id);
- 
+  ngOnInit(): void { 
     this.messagesService.getMessage(this.data.id).subscribe(x => {
       this.message = x;
     })

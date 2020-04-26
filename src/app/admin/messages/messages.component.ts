@@ -4,7 +4,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { NewMessageDialogComponent } from './new-message-dialog/new-message-dialog.component';
 import { NewMessageToAllDialogComponent } from './new-message-to-all-dialog/new-message-to-all-dialog.component';
 import { MessageDialogComponent } from './message-dialog/message-dialog.component';
-import { MessageList } from 'src/app/shared/messagesList';
 import { MessagesService } from 'src/app/services/messages.service';
 
 @Component({

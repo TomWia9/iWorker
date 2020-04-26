@@ -1,0 +1,13 @@
+p {
+    text-align: center;
+}
+
+.message {
+    padding: 20px;
+    word-wrap: break-word;
+    background-color: mistyrose;
+    border: 1px solid #4E7596;
+    font-weight: bold;
+    border-radius: 10px;
+    color: black;
+}

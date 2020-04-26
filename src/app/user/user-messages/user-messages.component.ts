@@ -3,11 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { UserMessageDialogComponent } from './user-message-dialog/user-message-dialog.component';
 import { UserNewMessageDialogComponent } from './user-new-message-dialog/user-new-message-dialog.component';
-
-const MESSAGES = [  //it will be replaced with data from api
-  {date: "19.04.2020 | 18:30"},
-  {date: "19.04.2020 | 18:30"},
-] 
+import { MessagesService } from 'src/app/services/messages.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-user-messages',
@@ -16,20 +13,21 @@ const MESSAGES = [  //it will be replaced with data from api
 })
 export class UserMessagesComponent implements OnInit {
   dataSource;
-  displayedColumns = ['date'];
+  displayedColumns = ['worker','date'];
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private messagesService: MessagesService, private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(MESSAGES);
+    this.messagesService.getMessageList(this.authService.getCurrentValue().userID).toPromise().then(x => {
+      this.dataSource = new MatTableDataSource(x);
+    })
   }
 
   message(row: any){
-    console.log(row.date);
     
     const dialogRef = this.dialog.open(UserMessageDialogComponent, {
       width: '500px',
-      data: {worker: row.date}
+      data: {id: row.messageID}
    });
 
    dialogRef.afterClosed().subscribe(() => {

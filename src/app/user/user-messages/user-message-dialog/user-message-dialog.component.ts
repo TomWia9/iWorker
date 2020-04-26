@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MessageItem } from 'src/app/shared/messageItem';
+import { MessagesService } from 'src/app/services/messages.service';
 
 @Component({
   selector: 'app-user-message-dialog',
@@ -8,13 +10,15 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./user-message-dialog.component.css']
 })
 export class UserMessageDialogComponent implements OnInit {
+  message: MessageItem = new MessageItem();
 
   constructor(public dialogRef: MatDialogRef<UserMessageDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder) { }
+    @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder, private messagesService: MessagesService) { }
 
   ngOnInit(): void {
-    console.log(this.data.date);
-    
+    this.messagesService.getMessage(this.data.id).subscribe(x => {
+      this.message = x;
+    })
   }
 
 }
