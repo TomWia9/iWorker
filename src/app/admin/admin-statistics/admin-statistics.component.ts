@@ -31,7 +31,7 @@ export class AdminStatisticsComponent implements OnInit {
   }
 
    getChartData(){
-     this.statisticsService.getTotalChartData().subscribe(x  => { //it will be another func without any args, i will add it later to service 
+     this.statisticsService.getTotalChartData(60).subscribe(x  => { //dane z 2 miesiecy
          this.chartData = x;
          this.wait++;
          

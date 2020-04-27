@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+    background: #25272a;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #4E7596;
+}
+
+.header h2 {
+    font-size: 30px;
+}
+
+h2 {
+    color: brown;
+    text-align: center;
+}
+
+.box {
+    width: 40%;
+    text-align: center;
+}
+
+.btn {
+    background: brown;
+    white-space: normal;
+    width: 40%;
+    margin: 2em;
+    padding: 10%;
+}

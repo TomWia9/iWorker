@@ -46,8 +46,8 @@ export class StatisticsService {
     return this.http.get<string[]>(`https://localhost:5001/api/statistics/getTotalChartLabels`);
   }
 
-  getTotalChartData(): Observable<number[]>{
-    return this.http.get<number[]>(`https://localhost:5001/api/statistics/getTotalChartData`);
+  getTotalChartData(peroid): Observable<number[]>{
+    return this.http.get<number[]>(`https://localhost:5001/api/statistics/getTotalChartData/${peroid}`);
   }
 
 }
