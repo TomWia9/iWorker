@@ -20,6 +20,7 @@ import { WorkPlanComponent } from './admin/work-plan/work-plan.component';
 import { AdminStatisticsComponent } from './admin/admin-statistics/admin-statistics.component';
 import { MessagesComponent } from './admin/messages/messages.component';
 import { UserMessagesComponent } from './user/user-messages/user-messages.component';
+import { AdminRaportsComponent } from './admin/admin-raports/admin-raports.component';
 
 const routes: Routes = [
   {
@@ -55,6 +56,7 @@ const routes: Routes = [
           {path: 'plan', component: WorkPlanComponent},
           {path: 'statistics', component: AdminStatisticsComponent},
           {path:'ranking', component: RankingComponent},
+          {path:'raports', component: AdminRaportsComponent},
         ]
       },
     ]

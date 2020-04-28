@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NewMessageToAllDialogComponent } from '../messages/new-message-to-all-dialog/new-message-to-all-dialog.component';
 import { StatisticsService } from 'src/app/services/statistics.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -12,11 +13,13 @@ import { StatisticsService } from 'src/app/services/statistics.service';
     wait: number = 0;
     chartData: any[] = [];
     chartLabels: string[] = [];
-    name: string = "Mathias"
-    surname: string = "Muller"
-  constructor(public dialog: MatDialog, private statisticsService: StatisticsService) { }
+    name: string;
+    surname: string;
+  constructor(public dialog: MatDialog, private statisticsService: StatisticsService, private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.name = this.authService.getCurrentValue().name;
+    this.surname = this.authService.getCurrentValue().surname;
     this.getChartData();
   }
 

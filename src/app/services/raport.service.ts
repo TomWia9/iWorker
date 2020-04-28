@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { RaportDetails } from '../user/raports/raport-details/raportDetails';
 import { RaportList } from '../user/raports/RaportList';
+import { AllRaports } from '../shared/allRaports';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,10 @@ export class RaportService {
 
   getRaportsList(userID): Observable<RaportList[]>{
     return this.http.get<RaportList[]>(`https://localhost:5001/api/raport/${userID}`);
+  }
+
+  getAllRaportsList(): Observable<AllRaports[]>{
+    return this.http.get<AllRaports[]>('https://localhost:5001/api/raport/getAllRaportsList');
   }
 
 }
