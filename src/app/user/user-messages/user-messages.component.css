@@ -24,22 +24,23 @@
 .btn {
     background: brown;
     white-space: normal;
-    width: 40%;
+    width: 60%;
     margin: 2em;
-    padding: 10%;
+    padding: 5%;
 }
 
 .actions {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 45%;
+    justify-content: center;
+    width: 30%;
 }
 
 .messages {
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 60%;
 }
 
 .messages h2 {
@@ -49,6 +50,8 @@
 
 .table {
     background: #25272a;
+    overflow: auto;
+    max-height: 600px;
 }
 
 .row-hover:hover {
@@ -56,7 +59,16 @@
     cursor: pointer;
 }
 
-mat-header-cell,
-mat-cell {
+mat-header-cell {
+    font-weight: bold;
+    font-size: 30px;
     justify-content: center;
+    color: #4E7596;
+}
+
+mat-cell {
+    font-weight: bold;
+    font-size: 20px;
+    justify-content: center;
+    color: brown;
 }

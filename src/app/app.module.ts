@@ -63,6 +63,7 @@ import { UserNewMessageDialogComponent } from './user/user-messages/user-new-mes
 import { UserMessageDialogComponent } from './user/user-messages/user-message-dialog/user-message-dialog.component';
 import { AdminRaportsComponent } from './admin/admin-raports/admin-raports.component';
 import { RaportDialogComponent } from './admin/admin-raports/raport-dialog/raport-dialog.component';
+import { MessageListComponent } from './admin/messages/message-list/message-list.component';
 
 
 
@@ -104,7 +105,8 @@ import { RaportDialogComponent } from './admin/admin-raports/raport-dialog/rapor
     UserNewMessageDialogComponent,
     UserMessageDialogComponent,
     AdminRaportsComponent,
-    RaportDialogComponent
+    RaportDialogComponent,
+    MessageListComponent
   ],
   imports: [
     BrowserModule,

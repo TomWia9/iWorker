@@ -35,8 +35,8 @@ export class RaportService {
     return this.http.get<RaportList[]>(`https://localhost:5001/api/raport/${userID}`);
   }
 
-  getAllRaportsList(): Observable<AllRaports[]>{
-    return this.http.get<AllRaports[]>('https://localhost:5001/api/raport/getAllRaportsList');
+  getAllRaportsList(peroid): Observable<AllRaports[]>{
+    return this.http.get<AllRaports[]>(`https://localhost:5001/api/raport/getAllRaportsList/${peroid}`);
   }
 
 }

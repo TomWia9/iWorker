@@ -6,12 +6,42 @@
         <h2>Witaj {{name}} {{surname}}</h2>
     </mat-card-header>
     <mat-card-content class="content">
-        <div class="box"> <button class="btn" mat-raised-button (click)="newMessageToAll()">Nowa wiadomość do wszystkich pracowników</button></div>
-        <div class="box" *ngIf="wait >=2">
-            <h2>Ilość zebranych zbiorów wczoraj: </h2>
-            <app-pie-chart [chartData]="chartData" [chartLabels]="chartLabels"></app-pie-chart>
+        <div class="box">
+            <h2>Raporty z wczoraj</h2>
+            <mat-table class="table" [dataSource]="raports">
+                <ng-container matColumnDef="number">
+                    <mat-header-cell *matHeaderCellDef>Numer</mat-header-cell>
+                    <mat-cell *matCellDef="let element; let i = index"><a class="element">{{ i+1 }}</a> </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="userID">
+                    <mat-header-cell *matHeaderCellDef>Numer pracownika</mat-header-cell>
+                    <mat-cell *matCellDef="let element; let i = index"><a class="element">{{ element.userID }}</a> </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="workName">
+                    <mat-header-cell *matHeaderCellDef>Praca</mat-header-cell>
+                    <mat-cell *matCellDef="let element"><a class="element">{{ element.workName }}</a> </mat-cell>
+                </ng-container>
+                <mat-header-row *matHeaderRowDef=" displayedColumns; sticky: true"></mat-header-row>
+                <mat-row *matRowDef="let row; columns:  displayedColumns" (click)="navigateTo(row)" class="row-hover"></mat-row>
+            </mat-table>
         </div>
-        <div class="box">3</div>
-        <div class="box">4</div>
+        <div class="box" *ngIf="wait >=2">
+            <h2>Ilość zebranych zbiorów wczoraj </h2>
+            <div class="chartBox">
+                <app-pie-chart [chartData]="chartData" [chartLabels]="chartLabels"></app-pie-chart>
+            </div>
+
+        </div>
+        <div class="box">
+            <div class="btnBox">
+                <button class="btn" mat-raised-button [routerLink]="['/admin/workers']">Zarządzaj pracownikami</button>
+                <button class="btn" mat-raised-button [routerLink]="['/admin/plan']">Zarządzaj planem pracy</button>
+            </div>
+
+        </div>
+        <div class="box">
+            <h2>Wiadomości z wczoraj</h2>
+            <app-message-list></app-message-list>
+        </div>
     </mat-card-content>
 </mat-card>

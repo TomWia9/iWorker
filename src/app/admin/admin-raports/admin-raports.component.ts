@@ -31,9 +31,8 @@ export class AdminRaportsComponent implements OnInit {
       worker: ''
     })
 
-    this.raportService.getAllRaportsList().subscribe(x  => {
+    this.raportService.getAllRaportsList(60).subscribe(x  => {
       this.raports = new MatTableDataSource(x); 
-      console.log(this.raports);
       
   });
     this.workersService.getWorkersList().subscribe(x => {

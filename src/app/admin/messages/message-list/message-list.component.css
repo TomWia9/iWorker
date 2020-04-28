@@ -1,0 +1,24 @@
+.table {
+    background: #25272a;
+    overflow: auto;
+    max-height: 200px;
+}
+
+.row-hover:hover {
+    background-color: rgba(0, 0, 0, .05);
+    cursor: pointer;
+}
+
+mat-header-cell {
+    font-weight: bold;
+    font-size: 30px;
+    justify-content: center;
+    color: #4E7596;
+}
+
+mat-cell {
+    font-weight: bold;
+    font-size: 20px;
+    justify-content: center;
+    color: brown;
+}
