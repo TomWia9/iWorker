@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { WorkersList } from '../admin/workers/workers-list/workers-list';
 import { SelectionModel } from '@angular/cdk/collections';
 import { Register } from '../admin/workers/register-dialog/register';
+import { NewPassword } from '../shared/settings-dialog/newPassword';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +27,9 @@ export class WorkersService {
 
   editWorker(userID, newData: WorkersList): Observable<boolean>{
     return this.http.post<boolean>(`https://localhost:5001/api/workers/editWorker/${userID}`, newData);
+  }
+
+  changePassword(newPassword: NewPassword){
+    return this.http.post<boolean>('https://localhost:5001/api/workers/changePassword', newPassword);
   }
 }

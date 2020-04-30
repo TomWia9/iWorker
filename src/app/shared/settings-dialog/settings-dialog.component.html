@@ -1,0 +1,23 @@
+<form [formGroup]="form">
+    <div class="container">
+        <h2>Zmień hasło</h2>
+        <mat-form-field *ngIf="!show">
+            <mat-label>Podaj aktualne hasło: </mat-label>
+            <input matInput type="password" formControlName="currentPassword">
+        </mat-form-field>
+        <p class="err" *ngIf="wrongCurrentPassword === true">Niepoprawne hasło</p>
+        <button *ngIf="!show" mat-raised-button (click)="onCurrentPassword(form.value.currentPassword)">OK</button>
+        <div class="changePassword" *ngIf="show">
+            <mat-form-field>
+                <mat-label>Podaj nowe hasło: </mat-label>
+                <input matInput type="password" formControlName="newPassword1">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Powtórz nowe hasło: </mat-label>
+                <input matInput type="password" formControlName="newPassword2">
+            </mat-form-field>
+            <p class="err" *ngIf="error === true">Wprowadzone hasła nie są jednakowe</p>
+            <button class="button" mat-raised-button (click)="onPasswordChange(form.value)">Zmień hasło</button>
+        </div>
+    </div>
+</form>

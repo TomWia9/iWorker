@@ -3,6 +3,7 @@ import { MessageDialogComponent } from '../message-dialog/message-dialog.compone
 import { MatTableDataSource } from '@angular/material/table';
 import { MessagesService } from 'src/app/services/messages.service';
 import { MatDialog } from '@angular/material/dialog';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-message-list',
@@ -12,13 +13,13 @@ import { MatDialog } from '@angular/material/dialog';
 export class MessageListComponent implements OnInit {
   dataSource;
   displayedColumns = ['worker','date'];
-  @Input() isInDashboard: boolean = true; //if component isn't in dashboard, then height should be auto
+  @Input() isInDashboard: boolean = true; //if component isn't in dashboard, then max-height should be 500px
+  @Input() peroid: number = 1;
 
-  constructor(public dialog: MatDialog, private messagesService: MessagesService) { }
-
+  constructor(public dialog: MatDialog, private messagesService: MessagesService, private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.messagesService.getMessageList(0).toPromise().then(x => {
+    this.messagesService.getMessageList(this.authService.getCurrentValue().userID, this.peroid).toPromise().then(x => {
       this.dataSource = new MatTableDataSource(x);
     })
   }

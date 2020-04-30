@@ -18,9 +18,9 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { WorkersComponent } from './admin/workers/workers.component';
 import { WorkPlanComponent } from './admin/work-plan/work-plan.component';
 import { AdminStatisticsComponent } from './admin/admin-statistics/admin-statistics.component';
-import { MessagesComponent } from './admin/messages/messages.component';
 import { UserMessagesComponent } from './user/user-messages/user-messages.component';
 import { AdminRaportsComponent } from './admin/admin-raports/admin-raports.component';
+import { AdminMessagesComponent } from './admin/admin-messages/admin-messages.component';
 
 const routes: Routes = [
   {
@@ -51,7 +51,7 @@ const routes: Routes = [
         canActivate: [AdminGuard],
         children: [
           {path: '', component: AdminDashboardComponent},
-          {path: 'messages', component: MessagesComponent},
+          {path: 'messages', component: AdminMessagesComponent},
           {path: 'workers', component: WorkersComponent},
           {path: 'plan', component: WorkPlanComponent},
           {path: 'statistics', component: AdminStatisticsComponent},

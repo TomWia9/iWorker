@@ -54,18 +54,16 @@ import { WorkPlanComponent } from './admin/work-plan/work-plan.component';
 import { SetPlanDialogComponent } from './admin/work-plan/set-plan-dialog/set-plan-dialog.component';
 import { AdminStatisticsComponent } from './admin/admin-statistics/admin-statistics.component';
 import { SelectWorkerDialogComponent } from './admin/admin-statistics/select-worker-dialog/select-worker-dialog.component';
-import { MessagesComponent } from './admin/messages/messages.component';
-import { NewMessageDialogComponent } from './admin/messages/new-message-dialog/new-message-dialog.component';
-import { NewMessageToAllDialogComponent } from './admin/messages/new-message-to-all-dialog/new-message-to-all-dialog.component';
-import { MessageDialogComponent } from './admin/messages/message-dialog/message-dialog.component';
 import { UserMessagesComponent } from './user/user-messages/user-messages.component';
 import { UserNewMessageDialogComponent } from './user/user-messages/user-new-message-dialog/user-new-message-dialog.component';
-import { UserMessageDialogComponent } from './user/user-messages/user-message-dialog/user-message-dialog.component';
 import { AdminRaportsComponent } from './admin/admin-raports/admin-raports.component';
 import { RaportDialogComponent } from './admin/admin-raports/raport-dialog/raport-dialog.component';
-import { MessageListComponent } from './admin/messages/message-list/message-list.component';
-
-
+import { AdminMessagesComponent } from './admin/admin-messages/admin-messages.component';
+import { NewMessageDialogComponent } from './admin/admin-messages/new-message-dialog/new-message-dialog.component';
+import { NewMessageToAllDialogComponent } from './admin/admin-messages/new-message-to-all-dialog/new-message-to-all-dialog.component';
+import { MessageDialogComponent } from './shared/messages/message-dialog/message-dialog.component';
+import { MessageListComponent } from './shared/messages/message-list/message-list.component';
+import { SettingsDialogComponent } from './shared/settings-dialog/settings-dialog.component';
 
 
 @NgModule({
@@ -97,16 +95,16 @@ import { MessageListComponent } from './admin/messages/message-list/message-list
     SetPlanDialogComponent,
     AdminStatisticsComponent,
     SelectWorkerDialogComponent,
-    MessagesComponent,
     NewMessageDialogComponent,
     NewMessageToAllDialogComponent,
     MessageDialogComponent,
     UserMessagesComponent,
     UserNewMessageDialogComponent,
-    UserMessageDialogComponent,
     AdminRaportsComponent,
     RaportDialogComponent,
-    MessageListComponent
+    MessageListComponent,
+    AdminMessagesComponent,
+    SettingsDialogComponent,
   ],
   imports: [
     BrowserModule,

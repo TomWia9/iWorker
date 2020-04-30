@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
-import { NewMessageDialogComponent } from './new-message-dialog/new-message-dialog.component';
-import { NewMessageToAllDialogComponent } from './new-message-to-all-dialog/new-message-to-all-dialog.component';
+import { NewMessageDialogComponent } from 'src/app/admin/admin-messages/new-message-dialog/new-message-dialog.component';
+import { NewMessageToAllDialogComponent } from 'src/app/admin/admin-messages/new-message-to-all-dialog/new-message-to-all-dialog.component';
 
 @Component({
-  selector: 'app-messages',
-  templateUrl: './messages.component.html',
-  styleUrls: ['./messages.component.css']
+  selector: 'app-admin-messages',
+  templateUrl: './admin-messages.component.html',
+  styleUrls: ['./admin-messages.component.css']
 })
-export class MessagesComponent implements OnInit {
+export class AdminMessagesComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
@@ -36,5 +35,5 @@ export class MessagesComponent implements OnInit {
    });
   }
 
-}
 
+}

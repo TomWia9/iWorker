@@ -23,8 +23,8 @@ export class MessagesService {
     return this.http.post<boolean>(`https://localhost:5001/api/messages/sendToUser/${from}/${to}`, message);
   }
 
-  getMessageList(userID): Observable<MessageList[]>{
-    return this.http.get<MessageList[]>(`https://localhost:5001/api/messages/getMessageList/${userID}`);
+  getMessageList(userID, peroid): Observable<MessageList[]>{
+    return this.http.get<MessageList[]>(`https://localhost:5001/api/messages/getMessageList/${userID}/${peroid}`);
   }
 
   getMessage(messageID): Observable<MessageItem>{

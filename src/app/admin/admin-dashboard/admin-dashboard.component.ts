@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { NewMessageToAllDialogComponent } from '../messages/new-message-to-all-dialog/new-message-to-all-dialog.component';
 import { StatisticsService } from 'src/app/services/statistics.service';
-import { AuthService } from 'src/app/services/auth.service';
 import { RaportService } from 'src/app/services/raport.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { RaportDialogComponent } from '../admin-raports/raport-dialog/raport-dialog.component';
+import { NewMessageToAllDialogComponent } from 'src/app/admin/admin-messages/new-message-to-all-dialog/new-message-to-all-dialog.component';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -16,16 +15,12 @@ import { RaportDialogComponent } from '../admin-raports/raport-dialog/raport-dia
     wait: number = 0;
     chartData: any[] = [];
     chartLabels: string[] = [];
-    name: string;
-    surname: string;
     raports = new MatTableDataSource();
     displayedColumns = ['number', 'userID', 'workName'];
 
-  constructor(public dialog: MatDialog, private statisticsService: StatisticsService, private raportService: RaportService, private authService: AuthService) { }
+  constructor(public dialog: MatDialog, private statisticsService: StatisticsService, private raportService: RaportService) { }
 
   ngOnInit(): void {
-    this.name = this.authService.getCurrentValue().name;
-    this.surname = this.authService.getCurrentValue().surname;
     this.getChartData();
 
     this.raportService.getAllRaportsList(1).subscribe(x  => {

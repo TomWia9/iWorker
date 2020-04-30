@@ -34,6 +34,10 @@
                 <span>Wiadomości</span>
             </a>
             <mat-divider></mat-divider>
+            <a class="listItem" mat-list-item (click)="onSettings()">
+                <mat-icon class="icon" aria-hidden="false" aria-label="Settings">settings</mat-icon>
+                <span>Ustawienia</span>
+            </a>
             <a class="listItem" mat-list-item [routerLink]="['/login']">
                 <mat-icon class="icon" aria-hidden="false" aria-label="Dashboard">exit_to_app</mat-icon>
                 <span>Wyloguj</span>

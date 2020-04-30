@@ -1,6 +1,6 @@
 import { Component, OnInit, } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
+import { SettingsDialogComponent } from 'src/app/shared/settings-dialog/settings-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-sidenav',
@@ -9,10 +9,19 @@ import { Router } from '@angular/router';
 })
 export class SidenavComponent implements OnInit {
   
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
    
+  }
+
+  onSettings(){
+    const dialogRef = this.dialog.open(SettingsDialogComponent, {
+      width: '500px',
+   });
+
+   dialogRef.afterClosed().subscribe(() => {
+   });
   }
 
 }
