@@ -29,11 +29,14 @@ export class StatisticsComponent implements OnInit {
      this.dateString = date.toLocaleDateString();
 
     this.statisticsService.getMainStatistics(this.userID, this.dateString).subscribe(x  => {
-      this.form = this.fb.group({
-        rankingPosition: x.rankingPosition,
-        amount: x.amount,
-        hours: x.hours,
-      });
+      if(x != null){
+        this.form = this.fb.group({
+          rankingPosition: x.rankingPosition,
+          amount: x.amount,
+          hours: x.hours,
+        });
+      }
+    
    });
 
   

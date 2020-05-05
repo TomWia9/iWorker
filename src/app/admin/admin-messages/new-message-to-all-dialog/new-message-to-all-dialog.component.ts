@@ -24,12 +24,10 @@ export class NewMessageToAllDialogComponent implements OnInit {
 
   onSend(value){
     if(value !== ''){
-      console.log("Wysłano: " + value);
       this.message.message = value;
       this.messagesService.sendToAll(this.message).subscribe(x => {
         this.error = x;
       })
-      //serwis -> send
       if(!this.error){
         this.dialogRef.close();
       }

@@ -35,7 +35,6 @@ export class NewMessageDialogComponent implements OnInit {
 
   onSend(value, worker){
     if(value !== '' && this.selected === true){
-      console.log("Wysłano do " + worker + ", wiadomość: " + value);
       this.message.message = value;
       this.messagesService.sendToUser(this.message, 0, worker).subscribe(x => {
         this.error = x;

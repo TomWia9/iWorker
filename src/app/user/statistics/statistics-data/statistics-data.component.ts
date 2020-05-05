@@ -62,6 +62,7 @@ export class StatisticsDataComponent implements OnInit {
     });
 
     this.statisticsService.getDataStatistics(this.userID, this.chartID).subscribe(x => {
+      if(x != null){
       this.form = this.fb.group({
         max: x.max,
         total: x.total,
@@ -69,7 +70,7 @@ export class StatisticsDataComponent implements OnInit {
         avg: x.avg,
         avgMonth: x.avgMonth,
         avgWeek: x.avgWeek,
-      })
+      })}
     })
     
   }

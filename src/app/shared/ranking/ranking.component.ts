@@ -14,14 +14,12 @@ export class RankingComponent implements OnInit {
   date = new Date();
   dateString: string;
 
-  constructor(private statisticsService: StatisticsService) {
-    this.date.setDate(this.date.getDate() - 1);
-    this.dateString = this.date.toLocaleDateString();
-   }
+  constructor(private statisticsService: StatisticsService) {}
 
   ngOnInit(): void {
-   
-  
+    this.date.setDate(this.date.getDate() - 1);
+    this.dateString = this.date.toLocaleDateString();
+
     this.statisticsService.getRanking(this.dateString).subscribe(x  => {
       this.ranking = new MatTableDataSource(x); 
     });

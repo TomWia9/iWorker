@@ -74,17 +74,20 @@ export class WorkPlanComponent implements OnInit {
     let dateString: string;
     date.setDate(date.getDate() - 1);
     dateString = date.toLocaleDateString();
-    await this.planService.getFullPlan(dateString).toPromise().then(x => {
-      this.plan = x;      
+    await this.planService.getFullPlan(dateString).toPromise().then(x => {     
+        this.plan = x;  
     })
 
-    this.plan.date = '';
-    this.workers = [];
-    this.form = this.fb.group({
-      date: '',
-      timeFrom: this.plan.hours.substring(0, 5),
-      timeTo: this.plan.hours.substring(8,13),
-    });
+    if(this.plan !== null){
+      this.plan.date = '';
+      this.workers = [];
+      this.form = this.fb.group({
+        date: '',
+        timeFrom: this.plan.hours.substring(0, 5),
+        timeTo: this.plan.hours.substring(8,13),
+      });
+    }
+   
     
   }
 }

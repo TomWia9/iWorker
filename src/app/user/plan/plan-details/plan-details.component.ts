@@ -25,7 +25,6 @@ export class PlanDetailsComponent implements OnInit {
       sector: '',
       hours: ''
     });
-   console.log(this.date);
      this.planService.getPlanDetails(this.userID, this.date).subscribe(x => {
        if(x == null){
          this.noPlan = true;
