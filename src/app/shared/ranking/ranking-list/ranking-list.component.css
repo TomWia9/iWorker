@@ -1,0 +1,22 @@
+.table {
+    background: #25272a;
+    width: 100%;
+}
+
+mat-header-cell {
+    color: #4E7596;
+    font-size: 20px;
+    justify-content: center;
+}
+
+mat-cell {
+    justify-content: center;
+    color: brown;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.row-hover:hover {
+    background-color: rgba(0, 0, 0, .05);
+    cursor: pointer;
+}

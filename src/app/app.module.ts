@@ -64,6 +64,7 @@ import { NewMessageToAllDialogComponent } from './admin/admin-messages/new-messa
 import { MessageDialogComponent } from './shared/messages/message-dialog/message-dialog.component';
 import { MessageListComponent } from './shared/messages/message-list/message-list.component';
 import { SettingsDialogComponent } from './shared/settings-dialog/settings-dialog.component';
+import { RankingListComponent } from './shared/ranking/ranking-list/ranking-list.component';
 
 
 @NgModule({
@@ -105,6 +106,7 @@ import { SettingsDialogComponent } from './shared/settings-dialog/settings-dialo
     MessageListComponent,
     AdminMessagesComponent,
     SettingsDialogComponent,
+    RankingListComponent,
   ],
   imports: [
     BrowserModule,

@@ -51,7 +51,13 @@ export class NewRaportComponent implements OnInit {
           newRaport.date = this.date;
           
           this.raportService.createRaport(newRaport).subscribe(x=> {
+            if(x != -1){
               this.router.navigate(['/raport',x]);
+            }
+            else{
+              this.cantAdd = true;
+            }
+              
           })
       
       } else{

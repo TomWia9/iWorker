@@ -7,30 +7,7 @@
     <mat-card-content class="content">
         <div class="ranking">
             <h2>Top 3 najlepszych pracowników wczoraj</h2>
-            <mat-table class="table" [dataSource]="top3">
-                <ng-container matColumnDef="position">
-                    <mat-header-cell *matHeaderCellDef>Pozycja</mat-header-cell>
-                    <mat-cell *matCellDef="let element; let i = index">{{ i+1 }}</mat-cell>
-                </ng-container>
-                <ng-container matColumnDef="userID">
-                    <mat-header-cell *matHeaderCellDef>Numer pracownika</mat-header-cell>
-                    <mat-cell *matCellDef="let element">{{ element.userID }}</mat-cell>
-                </ng-container>
-                <ng-container matColumnDef="name">
-                    <mat-header-cell *matHeaderCellDef>Imię</mat-header-cell>
-                    <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
-                </ng-container>
-                <ng-container matColumnDef="surname">
-                    <mat-header-cell *matHeaderCellDef>Nazwisko</mat-header-cell>
-                    <mat-cell *matCellDef="let element">{{ element.surname }}</mat-cell>
-                </ng-container>
-                <ng-container matColumnDef="ratio">
-                    <mat-header-cell *matHeaderCellDef>Wydajność</mat-header-cell>
-                    <mat-cell *matCellDef="let element">{{ element.ratio }}</mat-cell>
-                </ng-container>
-                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                <mat-row *matRowDef="let row; columns: displayedColumns" class="row-hover"></mat-row>
-            </mat-table>
+            <app-ranking-list [ranking]="top3"></app-ranking-list>
             <button mat-raised-button class="btn" [routerLink]="['/admin/ranking']">Wyświetl pełny ranking</button>
         </div>
         <div class="charts">

@@ -18,44 +18,19 @@
     color: #4E7596;
 }
 
-.table {
-    background: #25272a;
-    width: 100%;
-}
-
 h1 {
     font-weight: bold;
     font-size: 40px;
-}
-
-mat-header-cell {
-    color: #4E7596;
-    font-size: 20px;
-    justify-content: center;
-}
-
-mat-cell {
-    justify-content: center;
-    color: brown;
-    font-weight: bold;
-    font-size: 15px;
-}
-
-.row-hover:hover {
-    background-color: rgba(0, 0, 0, .05);
-    cursor: pointer;
-}
-
-.filter {
-    font-size: 15px;
-    width: 40%;
-    margin-right: 3em;
 }
 
 .date {
     font-size: 15px;
     width: 15%;
     margin-left: 3em;
+}
+
+.ranking {
+    width: 100%;
 }
 
 ::ng-deep.mat-form-field-ripple {
