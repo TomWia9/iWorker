@@ -38,6 +38,18 @@
     white-space: normal;
 }
 
+.buttonsArea {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+}
+
+.buttonsArea .button {
+    width: 30%;
+    background: brown;
+}
+
 .choose {
     display: flex;
     flex-wrap: wrap;

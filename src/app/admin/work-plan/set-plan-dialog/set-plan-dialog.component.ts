@@ -85,37 +85,4 @@ export class SetPlanDialogComponent implements OnInit {
     })
 
   }
-
-  // onConfirm(){
-  //   console.log("Zatwierdzam");
-    
-  //   switch(this.data.sectorName){
-  //     case 'A1': {
-  //       this.data.plan.A1 = this.dataList;
-  //       break;
-  //     }
-  //     case 'B12': {
-  //       this.data.plan.B12 = this.dataList;
-  //       break;
-  //     }
-  //     case 'EZ': {
-  //       this.data.plan.EZ = this.dataList;
-  //       break;
-  //     }
-  //     case 'ES': {
-  //       this.data.plan.ES = this.dataList;
-  //       break;
-  //     }
-  //     case 'C3': {
-  //       this.data.plan.C3 = this.dataList;
-  //       break;
-  //     }
-  //     case 'H12': {
-  //       this.data.plan.H12 = this.dataList;
-  //       break;
-  //     }
-  //   }
-  // }
-
-
 }

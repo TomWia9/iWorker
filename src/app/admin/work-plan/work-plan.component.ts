@@ -7,6 +7,7 @@ import { Plan } from './plan';
 import { WorkersList } from '../workers/workers-list/workers-list';
 import { WorkersService } from 'src/app/services/workers.service';
 import { PlanService } from 'src/app/services/plan.service';
+import { DeletePlanDialogComponent } from './delete-plan-dialog/delete-plan-dialog.component';
 
 @Component({
   selector: 'app-work-plan',
@@ -89,5 +90,14 @@ export class WorkPlanComponent implements OnInit {
     }
    
     
+  }
+
+  onDelete(){
+    const dialogRef = this.dialog.open(DeletePlanDialogComponent, {
+      width: '500px',      
+   });
+
+   dialogRef.afterClosed().subscribe(() => {
+   });
   }
 }

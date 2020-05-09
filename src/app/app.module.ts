@@ -65,6 +65,7 @@ import { MessageDialogComponent } from './shared/messages/message-dialog/message
 import { MessageListComponent } from './shared/messages/message-list/message-list.component';
 import { SettingsDialogComponent } from './shared/settings-dialog/settings-dialog.component';
 import { RankingListComponent } from './shared/ranking/ranking-list/ranking-list.component';
+import { DeletePlanDialogComponent } from './admin/work-plan/delete-plan-dialog/delete-plan-dialog.component';
 
 
 @NgModule({
@@ -107,6 +108,7 @@ import { RankingListComponent } from './shared/ranking/ranking-list/ranking-list
     AdminMessagesComponent,
     SettingsDialogComponent,
     RankingListComponent,
+    DeletePlanDialogComponent,
   ],
   imports: [
     BrowserModule,

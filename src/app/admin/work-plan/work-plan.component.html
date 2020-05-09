@@ -21,9 +21,13 @@
                     <mat-label>Do</mat-label>
                     <input matInput type="time" formControlName="timeTo" #to>
                 </mat-form-field>
+            </div>
+            <div class="buttonsArea">
                 <button class="button" mat-raised-button (click)="likeYesterday()">Ustaw taki plan jak ostatnio</button>
                 <button class="button" mat-raised-button (click)="onReset()">Resetuj plan</button>
+                <button class="button" mat-raised-button (click)="onDelete()">Usuń plan</button>
             </div>
+
 
             <h3>Sektory:</h3>
             <div class="sectors">
