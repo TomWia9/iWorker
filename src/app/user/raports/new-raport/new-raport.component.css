@@ -53,6 +53,17 @@ h1 {
     font-size: 40px;
 }
 
+.mistake {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    /* background-color: mistyrose; */
+    border: 1px solid brown;
+    font-weight: bold;
+    border-radius: 10px;
+    color: #4E7596;
+}
+
 ::ng-deep.mat-select-panel {
     background-color: brown;
 }
