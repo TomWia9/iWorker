@@ -21,6 +21,6 @@
         </div>
         <button class="button" mat-raised-button (click)="onEdit(form.value)">Edit</button>
         <button class="button" mat-raised-button (click)="onExit()">Exit</button>
-        <p class="err" *ngIf="success === false">Failed to edit the sector</p>
+        <p class="err" *ngIf="edited === false">Failed to edit the sector</p>
     </form>
 </div>

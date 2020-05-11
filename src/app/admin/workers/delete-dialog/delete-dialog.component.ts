@@ -29,11 +29,10 @@ export class DeleteDialogComponent implements OnInit {
     this.dialogRef.close();   
   }
 
-  onDelete(value){
+  async onDelete(value){
     if(value.worker != ''){
-      this.workersService.deleteWorker(value.worker.userID).subscribe(x => {
+      await this.workersService.deleteWorker(value.worker.userID).toPromise().then(x => {
         this.deleted = x; //true or false
-        this.dialogRef.close();  
       })
     } else{
       this.deleted = false;

@@ -28,9 +28,10 @@ export class DeleteSectorDialogComponent implements OnInit {
     this.dialogRef.close();   
   }
 
-  onDelete(value){
+  async onDelete(value){
+    
     if(value.sector != ''){
-      this.sectorsService.deleteSector(value.worker.id).subscribe(x => {
+      await this.sectorsService.deleteSector(value.sector.id).toPromise().then(x => {
         this.deleted = x; //true or false
       })
     } else{

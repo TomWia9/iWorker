@@ -22,7 +22,7 @@ export class AddSectorDialogComponent implements OnInit {
   }
 
   onSubmit(value){
-    if(value.sectorName != '' && value.workName != ''){
+    if(value.sectorName != '' && value.workName != ''){      
       this.sectorsService.addSector(value).subscribe(x => {
         this.wrong = x;
       });

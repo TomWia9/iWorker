@@ -11,7 +11,7 @@ export class SectorsListComponent implements OnInit {
 
   @Input() sectors: Sector[];
   dataSource;
-  displayedColumns = ['id','sectorName', 'workName'];
+  displayedColumns = ['sectorName', 'workName'];
   
   constructor() { }
 

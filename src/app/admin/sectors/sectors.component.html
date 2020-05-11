@@ -14,12 +14,12 @@
     </div>
     <mat-card class="manage">
         <mat-card-content>
-            <form [formGroup]="form">
+            <div [formGroup]="form">
                 <mat-form-field appearance="outline" class="amount">
                     <mat-label>Liczba sektorów</mat-label>
                     <input matInput type="number" formControlName="amount" readonly>
                 </mat-form-field>
-            </form>
+            </div>
             <div class="actions">
                 <button class="btn" mat-raised-button (click)="addSector()">
                     <mat-icon class="icon" aria-hidden="false" aria-label="add">note_add</mat-icon>

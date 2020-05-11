@@ -25,6 +25,6 @@
         </div>
         <button class="button" mat-raised-button (click)="onEdit(form.value)">Edytuj</button>
         <button class="button" mat-raised-button (click)="onExit()">Wyjdź</button>
-        <p class="err" *ngIf="success === false">Nie udało się edytować użytkownika</p>
+        <p class="err" *ngIf="edited === false">Nie udało się edytować użytkownika</p>
     </form>
 </div>

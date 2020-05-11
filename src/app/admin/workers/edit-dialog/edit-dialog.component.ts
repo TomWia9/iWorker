@@ -13,7 +13,7 @@ export class EditDialogComponent implements OnInit {
   form: FormGroup;
   workers: WorkersList[];
   selected: boolean = false;
-  success: boolean = null;
+  edited: boolean = null;
   newData: WorkersList = new WorkersList();
   constructor(public dialogRef: MatDialogRef<EditDialogComponent>, private workersService: WorkersService, private fb: FormBuilder) { }
   
@@ -36,22 +36,22 @@ export class EditDialogComponent implements OnInit {
     this.selected = true;
   }
 
-  onEdit(value){
-    
-    this.newData.userID = value.userID;
-    this.newData.name = value.name;
-    this.newData.surname = value.surname;
-    
-    if(value.worker != ''){
-    this.workersService.editWorker(value.worker.userID, this.newData).subscribe(x => {
-      this.success = x; //true or false
-      this.dialogRef.close();
+  async onEdit(value){
+   
+    if(value.worker != '' && value.userID != '' && value.name != '' && value.surname != ''){
+      this.newData.userID = value.userID;
+      this.newData.name = value.name;
+      this.newData.surname = value.surname;
+      console.log(this.newData);
+      
+      await this.workersService.editWorker(value.worker.userID, this.newData).toPromise().then(x => {
+      this.edited = x; //true or false
     })
   } else{
-    this.success = false;
+    this.edited = false;
   }
 
-    if(this.success){
+    if(this.edited){
       this.dialogRef.close();  
     }
   }

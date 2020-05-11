@@ -14,12 +14,13 @@ export class EditSectorDialogComponent implements OnInit {
   form: FormGroup;
   sectors: Sector[];
   selected: boolean = false;
-  success: boolean = null;
+  edited: boolean = null;
   newData: Sector = new Sector();
   constructor(public dialogRef: MatDialogRef<EditSectorDialogComponent>, private sectorsService: SectorsService, private fb: FormBuilder) { }
   
   ngOnInit(): void {
     this.form = this.fb.group({
+      sector: '',
       sectorName: '',
       workName: ''
     })
@@ -31,24 +32,26 @@ export class EditSectorDialogComponent implements OnInit {
   }
 
   onSelectChange(event){    
-    console.log(event.value.userID);
     this.selected = true;
   }
 
-  onEdit(value){
+  async onEdit(value){
     
-    this.newData.sectorName = value.sectorName;
-    this.newData.workName = value.workName;
     
-    if(value.sector != ''){
-    this.sectorsService.editSector(value.sector.id, this.newData).subscribe(x => { //pewnie nie zadziala bo id ale zobaczy sie
-      this.success = x; //true or false
+    if(value.sector != '' && value.sectorName != '' && value.workName != ''){
+      
+      this.newData.id = value.sector.id;
+      this.newData.sectorName = value.sectorName;
+      this.newData.workName = value.workName;
+     
+   await this.sectorsService.editSector(this.newData).toPromise().then(x => { 
+      this.edited = x; //true or false
     })
   } else{
-    this.success = false;
+    this.edited = false;
   }
 
-    if(this.success){
+    if(this.edited){
       this.dialogRef.close();  
     }
   }

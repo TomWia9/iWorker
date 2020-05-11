@@ -23,12 +23,19 @@ export class SectorsComponent implements OnInit {
   constructor(private fb: FormBuilder, public dialog: MatDialog, private router: Router, private sectorsService: SectorsService, private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit(): void {
-    this.showSectorsList();
 
     this.form = this.fb.group({
-      amount: this.sectors.length //have to implement also in workers
+      amount: ''
     })
-    
+
+    this.showSectorsList();
+
+    this.sectorsService.getSectorsAmount().subscribe(x => {      
+      this.form = this.fb.group({
+        amount: x
+      })
+    })
+
   }
 
   addSector(): void {
@@ -64,7 +71,7 @@ export class SectorsComponent implements OnInit {
 
   async showSectorsList(){
 
-    await this.sectorsService.getSectorsList().toPromise().then(x => {
+    await this.sectorsService.getSectorsList().toPromise().then(x => {      
       this.sectors = x;
     })
 
@@ -74,7 +81,7 @@ export class SectorsComponent implements OnInit {
  
      let childComponent = this.componentFactoryResolver.resolveComponentFactory(SectorsListComponent);
      this.componentRef = this.target.createComponent(childComponent);    
-     this.componentRef.instance.workers = this.sectors;
+     this.componentRef.instance.sectors = this.sectors;
    }
 
 }
