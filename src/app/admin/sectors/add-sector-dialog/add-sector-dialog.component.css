@@ -1,0 +1,55 @@
+.header {
+    justify-content: center;
+    color: brown;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    width: 50%;
+    padding: 2%;
+    background: brown;
+    color: azure;
+    font-size: 100%;
+}
+
+.err {
+    padding: 20px;
+    background-color: mistyrose;
+    border: 1px solid red;
+    font-weight: bold;
+    border-radius: 10px;
+    color: black;
+}
+
+.mat-form-field {
+    width: 50%;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: brown !important;
+}

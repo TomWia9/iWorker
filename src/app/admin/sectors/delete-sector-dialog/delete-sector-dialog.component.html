@@ -1,0 +1,16 @@
+<div class="container">
+    <form [formGroup]="form">
+        <h2>Select the sector you want to delete</h2>
+        <mat-form-field appearance="outline">
+            <mat-label>Sector</mat-label>
+            <mat-select formControlName="sector">
+                <mat-option *ngFor="let sector of sectors" [value]="sector">
+                    {{ sector.sectorName }} | {{ sector.workName }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button (click)="onDelete(form.value)">Delete</button>
+        <button mat-raised-button (click)="onExit()">Exit</button>
+        <p class="err" *ngIf="deleted === false">Failed to delete sector</p>
+    </form>
+</div>

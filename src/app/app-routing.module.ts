@@ -21,6 +21,7 @@ import { AdminStatisticsComponent } from './admin/admin-statistics/admin-statist
 import { UserMessagesComponent } from './user/user-messages/user-messages.component';
 import { AdminRaportsComponent } from './admin/admin-raports/admin-raports.component';
 import { AdminMessagesComponent } from './admin/admin-messages/admin-messages.component';
+import { SectorsComponent } from './admin/sectors/sectors.component';
 
 const routes: Routes = [
   {
@@ -54,6 +55,7 @@ const routes: Routes = [
           {path: 'messages', component: AdminMessagesComponent},
           {path: 'workers', component: WorkersComponent},
           {path: 'plan', component: WorkPlanComponent},
+          {path: 'sectors', component: SectorsComponent},
           {path: 'statistics', component: AdminStatisticsComponent},
           {path:'ranking', component: RankingComponent},
           {path:'raports', component: AdminRaportsComponent},

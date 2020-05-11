@@ -1,0 +1,61 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.list {
+    width: 60%;
+    margin: 2em;
+}
+
+.manage {
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    background: #25272a;
+    text-align: center;
+    width: 30%;
+    flex-wrap: wrap;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    display: flex;
+    padding: 2%;
+    width: 60%;
+    white-space: normal;
+    background: #4E7596;
+    margin: 10px;
+}
+
+.amount {
+    margin: 1em;
+}
+
+.icon {
+    position: relative;
+    padding: 0 20px;
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    /* margin: 2em; */
+    background: #25272a;
+}
+
+.table-header {
+    justify-content: center;
+    color: #4E7596;
+}
+
+.table-content {
+    justify-content: center;
+    height: 450px;
+    overflow: auto;
+}

@@ -66,6 +66,11 @@ import { MessageListComponent } from './shared/messages/message-list/message-lis
 import { SettingsDialogComponent } from './shared/settings-dialog/settings-dialog.component';
 import { RankingListComponent } from './shared/ranking/ranking-list/ranking-list.component';
 import { DeletePlanDialogComponent } from './admin/work-plan/delete-plan-dialog/delete-plan-dialog.component';
+import { SectorsComponent } from './admin/sectors/sectors.component';
+import { AddSectorDialogComponent } from './admin/sectors/add-sector-dialog/add-sector-dialog.component';
+import { DeleteSectorDialogComponent } from './admin/sectors/delete-sector-dialog/delete-sector-dialog.component';
+import { EditSectorDialogComponent } from './admin/sectors/edit-sector-dialog/edit-sector-dialog.component';
+import { SectorsListComponent } from './admin/sectors/sectors-list/sectors-list.component';
 
 
 @NgModule({
@@ -109,6 +114,11 @@ import { DeletePlanDialogComponent } from './admin/work-plan/delete-plan-dialog/
     SettingsDialogComponent,
     RankingListComponent,
     DeletePlanDialogComponent,
+    SectorsComponent,
+    AddSectorDialogComponent,
+    DeleteSectorDialogComponent,
+    EditSectorDialogComponent,
+    SectorsListComponent,
   ],
   imports: [
     BrowserModule,

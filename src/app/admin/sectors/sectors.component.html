@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="list">
+        <mat-card class="table-container">
+            <mat-card-header class="table-header">
+                <mat-card-title>
+                    <h1>Sectors list</h1>
+                    <mat-divider></mat-divider>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="table-content">
+                <template #dynamicSectorsListComponent></template>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <mat-card class="manage">
+        <mat-card-content>
+            <form [formGroup]="form">
+                <mat-form-field appearance="outline" class="amount">
+                    <mat-label>Liczba sektorów</mat-label>
+                    <input matInput type="number" formControlName="amount" readonly>
+                </mat-form-field>
+            </form>
+            <div class="actions">
+                <button class="btn" mat-raised-button (click)="addSector()">
+                    <mat-icon class="icon" aria-hidden="false" aria-label="add">note_add</mat-icon>
+                    <span>Add sector</span>      
+                </button>
+                <button class="btn" mat-raised-button (click)="onSectorDelete()">
+                    <mat-icon class="icon" aria-hidden="false" aria-label="add">delete</mat-icon>
+                    <span>Delete sector</span>          
+                </button>
+                <button class="btn" mat-raised-button (click)="onSectorEdit()">
+                    <mat-icon class="icon" aria-hidden="false" aria-label="edit">edit</mat-icon>
+                    <span>Edit sector</span>                 
+                </button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

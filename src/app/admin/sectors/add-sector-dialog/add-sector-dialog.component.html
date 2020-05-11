@@ -1,0 +1,23 @@
+<form [formGroup]="form" (submit)="onSubmit(form.value)">
+    <mat-card-header class="header">
+        <mat-card-title>
+            <h1>Add sector</h1>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="content">
+        <mat-form-field>
+            <mat-label>Sector name</mat-label>
+            <input matInput type="text" formControlName="sectorName">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Work name</mat-label>
+            <input matInput type="text" formControlName="workName">
+        </mat-form-field>
+        <span class="err" *ngIf="wrong">Dany sektor jest już dodany lub nie wszystkie pola są wypełnione</span>
+        <span class="err" *ngIf="wrong == false" [ngStyle]="{backgroundColor: wrong ? 'mistyrose' : 'forestgreen'}">Pomyślnie dodano sektor</span>
+    </mat-card-content>
+    <mat-card-actions class="actions">
+        <button class="button" type="submit" mat-raised-button>Dodaj</button>
+        <button class="button" mat-raised-button (click)="onExit()">Wyjdź</button>
+    </mat-card-actions>
+</form>
