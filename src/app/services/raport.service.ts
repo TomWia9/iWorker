@@ -22,12 +22,10 @@ export class RaportService {
       userID: newRaport.userID,
       name: newRaport.name,
       surname: newRaport.surname,
-      workName: newRaport.workName,
       sector: newRaport.sector,
       amount: newRaport.amount,
       hours: newRaport.hours,
       date: newRaport.date,
-      chests: newRaport.chests
     })
   }
 

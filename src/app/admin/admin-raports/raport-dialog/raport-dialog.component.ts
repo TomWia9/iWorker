@@ -34,12 +34,11 @@ export class RaportDialogComponent implements OnInit {
         userID: x.userID,
         name: x.name,
         surname: x.surname,
-        workName: x.workName,
-        sector: x.sector,
+        workName: x.sector.workName,
+        sector: x.sector.sectorName,
         amount:x.amount,
         hours: x.hours,
         date: x.date,
-        chests: x.chests,
       });
 
       this.date = x.date;

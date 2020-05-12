@@ -5,9 +5,8 @@ import { RaportDetails } from '../raport-details/raportDetails';
 import { Router } from '@angular/router';
 import { User } from 'src/app/auth/user';
 import { AuthService } from 'src/app/services/auth.service';
-import { SECTORS } from 'src/app/shared/sectors';
-import { CHESTS } from 'src/app/shared/chests';
-import { WORKS } from 'src/app/shared/works';
+import { SectorsService } from 'src/app/services/sectors.service';
+import { Sector } from 'src/app/admin/sectors/sector';
 
 @Component({
   selector: 'app-new-raport',
@@ -16,39 +15,42 @@ import { WORKS } from 'src/app/shared/works';
 })
 export class NewRaportComponent implements OnInit {
   form: FormGroup;
-  works = WORKS;
-  sectors = SECTORS;
-  chests = CHESTS;
+  sectors: Sector[];
   @ViewChild('dateString', {static: true}) dateString: ElementRef;
   date: Date;
   cantAdd: boolean = false;
   userInfo: User;
 
-  constructor(private fb: FormBuilder, private raportService: RaportService, private authService: AuthService, private router: Router) { }
+  constructor(private fb: FormBuilder, private sectorsService: SectorsService, private raportService: RaportService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+
+    this.sectorsService.getSectorsList().subscribe(x =>{
+      this.sectors = x;
+    })
+
     this.userInfo = this.authService.getCurrentValue();
     this.form = this.fb.group({
       userID: this.userInfo.userID,
       name: this.userInfo.name,
       surname: this.userInfo.surname,
-      workName: '',
       sector: '',
       amount: '',
       hours: '',
       date: '',
-      chests: '',
     });
   }
 
   onSubmit(value){
    this.date = this.dateString.nativeElement.value;
    console.log(this.date);
-    if (value.userID != '' && value.name !== '' && value.surname !== '' && value.date !== '' && value.hours !== '' && value.hours <13 && value.workName !== '' 
-        && value.sector !== '' && value.amount !== '' && value.chests !== ''){
+    if (value.userID != '' && value.name !== '' && value.surname !== '' && value.date !== '' && value.hours !== '' && value.hours <13
+        && value.sector !== '' && value.amount !== ''){
           this.cantAdd = false;
           const newRaport = value as RaportDetails; 
           newRaport.date = this.date;
+          console.log(newRaport);
+          
           
           this.raportService.createRaport(newRaport).subscribe(x=> {
             if(x != -1){

@@ -21,38 +21,11 @@ export class SetPlanDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    console.log(this.data.plan.A1);
     this.form = this.fb.group({
       worker: ''
     })
 
-    switch(this.data.sectorName){
-      case 'A1': {
-        this.dataList = this.data.plan.a1;
-        break;
-      }
-      case 'B12': {
-        this.dataList = this.data.plan.b12;
-        break;
-      }
-      case 'EZ': {
-        this.dataList = this.data.plan.ez;
-        break;
-      }
-      case 'ES': {
-        this.dataList = this.data.plan.es;
-        break;
-      }
-      case 'C3': {
-        this.dataList = this.data.plan.c3;
-        break;
-      }
-      case 'H12': {
-        this.dataList = this.data.plan.h12;
-        break;
-      }
-    }
-
+    this.dataList = this.data.sector.workers;
     this.dataSource = new MatTableDataSource(this.dataList);
   }
 

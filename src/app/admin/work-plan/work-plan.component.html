@@ -31,8 +31,7 @@
 
             <h3>Sektory:</h3>
             <div class="sectors">
-
-                <button mat-raised-button class="button" *ngFor="let sector of sectors" (click)="edit(sector)">{{sector}}</button>
+                <button mat-raised-button class="button" *ngFor="let sectorPlan of sectorPlans" (click)="edit(sectorPlan)">{{sectorPlan.sector.sectorName}}</button>
             </div>
             <p class="err" *ngIf="success == true" [ngStyle]="{backgroundColor: success ? 'forestgreen' : 'mistyrose'}">Pomyślnie dodano plan</p>
             <p class="err" *ngIf="success == false">Nie udało się dodać planu, sprawdź czy wybrałeś datę, godziny i czy przypisałeś wszystkich pracowników</p>

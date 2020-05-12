@@ -1,6 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { SECTORS } from 'src/app/shared/sectors';
 import { MatDialog } from '@angular/material/dialog';
 import { SetPlanDialogComponent } from './set-plan-dialog/set-plan-dialog.component';
 import { Plan } from './plan';
@@ -8,6 +7,8 @@ import { WorkersList } from '../workers/workers-list/workers-list';
 import { WorkersService } from 'src/app/services/workers.service';
 import { PlanService } from 'src/app/services/plan.service';
 import { DeletePlanDialogComponent } from './delete-plan-dialog/delete-plan-dialog.component';
+import { SectorsService } from 'src/app/services/sectors.service';
+import { SectorPlan } from './sectorPlan';
 
 @Component({
   selector: 'app-work-plan',
@@ -20,11 +21,12 @@ export class WorkPlanComponent implements OnInit {
   @ViewChild('from', {static: true}) from: ElementRef;
   @ViewChild('to', {static: true}) to: ElementRef;
   form: FormGroup;
-  sectors = SECTORS;
   plan: Plan;
+  sectorPlans: SectorPlan[] = [];
   workers: WorkersList[] = [];
+  wait: boolean = false;
 
-  constructor(private fb: FormBuilder, private workersService: WorkersService, private planService: PlanService, public dialog: MatDialog) { }
+  constructor(private fb: FormBuilder, private sectorsService: SectorsService, private workersService: WorkersService, private planService: PlanService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -33,19 +35,31 @@ export class WorkPlanComponent implements OnInit {
       timeTo: ''
     });
 
-    this.workersService.getWorkersList().subscribe(x => {
-      this.workers = x;
-    })
+    this.getSectors();
+    
 
-    this.plan = new Plan();
+      this.workersService.getWorkersList().subscribe(x => {
+        this.workers = x;
+      })
+  
+      this.plan = new Plan();
+   
+  }
+
+ async getSectors(){
+    await this.sectorsService.getSectorsList().toPromise().then(x => {
+      x.forEach(element => {
+        this.sectorPlans.push({sector: element, workers: []});
+      });
+    })
   }
 
   edit(sector){
+    console.log(sector);
+    
     const dialogRef = this.dialog.open(SetPlanDialogComponent, {
       width: '950px',
-      data: {sectorName: sector, plan: this.plan, workers: this.workers}
-      
-      
+      data: {sector: sector, workers: this.workers} 
    });
 
    dialogRef.afterClosed().subscribe(() => {
@@ -58,6 +72,9 @@ export class WorkPlanComponent implements OnInit {
     if(this.dateString.nativeElement.value !== '' && this.workers.length == 0 && this.from.nativeElement.value !== '' && this.to.nativeElement.value !== ''){
       this.plan.date = this.dateString.nativeElement.value;
       this.plan.hours = this.from.nativeElement.value + " - " + this.to.nativeElement.value;
+      this.plan.sectors = this.sectorPlans;
+      console.log(this.plan);
+      
       this.planService.newPlan(this.plan).subscribe(x => {
         this.success = x;
       })
@@ -67,6 +84,7 @@ export class WorkPlanComponent implements OnInit {
   }
 
   onReset(){
+    this.sectorPlans = [];
     this.ngOnInit();
   }
 

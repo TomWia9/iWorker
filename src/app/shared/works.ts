@@ -1,1 +1,0 @@
-export const WORKS: string[] = ['Maliny', 'Truskawki', 'Jerzyny', 'Borówki'];

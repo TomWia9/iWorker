@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RaportDetails } from './raportDetails';
 import { ActivatedRoute } from '@angular/router';
 import { RaportService } from 'src/app/services/raport.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
@@ -28,7 +27,6 @@ export class RaportDetailsComponent implements OnInit {
       amount: '',
       hours: '',
       date: '',
-      chests: '',
     });
 
     this.id = this.route.snapshot.params.id;
@@ -37,12 +35,11 @@ export class RaportDetailsComponent implements OnInit {
         userID: x.userID,
         name: x.name,
         surname: x.surname,
-        workName: x.workName,
-        sector: x.sector,
-        amount:x.amount,
+        sector: x.sector.sectorName,
+        workName: x.sector.workName,
+        amount: x.amount,
         hours: x.hours,
         date: x.date,
-        chests: x.chests,
       });
 
       this.date = x.date;

@@ -72,7 +72,10 @@ export class SectorsComponent implements OnInit {
   async showSectorsList(){
 
     await this.sectorsService.getSectorsList().toPromise().then(x => {      
+      console.log(x);
       this.sectors = x;
+     
+      
     })
 
     if(this.componentRef){

@@ -30,10 +30,10 @@
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label>Wykonywana praca</mat-label>
-                    <mat-select formControlName="workName">
-                        <mat-option *ngFor="let work of works" [value]="work">
-                            {{ work }}
+                    <mat-label>Sector | Work</mat-label>
+                    <mat-select formControlName="sector">
+                        <mat-option *ngFor="let sector of sectors" [value]="sector">
+                            {{ sector.sectorName }} | {{sector.workName}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -43,22 +43,6 @@
                 </mat-form-field>
             </div>
             <div class="data">
-                <mat-form-field appearance="outline">
-                    <mat-label>Sektor</mat-label>
-                    <mat-select formControlName="sector">
-                        <mat-option *ngFor="let sector of sectors" [value]="sector">
-                            {{ sector }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-                <mat-form-field appearance="outline">
-                    <mat-label>Rodzaj skrzynek</mat-label>
-                    <mat-select formControlName="chests">
-                        <mat-option *ngFor="let chest of chests" [value]="chest">
-                            {{ chest }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Ilość</mat-label>
                     <input matInput formControlName="amount" type="number" min="1" max="999" step="any">
