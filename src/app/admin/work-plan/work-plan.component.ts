@@ -54,9 +54,7 @@ export class WorkPlanComponent implements OnInit {
     })
   }
 
-  edit(sector){
-    console.log(sector);
-    
+  edit(sector){    
     const dialogRef = this.dialog.open(SetPlanDialogComponent, {
       width: '950px',
       data: {sector: sector, workers: this.workers} 
@@ -93,12 +91,13 @@ export class WorkPlanComponent implements OnInit {
     let dateString: string;
     date.setDate(date.getDate() - 1);
     dateString = date.toLocaleDateString();
-    await this.planService.getFullPlan(dateString).toPromise().then(x => {     
+    await this.planService.getFullPlan('14.05.2020').toPromise().then(x => {     
         this.plan = x;  
     })
 
     if(this.plan !== null){
       this.sectorPlans.forEach(sector => {
+        sector.workers = [];
         this.plan.sectors.forEach(sectorFromAPI => {
           if(sector.sector.sectorName === sectorFromAPI.sector.sectorName){
             sector.workers = sectorFromAPI.workers
