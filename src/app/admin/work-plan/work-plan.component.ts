@@ -21,7 +21,7 @@ export class WorkPlanComponent implements OnInit {
   @ViewChild('from', {static: true}) from: ElementRef;
   @ViewChild('to', {static: true}) to: ElementRef;
   form: FormGroup;
-  plan: Plan;
+  plan: Plan = new Plan();
   sectorPlans: SectorPlan[] = [];
   workers: WorkersList[] = [];
   wait: boolean = false;
@@ -70,10 +70,10 @@ export class WorkPlanComponent implements OnInit {
   onSave(){
    
     if(this.dateString.nativeElement.value !== '' && this.workers.length == 0 && this.from.nativeElement.value !== '' && this.to.nativeElement.value !== ''){
+     
       this.plan.date = this.dateString.nativeElement.value;
       this.plan.hours = this.from.nativeElement.value + " - " + this.to.nativeElement.value;
-      this.plan.sectors = this.sectorPlans;
-      console.log(this.plan);
+      this.plan.sectors = this.sectorPlans; 
       
       this.planService.newPlan(this.plan).subscribe(x => {
         this.success = x;
@@ -98,6 +98,13 @@ export class WorkPlanComponent implements OnInit {
     })
 
     if(this.plan !== null){
+      this.sectorPlans.forEach(sector => {
+        this.plan.sectors.forEach(sectorFromAPI => {
+          if(sector.sector.sectorName === sectorFromAPI.sector.sectorName){
+            sector.workers = sectorFromAPI.workers
+          }
+        });
+      });
       this.plan.date = '';
       this.workers = [];
       this.form = this.fb.group({
