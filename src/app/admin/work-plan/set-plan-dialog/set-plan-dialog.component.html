@@ -1,18 +1,18 @@
-<h2>Sektor {{data.sector.sector.sectorName}}</h2>
-<h4>Kliknij na danego pracownika aby go usunąć z sektora</h4>
+<h2>Sector {{data.sector.sector.sectorName}}</h2>
+<h4>Click on the employee to remove him from the sector</h4>
 <div class="container">
     <div class="list">
         <mat-table class="table" [dataSource]="dataSource">
             <ng-container matColumnDef="userID">
-                <mat-header-cell *matHeaderCellDef>Numer pracownika</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef>Number of worker</mat-header-cell>
                 <mat-cell *matCellDef="let element"><a class="element">{{ element.userID }}</a> </mat-cell>
             </ng-container>
             <ng-container matColumnDef="name">
-                <mat-header-cell *matHeaderCellDef>Imię</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
                 <mat-cell *matCellDef="let element"><a class="element">{{ element.name }}</a> </mat-cell>
             </ng-container>
             <ng-container matColumnDef="surname">
-                <mat-header-cell *matHeaderCellDef>Nazwisko</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef>Surname</mat-header-cell>
                 <mat-cell *matCellDef="let element"><a class="element">{{ element.surname }}</a> </mat-cell>
             </ng-container>
             <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
@@ -22,7 +22,7 @@
 
     <form [formGroup]="form">
         <mat-form-field appearance="outline">
-            <mat-label>Pracownik</mat-label>
+            <mat-label>Worker</mat-label>
             <mat-select formControlName="worker" (selectionChange)="onChange()">
                 <mat-option *ngFor="let worker of data.workers" [value]="worker">
                     {{ worker.userID }} | {{ worker.name }} {{ worker.surname }}
@@ -30,9 +30,8 @@
             </mat-select>
         </mat-form-field>
         <div class="actions">
-            <button class="button" mat-raised-button (click)="onAdd(form.value)" [disabled]="!showButton">Dodaj</button>
-            <!-- <button class="button" mat-raised-button>Zatwierdź</button> -->
-            <button class="button" mat-raised-button (click)="onExit()">Wyjdź</button>
+            <button class="button" mat-raised-button (click)="onAdd(form.value)" [disabled]="!showButton">Add</button>
+            <button class="button" mat-raised-button (click)="onExit()">Exit</button>
         </div>
     </form>
 </div>

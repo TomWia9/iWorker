@@ -1,10 +1,10 @@
 <mat-table class="table" [ngStyle]="{'max-height':  !isInDashboard ? '500px' : '200px'}" [dataSource]="dataSource">
     <ng-container matColumnDef="worker">
-        <mat-header-cell *matHeaderCellDef>Wiadomość od</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef>Message from</mat-header-cell>
         <mat-cell *matCellDef="let element"><a class="element"> {{element.worker.userID}} | {{ element.worker.name }} {{ element.worker.surname}}</a> </mat-cell>
     </ng-container>
     <ng-container matColumnDef="date">
-        <mat-header-cell *matHeaderCellDef>Data</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
         <mat-cell *matCellDef="let element"><a class="element">{{ element.date }}</a> </mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>

@@ -3,7 +3,7 @@
         <mat-card class="table-container">
             <mat-card-header class="table-header">
                 <mat-card-title>
-                    <h1>Lista pracowników</h1>
+                    <h1>List of employees</h1>
                     <mat-divider></mat-divider>
                 </mat-card-title>
             </mat-card-header>
@@ -16,22 +16,22 @@
         <mat-card-content>
             <form [formGroup]="form">
                 <mat-form-field appearance="outline" class="amount">
-                    <mat-label>Liczba pracowników</mat-label>
+                    <mat-label>Number of employees</mat-label>
                     <input matInput type="number" formControlName="amount" readonly>
                 </mat-form-field>
             </form>
             <div class="actions">
                 <button class="btn" mat-raised-button (click)="addWorker()">
                     <mat-icon class="icon" aria-hidden="false" aria-label="add">note_add</mat-icon>
-                    <span>Dodaj pracownika</span>      
+                    <span>Add employee</span>      
                 </button>
                 <button class="btn" mat-raised-button (click)="onDelete()">
                     <mat-icon class="icon" aria-hidden="false" aria-label="add">delete</mat-icon>
-                    <span>Usuń pracownika</span>          
+                    <span>Delete employee</span>          
                 </button>
                 <button class="btn" mat-raised-button (click)="onEdit()">
                     <mat-icon class="icon" aria-hidden="false" aria-label="edit">edit</mat-icon>
-                    <span>Edytuj pracownika</span>                 
+                    <span>Edit employee</span>                 
                 </button>
             </div>
         </mat-card-content>

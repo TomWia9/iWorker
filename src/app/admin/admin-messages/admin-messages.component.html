@@ -1,16 +1,16 @@
 <mat-card class="container">
     <mat-card-header class="header">
         <mat-card-title>
-            <h2>Wiadomości</h2>
+            <h2>Messages</h2>
         </mat-card-title>
     </mat-card-header>
     <mat-card-content class="content">
         <div class="actions">
-            <button class="btn" mat-raised-button (click)="newMessageToAll()">Nowa wiadomość do wszystkich pracowników</button>
-            <button class="btn" mat-raised-button (click)="newMessage()">Nowa wiadomość do wybranego pracownika</button>
+            <button class="btn" mat-raised-button (click)="newMessageToAll()">New message to all employees</button>
+            <button class="btn" mat-raised-button (click)="newMessage()">New message to the selected employee</button>
         </div>
         <div class="messages">
-            <h2>Twoje wiadomości</h2>
+            <h2>Your messages</h2>
             <app-message-list [isInDashboard]="false" [peroid]="60"></app-message-list>
         </div>
     </mat-card-content>

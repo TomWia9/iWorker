@@ -2,7 +2,7 @@
     <mat-card class="container">
         <mat-card-header class="header">
             <mat-card-title>
-                <h1>Nowy raport</h1>
+                <h1>New report</h1>
                 <mat-divider></mat-divider>
             </mat-card-title>
         </mat-card-header>
@@ -10,21 +10,21 @@
 
             <div class="data">
                 <mat-form-field appearance="outline">
-                    <mat-label>Numer pracownika</mat-label>
+                    <mat-label>Worker number</mat-label>
                     <input matInput type="number" formControlName="userID" readonly>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label>Imię</mat-label>
+                    <mat-label>Name</mat-label>
                     <input matInput type="text" formControlName="name" readonly>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label>Nazwisko</mat-label>
+                    <mat-label>Surname</mat-label>
                     <input matInput type="text" formControlName="surname" readonly>
                 </mat-form-field>
             </div>
             <div class="data">
                 <mat-form-field appearance="outline">
-                    <mat-label>Data</mat-label>
+                    <mat-label>Date</mat-label>
                     <input matInput [matDatepicker]="picker" formControlName="date" #dateString>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
@@ -38,21 +38,21 @@
                     </mat-select>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label>Liczba godzin pracy</mat-label>
+                    <mat-label>Number of work hours</mat-label>
                     <input matInput formControlName="hours" type="number" min="1" max="12" step="0.25">
                 </mat-form-field>
             </div>
             <div class="data">
                 <mat-form-field appearance="outline">
-                    <mat-label>Ilość</mat-label>
+                    <mat-label>Amount (kg)</mat-label>
                     <input matInput formControlName="amount" type="number" min="1" max="999" step="any">
                 </mat-form-field>
             </div>
-            <p class="err" *ngIf="cantAdd">Nie udało się dodać raportu, sprawdź datę, sprawdź czy wypełniłeś wszystkie pola oraz czy nie dodałeś już raportu na dany dzień</p>
+            <p class="err" *ngIf="cantAdd">The report could not be added, check the date, check if you have completed all fields and have not added the report for the given day</p>
             <p class="mistake">If you make a mistake, you can edit the report until midnight by overwriting the previous report</p>
         </mat-card-content>
         <mat-card-actions class="actions">
-            <button class="button" mat-raised-button type="submit">Dodaj raport</button>
+            <button class="button" mat-raised-button type="submit">Add report</button>
         </mat-card-actions>
     </mat-card>
 </form>

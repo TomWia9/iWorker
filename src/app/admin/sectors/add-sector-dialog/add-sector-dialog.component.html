@@ -13,11 +13,11 @@
             <mat-label>Work name</mat-label>
             <input matInput type="text" formControlName="workName">
         </mat-form-field>
-        <span class="err" *ngIf="wrong">Dany sektor jest już dodany lub nie wszystkie pola są wypełnione</span>
-        <span class="err" *ngIf="wrong == false" [ngStyle]="{backgroundColor: wrong ? 'mistyrose' : 'forestgreen'}">Pomyślnie dodano sektor</span>
+        <span class="err" *ngIf="wrong">The sector is already added or not all fields are filled</span>
+        <span class="err" *ngIf="wrong == false" [ngStyle]="{backgroundColor: wrong ? 'mistyrose' : 'forestgreen'}">Successfully added sector</span>
     </mat-card-content>
     <mat-card-actions class="actions">
-        <button class="button" type="submit" mat-raised-button>Dodaj</button>
-        <button class="button" mat-raised-button (click)="onExit()">Wyjdź</button>
+        <button class="button" type="submit" mat-raised-button>Add</button>
+        <button class="button" mat-raised-button (click)="onExit()">Exit</button>
     </mat-card-actions>
 </form>

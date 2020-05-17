@@ -2,42 +2,42 @@
     <mat-card class="container">
         <mat-card-header class="header">
             <mat-card-title>
-                <h2>Plan pracy</h2>
+                <h2>Plan of work</h2>
             </mat-card-title>
         </mat-card-header>
         <mat-card-content class="content">
             <div class="choose">
                 <mat-form-field appearance="outline">
-                    <mat-label>Wybierz datę</mat-label>
+                    <mat-label>Select date</mat-label>
                     <input matInput [matDatepicker]="picker" formControlName="date" #dateString>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label>Od</mat-label>
+                    <mat-label>From</mat-label>
                     <input matInput type="time" formControlName="timeFrom" #from>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label>Do</mat-label>
+                    <mat-label>To</mat-label>
                     <input matInput type="time" formControlName="timeTo" #to>
                 </mat-form-field>
             </div>
             <div class="buttonsArea">
-                <button class="button" mat-raised-button (click)="likeYesterday()">Ustaw taki plan jak ostatnio</button>
-                <button class="button" mat-raised-button (click)="onReset()">Resetuj plan</button>
-                <button class="button" mat-raised-button (click)="onDelete()">Usuń plan</button>
+                <button class="button" mat-raised-button (click)="likeYesterday()">Set the plan as last time</button>
+                <button class="button" mat-raised-button (click)="onReset()">Reset plan</button>
+                <button class="button" mat-raised-button (click)="onDelete()">Delete plan</button>
             </div>
 
 
-            <h3>Sektory:</h3>
+            <h3>Sectors:</h3>
             <div class="sectors">
                 <button mat-raised-button class="button" *ngFor="let sectorPlan of sectorPlans" (click)="edit(sectorPlan)">{{sectorPlan.sector.sectorName}}</button>
             </div>
-            <p class="err" *ngIf="success == true" [ngStyle]="{backgroundColor: success ? 'forestgreen' : 'mistyrose'}">Pomyślnie dodano plan</p>
-            <p class="err" *ngIf="success == false">Nie udało się dodać planu, sprawdź czy wybrałeś datę, godziny i czy przypisałeś wszystkich pracowników</p>
+            <p class="err" *ngIf="success == true" [ngStyle]="{backgroundColor: success ? 'forestgreen' : 'mistyrose'}">Plan successfully added</p>
+            <p class="err" *ngIf="success == false">It was not possible to add the plan, check if you selected the date and time and if you assigned all employees</p>
         </mat-card-content>
         <mat-card-actions class=" actions ">
-            <button class="button" mat-raised-button (click)="onSave()">Zapisz plan</button>
+            <button class="button" mat-raised-button (click)="onSave()">Save plan</button>
         </mat-card-actions>
     </mat-card>
 </form>

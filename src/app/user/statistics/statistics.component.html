@@ -2,30 +2,30 @@
     <mat-card class="container">
         <mat-card-header class="header">
             <mat-card-title>
-                <h2>Statystyki</h2>
+                <h2>Statistics</h2>
                 <mat-divider></mat-divider>
             </mat-card-title>
         </mat-card-header>
         <mat-card-content class="content">
             <div class="mainStatistics">
-                <h3>Wczorajszy dzień</h3>
+                <h3>Yesterday</h3>
                 <mat-form-field appearance="outline">
-                    <mat-label>Miejsce w rankingu pracowników</mat-label>
+                    <mat-label>Position in the employee ranking</mat-label>
                     <input matInput readonly formControlName="rankingPosition">
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label>Ilośc zebranych owoców (w kg)</mat-label>
+                    <mat-label>Amount of collected fruit (kg)</mat-label>
                     <input matInput readonly formControlName="amount">
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label>Ilośc przepracowanych godzin</mat-label>
+                    <mat-label>Number of worked hours</mat-label>
                     <input matInput readonly formControlName="hours">
                 </mat-form-field>
             </div>
             <div class="allStatistics">
-                <a class="btn" mat-raised-button [routerLink]="['/statistics/data', 1]">Szczegółowe statystyki rankingu</a>
-                <a class="btn" mat-raised-button [routerLink]="['/statistics/data', 2]">Szczegółowe statystyki zbiorów</a>
-                <a class="btn" mat-raised-button [routerLink]="['/statistics/data', 3]">Szczegółowe statystyki godzin pracy</a>
+                <a class="btn" mat-raised-button [routerLink]="['/statistics/data', 1]">Detailed ranking statistics</a>
+                <a class="btn" mat-raised-button [routerLink]="['/statistics/data', 2]">Detailed harvest statistics</a>
+                <a class="btn" mat-raised-button [routerLink]="['/statistics/data', 3]">Detailed hours of work statistics</a>
             </div>
 
             <div class="mainStatistics">

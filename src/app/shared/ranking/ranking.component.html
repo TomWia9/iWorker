@@ -1,7 +1,7 @@
 <mat-card class="container">
     <mat-card-header class="header">
         <mat-card-title>
-            <h1>Ranking pracowników na dzień: {{dateString}}</h1>
+            <h1>Employee ranking for {{dateString}}</h1>
             <mat-divider></mat-divider>
         </mat-card-title>
     </mat-card-header>
@@ -11,7 +11,7 @@
             <input matInput (keyup)="applyFilter($event)" placeholder="Szukaj">
         </mat-form-field>
         <mat-form-field class="date" appearance="outline">
-            <mat-label>Zmień dzień</mat-label>
+            <mat-label>Change day</mat-label>
             <input matInput [matDatepicker]="picker" (dateInput)="changeDate()" disabled #dateInput>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker disabled="false"></mat-datepicker>

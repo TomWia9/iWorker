@@ -38,17 +38,17 @@ export class StatisticsDataComponent implements OnInit {
    this.statisticsService.getChartData(this.userID, 31, this.chartID).subscribe(x  => { 
         switch(+this.chartID){
           case 1: {
-            this.statsType = 'rankingu'
+            this.statsType = 'Ranking'
             this.chartData = [{data: x, label: 'Pozycja w rankingu', pointRadius: 8}];
             break;
           }
           case 2: {
-            this.statsType = 'zbiorów'
+            this.statsType = 'Harvest '
             this.chartData = x;
             break;
           }
           case 3: {
-            this.statsType = 'godzin pracy'
+            this.statsType = 'Hours of work'
             this.chartData = [ {data: x, label: 'Ilość godzin'} ];
             break;
           }

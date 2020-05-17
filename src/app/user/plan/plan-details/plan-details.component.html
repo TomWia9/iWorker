@@ -1,16 +1,16 @@
 <form [formGroup]="form" *ngIf="!noPlan">
     <mat-form-field class="formField" appearance="outline" [ngStyle]="{fontSize: isInDashboard == true ? '15px' : '20px'}">
-        <mat-label>Wykonywana praca</mat-label>
+        <mat-label>Work</mat-label>
         <input matInput formControlName="workName" readonly>
     </mat-form-field>
     <mat-form-field class="formField" appearance="outline" [ngStyle]="{fontSize: isInDashboard == true ? '15px' : '20px'}">
-        <mat-label>Sektor</mat-label>
+        <mat-label>Sector</mat-label>
         <input matInput formControlName="sector" readonly>
     </mat-form-field>
     <mat-form-field class="formField" appearance="outline" [ngStyle]="{fontSize: isInDashboard == true ? '15px' : '20px'}">
-        <mat-label>Godziny pracy</mat-label>
+        <mat-label>Hours of work</mat-label>
         <input matInput formControlName="hours" readonly>
     </mat-form-field>
 </form>
 
-<p class="err" *ngIf="noPlan">Brak planu na dany dzień</p>
+<p class="err" *ngIf="noPlan">There's no plan added for selected day</p>

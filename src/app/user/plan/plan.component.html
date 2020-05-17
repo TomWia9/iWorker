@@ -1,13 +1,13 @@
 <mat-card class="container">
     <mat-card-header class="header">
         <mat-card-title>
-            <h1>Plan pracy</h1>
+            <h1>Plan of work</h1>
             <mat-divider></mat-divider>
         </mat-card-title>
     </mat-card-header>
     <mat-card-content class="content">
         <mat-form-field class="formField" appearance="outline">
-            <mat-label>Wybierz dzień</mat-label>
+            <mat-label>Choose day</mat-label>
             <input matInput [matDatepicker]="picker" (dateInput)="showPlan()" disabled #dateInput>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker disabled="false"></mat-datepicker>

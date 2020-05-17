@@ -1,20 +1,20 @@
 <mat-card class="container">
     <mat-card-header class="header">
         <mat-card-title>
-            <h2>Witaj {{name}}</h2>
+            <h2>Hello {{name}}</h2>
         </mat-card-title>
     </mat-card-header>
     <mat-card-content class="content">
         <div class="planContainer">
-            <h2>Plan na jutro</h2>
+            <h2>Plan for tomorrow</h2>
             <app-plan-details [date]="dateString" [isInDashboard]="true"></app-plan-details>
         </div>
         <div class="raportContainer">
-            <a class="btn" mat-raised-button [routerLink]="['/new-raport']">Dodaj nowy raport</a>
-            <a class="btn" mat-raised-button [routerLink]="['/messages']">Wiadomości</a>
+            <a class="btn" mat-raised-button [routerLink]="['/new-raport']">Add new report</a>
+            <a class="btn" mat-raised-button [routerLink]="['/messages']">Messages</a>
         </div>
         <div class="statsContainer">
-            <h2>Statystyki z ostatniego tygodnia</h2>
+            <h2>Statistics from last week</h2>
             <app-main-statistics></app-main-statistics>
         </div>
     </mat-card-content>

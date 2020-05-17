@@ -1,7 +1,7 @@
 <form [formGroup]="form" *ngIf="chartID == 1 || chartID == 2 || chartID == 3">
     <mat-card class="container">
         <mat-card-header class="header">
-            <mat-card-title>Statystyki {{ statsType}}</mat-card-title>
+            <mat-card-title>{{ statsType}} statistics</mat-card-title>
         </mat-card-header>
         <mat-card-content class="content">
             <div class="stats">
@@ -11,7 +11,7 @@
                     <input matInput formControlName="max" readonly>
                 </mat-form-field>
                 <mat-form-field appearance="outline" *ngIf="chartID == 2 || chartID == 3">
-                    <mat-label>ŁĄCZNIE</mat-label>
+                    <mat-label>TOTAL</mat-label>
                     <input matInput formControlName="total" readonly>
                 </mat-form-field>
 
@@ -22,24 +22,20 @@
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
-                    <mat-label>ŚREDNIA</mat-label>
+                    <mat-label>AVERAGE</mat-label>
                     <input matInput formControlName="avg" readonly>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label>ŚREDNIA MIESIĘCZNA</mat-label>
+                    <mat-label>MONTH AVERAGE</mat-label>
                     <input matInput formControlName="avgMonth" readonly>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label>ŚREDNIA TYGODNIOWA</mat-label>
+                    <mat-label>WEEK AVERGAE</mat-label>
                     <input matInput formControlName="avgWeek" readonly>
                 </mat-form-field>
-
             </div>
 
-
-            <button *ngIf="chartID == 1" class="button" mat-raised-button [routerLink]="['/ranking']">Wyświetl ranking</button>
-
-
+            <button *ngIf="chartID == 1" class="button" mat-raised-button [routerLink]="['/ranking']">Display ranking</button>
 
             <div class="chart " *ngIf="chartID==1 && wait>= 2">
                 <app-line-chart [chartData]="chartData" [chartLabels]="chartLabels"></app-line-chart>
@@ -55,4 +51,4 @@
         </mat-card-content>
     </mat-card>
 </form>
-<p class="err" *ngIf="chartID != 1 && chartID != 2 && chartID != 3">Niepoprawny numer wykresu! </p>
+<p class="err" *ngIf="chartID != 1 && chartID != 2 && chartID != 3">Invalid chart number</p>

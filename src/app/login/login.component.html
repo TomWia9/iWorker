@@ -13,7 +13,7 @@
             <mat-card class="container">
                 <mat-card-header class="header">
                     <mat-card-title>
-                        <h1>Znajdź nas na:</h1>
+                        <h1>Find us on:</h1>
                     </mat-card-title>
                 </mat-card-header>
                 <mat-card-content class="content">
@@ -36,29 +36,29 @@
             <mat-card class="container">
                 <mat-card-header class="header">
                     <mat-card-title>
-                        <h1>Zaloguj się</h1>
+                        <h1>Sign In</h1>
                     </mat-card-title>
                 </mat-card-header>
                 <mat-card-content class="content">
                     <mat-form-field>
-                        <mat-label>Numer pracownika</mat-label>
+                        <mat-label>Worker number</mat-label>
                         <input matInput type="number" formControlName="userID">
                     </mat-form-field>
                     <mat-form-field>
-                        <mat-label>Hasło</mat-label>
+                        <mat-label>Password</mat-label>
                         <input matInput type="password" formControlName="password">
                     </mat-form-field>
-                    <span class="err" *ngIf="wrong">Podane Login lub hasło są niepoprawne</span>
+                    <span class="err" *ngIf="wrong">The provided login or password is incorrect</span>
                 </mat-card-content>
                 <mat-card-actions class="actions">
-                    <button class="button" type="submit" mat-raised-button>Zaloguj</button>
+                    <button class="button" type="submit" mat-raised-button>Log in</button>
                 </mat-card-actions>
             </mat-card>
         </div>
     </div>
 
     <div class="footer">
-        <p>W przypadku braku przypisanego numeru pracownika lub innych problemów proszę skontaktować się z pracodawcą</p>
+        <p>In the absence of an assigned employee number or other problems, please contact the employer</p>
     </div>
 
 </form>

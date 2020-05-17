@@ -2,45 +2,45 @@
     <mat-card class="container">
         <mat-card-header class="header">
             <mat-card-title>
-                Raport z dnia {{date}}:
+                Report from {{date}}:
             </mat-card-title>
         </mat-card-header>
         <mat-card-content class="content">
             <div class="data">
                 <mat-form-field appearance="outline">
-                    <mat-label>Numer pracownika</mat-label>
+                    <mat-label>Worker number</mat-label>
                     <input matInput type="number" formControlName="userID" readonly>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label>Imię</mat-label>
+                    <mat-label>Name</mat-label>
                     <input matInput type="text" formControlName="name" readonly>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label>Nazwisko</mat-label>
+                    <mat-label>Surname</mat-label>
                     <input matInput type="text" formControlName="surname" readonly>
                 </mat-form-field>
             </div>
             <div class="data">
                 <mat-form-field appearance="outline">
-                    <mat-label>Data</mat-label>
+                    <mat-label>Date</mat-label>
                     <input matInput type="text" formControlName="date" readonly>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label>Wykonywana praca</mat-label>
+                    <mat-label>Work</mat-label>
                     <input matInput type="text" formControlName="workName" readonly>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label>Liczba godzin pracy</mat-label>
+                    <mat-label>Number of work hours</mat-label>
                     <input matInput formControlName="hours" type="text" readonly>
                 </mat-form-field>
             </div>
             <div class="data">
                 <mat-form-field appearance="outline">
-                    <mat-label>Sektor</mat-label>
+                    <mat-label>Sector</mat-label>
                     <input matInput formControlName="sector" type="text" readonly>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label>Ilość</mat-label>
+                    <mat-label>Amount (kg)</mat-label>
                     <input matInput formControlName="amount" type="text">
                 </mat-form-field>
             </div>

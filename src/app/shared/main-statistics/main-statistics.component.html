@@ -1,14 +1,14 @@
 <div class="charts" *ngIf="wait >=5">
     <div class="chartItem">
-        <h3>Twoje miejsca w rankingu</h3>
+        <h3>Your places in the ranking</h3>
         <app-line-chart [chartData]="lineChartData" [chartLabels]="chartLabels"></app-line-chart>
     </div>
     <div class="chartItem">
-        <h3>Ilość zebranych owoców (w kg)</h3>
+        <h3>Amount of collected fruit(in kg)</h3>
         <app-pie-chart [chartData]="pieChartData" [chartLabels]="pieChartLabels"></app-pie-chart>
     </div>
     <div class="chartItem">
-        <h3>Ilość przepracowanych godzin</h3>
+        <h3>Number of worked hours </h3>
         <app-bar-chart [chartData]="barChartData" [chartLabels]="chartLabels"></app-bar-chart>
     </div>
 </div>

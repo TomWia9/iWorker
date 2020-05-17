@@ -1,22 +1,21 @@
 <mat-card class="container">
     <mat-card-header class="header">
         <mat-card-title>
-            <h1>Statystyki</h1>
+            <h1>Statistics</h1>
         </mat-card-title>
     </mat-card-header>
     <mat-card-content class="content">
         <div class="ranking">
-            <h2>Top 3 najlepszych pracowników wczoraj</h2>
+            <h2>Top 3 workers from yesterday</h2>
             <app-ranking-list [ranking]="top3"></app-ranking-list>
-            <button mat-raised-button class="btn" [routerLink]="['/admin/ranking']">Wyświetl pełny ranking</button>
+            <button mat-raised-button class="btn" [routerLink]="['/admin/ranking']">Show full ranking</button>
         </div>
         <div class="charts">
-            <h2>Łączna ilość zbiorów</h2>
+            <h2>Total amount of fruit crops</h2>
             <app-pie-chart *ngIf="wait >=2" [chartData]="chartData" [chartLabels]="chartLabels"></app-pie-chart>
-            <!--jeszcze jeden jakis wykres-->
         </div>
         <div class="otherStats">
-            <button mat-raised-button class="btn" (click)="onSelectWorker()">Statystyki ze względu na pracownika (ostatni miesiąc)</button>
+            <button mat-raised-button class="btn" (click)="onSelectWorker()">Statistics by employee (last month)</button>
             <p *ngIf="canShowWorkerStats">{{selected.userID}} | {{selected.name}} {{selected.surname}}</p>
             <app-main-statistics [userID]="selected.userID" [days]="31" *ngIf="canShowWorkerStats"></app-main-statistics>
         </div>
