@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './message-list.component.html',
   styleUrls: ['./message-list.component.css']
 })
-export class MessageListComponent implements OnInit {
+export class MessageComponent implements OnInit {
   dataSource;
   displayedColumns = ['worker','date'];
   @Input() isInDashboard: boolean = true; //if component isn't in dashboard, then max-height should be 500px

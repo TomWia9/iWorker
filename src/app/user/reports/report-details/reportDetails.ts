@@ -1,6 +1,6 @@
-import { Sector } from 'src/app/admin/sectors/sector';
+import { Sector } from 'src/app/shared/sector';
 
-export class RaportDetails{
+export class ReportDetails{
     userID: number;
     name: string;
     surname: string;

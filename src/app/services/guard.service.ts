@@ -10,7 +10,7 @@ export class GuardService {
 
   constructor(private http: HttpClient) { }
 
-  getUser(userID): Observable<Username>{
+  getWorkersList(userID): Observable<Username>{
     return this.http.get<Username>(`http://localhost:5001/api/user/exists/${userID}`);
   }
 }

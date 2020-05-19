@@ -3,8 +3,8 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { SetPlanDialogComponent } from './set-plan-dialog/set-plan-dialog.component';
 import { Plan } from './plan';
-import { WorkersList } from '../workers/workers-list/workers-list';
-import { WorkersService } from 'src/app/services/workers.service';
+import { User } from '../../shared/user';
+import { UsersService } from 'src/app/services/users.service';
 import { PlanService } from 'src/app/services/plan.service';
 import { DeletePlanDialogComponent } from './delete-plan-dialog/delete-plan-dialog.component';
 import { SectorsService } from 'src/app/services/sectors.service';
@@ -23,10 +23,10 @@ export class WorkPlanComponent implements OnInit {
   form: FormGroup;
   plan: Plan = new Plan();
   sectorPlans: SectorPlan[] = [];
-  workers: WorkersList[] = [];
+  workers: User[] = [];
   wait: boolean = false;
 
-  constructor(private fb: FormBuilder, private sectorsService: SectorsService, private workersService: WorkersService, private planService: PlanService, public dialog: MatDialog) { }
+  constructor(private fb: FormBuilder, private sectorsService: SectorsService, private workersService: UsersService, private planService: PlanService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -91,29 +91,26 @@ export class WorkPlanComponent implements OnInit {
     let dateString: string;
     date.setDate(date.getDate() - 1);
     dateString = date.toLocaleDateString();
-    await this.planService.getFullPlan(dateString).toPromise().then(x => {     
+    await this.planService.getFullPlan(dateString).toPromise().then(x => {  
+      if(x !== null){
         this.plan = x;  
-    })
-
-    if(this.plan !== null){
-      this.sectorPlans.forEach(sector => {
-        sector.workers = [];
-        this.plan.sectors.forEach(sectorFromAPI => {
-          if(sector.sector.sectorName === sectorFromAPI.sector.sectorName){
-            sector.workers = sectorFromAPI.workers
-          }
+        this.sectorPlans.forEach(sector => {
+          sector.workers = [];
+          this.plan.sectors.forEach(sectorFromAPI => {
+            if(sector.sector.sectorName === sectorFromAPI.sector.sectorName){
+              sector.workers = sectorFromAPI.workers
+            }
+          });
         });
-      });
-      this.plan.date = '';
-      this.workers = [];
-      this.form = this.fb.group({
-        date: '',
-        timeFrom: this.plan.hours.substring(0, 5),
-        timeTo: this.plan.hours.substring(8,13),
-      });
-    }
-   
-    
+        this.plan.date = '';
+        this.workers = [];
+        this.form = this.fb.group({
+          date: '',
+          timeFrom: this.plan.hours.substring(0, 5),
+          timeTo: this.plan.hours.substring(8,13),
+        });
+      }   
+    })
   }
 
   onDelete(){

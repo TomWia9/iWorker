@@ -6,7 +6,7 @@ import { StatisticsData } from '../user/statistics/statistics-data/statisticsDat
 import { chartLabelsItem } from '../user/statistics/chartLabelsItem';
 import { ChartDataItem } from '../user/statistics/chartDataItem';
 import { Ranking } from '../shared/ranking/ranking';
-import { WorkersList } from '../admin/workers/workers-list/workers-list';
+import { User } from '../shared/user';
 
 @Injectable({
   providedIn: 'root'

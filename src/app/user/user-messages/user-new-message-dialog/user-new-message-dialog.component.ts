@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { MessageItem } from 'src/app/shared/messageItem';
+import { MessageItem } from 'src/app/shared/messages/messageItem';
 import { MessagesService } from 'src/app/services/messages.service';
 import { AuthService } from 'src/app/services/auth.service';
 

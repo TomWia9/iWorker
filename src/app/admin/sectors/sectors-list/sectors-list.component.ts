@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Sector } from '../sector';
+import { Sector } from '../../../shared/sector';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({

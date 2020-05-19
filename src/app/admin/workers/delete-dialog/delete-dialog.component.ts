@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { WorkersList } from '../workers-list/workers-list';
-import { WorkersService } from 'src/app/services/workers.service';
+import { User } from '../../../shared/user';
+import { UsersService } from 'src/app/services/users.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -11,9 +11,9 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class DeleteDialogComponent implements OnInit {
   form: FormGroup;
-  workers: WorkersList[];
+  workers: User[];
   deleted: boolean = null;
-  constructor(public dialogRef: MatDialogRef<DeleteDialogComponent>, private workersService: WorkersService, private fb: FormBuilder) { }
+  constructor(public dialogRef: MatDialogRef<DeleteDialogComponent>, private workersService: UsersService, private fb: FormBuilder) { }
   
 
   ngOnInit(): void {

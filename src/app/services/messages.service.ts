@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { MessageList } from '../shared/messagesList';
-import { MessageItem } from '../shared/messageItem';
+import { Message } from '../shared/messages/message';
+import { MessageItem } from '../shared/messages/messageItem';
 
  const httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -23,8 +23,8 @@ export class MessagesService {
     return this.http.post<boolean>(`https://localhost:5001/api/messages/sendToUser/${from}/${to}`, message);
   }
 
-  getMessageList(userID, peroid): Observable<MessageList[]>{
-    return this.http.get<MessageList[]>(`https://localhost:5001/api/messages/getMessageList/${userID}/${peroid}`);
+  getMessageList(userID, peroid): Observable<Message[]>{
+    return this.http.get<Message[]>(`https://localhost:5001/api/messages/getMessageList/${userID}/${peroid}`);
   }
 
   getMessage(messageID): Observable<MessageItem>{

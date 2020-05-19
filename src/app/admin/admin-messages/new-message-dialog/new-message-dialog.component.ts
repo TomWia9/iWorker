@@ -1,10 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { WorkersService } from 'src/app/services/workers.service';
+import { UsersService } from 'src/app/services/users.service';
 import { MessagesService } from 'src/app/services/messages.service';
-import { MessageItem } from 'src/app/shared/messageItem';
-import { WorkersList } from 'src/app/admin/workers/workers-list/workers-list';
+import { MessageItem } from 'src/app/shared/messages/messageItem';
+import { User } from 'src/app/shared/user';
 
 @Component({
   selector: 'app-new-message-dialog',
@@ -14,11 +14,11 @@ import { WorkersList } from 'src/app/admin/workers/workers-list/workers-list';
 export class NewMessageDialogComponent implements OnInit {
   message: MessageItem = new MessageItem();
   form: FormGroup;
-  workers: WorkersList[];
+  workers: User[];
   selected: boolean = false;
   error: boolean = false;
 
-  constructor(public dialogRef: MatDialogRef<NewMessageDialogComponent>, private fb: FormBuilder, private workersService: WorkersService, private messagesService: MessagesService) { }
+  constructor(public dialogRef: MatDialogRef<NewMessageDialogComponent>, private fb: FormBuilder, private workersService: UsersService, private messagesService: MessagesService) { }
 
 
   ngOnInit(): void {

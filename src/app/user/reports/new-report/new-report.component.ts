@@ -1,19 +1,19 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { RaportService } from 'src/app/services/raport.service';
-import { RaportDetails } from '../raport-details/raportDetails';
+import { ReportService } from 'src/app/services/report.service';
+import { ReportDetails } from '../report-details/reportDetails';
 import { Router } from '@angular/router';
 import { User } from 'src/app/auth/user';
 import { AuthService } from 'src/app/services/auth.service';
 import { SectorsService } from 'src/app/services/sectors.service';
-import { Sector } from 'src/app/admin/sectors/sector';
+import { Sector } from 'src/app/shared/sector';
 
 @Component({
-  selector: 'app-new-raport',
-  templateUrl: './new-raport.component.html',
-  styleUrls: ['./new-raport.component.css']
+  selector: 'app-new-report',
+  templateUrl: './new-report.component.html',
+  styleUrls: ['./new-report.component.css']
 })
-export class NewRaportComponent implements OnInit {
+export class NewReportComponent implements OnInit {
   form: FormGroup;
   sectors: Sector[];
   @ViewChild('dateString', {static: true}) dateString: ElementRef;
@@ -21,7 +21,7 @@ export class NewRaportComponent implements OnInit {
   cantAdd: boolean = false;
   userInfo: User;
 
-  constructor(private fb: FormBuilder, private sectorsService: SectorsService, private raportService: RaportService, private authService: AuthService, private router: Router) { }
+  constructor(private fb: FormBuilder, private sectorsService: SectorsService, private reportService: ReportService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -47,14 +47,14 @@ export class NewRaportComponent implements OnInit {
     if (value.userID != '' && value.name !== '' && value.surname !== '' && value.date !== '' && value.hours !== '' && value.hours <13
         && value.sector !== '' && value.amount !== ''){
           this.cantAdd = false;
-          const newRaport = value as RaportDetails; 
-          newRaport.date = this.date;
-          console.log(newRaport);
+          const newReport = value as ReportDetails; 
+          newReport.date = this.date;
+          console.log(newReport);
           
           
-          this.raportService.createRaport(newRaport).subscribe(x=> {
+          this.reportService.createReport(newReport).subscribe(x=> {
             if(x != -1){
-              this.router.navigate(['/raport',x]);
+              this.router.navigate(['/report',x]);
             }
             else{
               this.cantAdd = true;

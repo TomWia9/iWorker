@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
-import { WorkersService } from 'src/app/services/workers.service';
+import { UsersService } from 'src/app/services/users.service';
 import { Login } from 'src/app/login/login';
 import { MatDialogRef } from '@angular/material/dialog';
 import { NewPassword } from './newPassword';
@@ -18,7 +18,7 @@ export class SettingsDialogComponent implements OnInit {
   wrongCurrentPassword = false;
   newPassword: NewPassword = new NewPassword();
 
-  constructor(public dialogRef: MatDialogRef<SettingsDialogComponent>, private fb: FormBuilder, private authService: AuthService, private workersService: WorkersService) { }
+  constructor(public dialogRef: MatDialogRef<SettingsDialogComponent>, private fb: FormBuilder, private authService: AuthService, private workersService: UsersService) { }
 
   ngOnInit(): void {
    

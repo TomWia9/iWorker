@@ -1,7 +1,7 @@
-import { Sector } from '../sectors/sector';
-import { WorkersList } from '../workers/workers-list/workers-list';
+import { Sector } from '../../shared/sector';
+import { User } from '../../shared/user';
 
 export class SectorPlan{
     sector: Sector;
-    workers: WorkersList[] = [];
+    workers: User[] = [];
 }

@@ -1,4 +1,4 @@
-export class WorkersList{
+export class User{
     userID: number;
     name: string;
     surname: string;

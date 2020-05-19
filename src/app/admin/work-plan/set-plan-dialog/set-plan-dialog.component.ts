@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { WorkersList } from '../../workers/workers-list/workers-list';
+import { User } from '../../../shared/user';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 
@@ -12,7 +12,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class SetPlanDialogComponent implements OnInit {
   form: FormGroup;
   showButton: boolean = false;
-  dataList: WorkersList[] = [];
+  dataList: User[] = [];
   dataSource;
   displayedColumns = ['userID','name', 'surname'];;
 
@@ -48,7 +48,7 @@ export class SetPlanDialogComponent implements OnInit {
    
   }
 
-  onDelete(row: WorkersList){    
+  onDelete(row: User){    
     this.data.workers.push(row);
     const index = this.dataList.findIndex(x => x.userID == row.userID);
     this.dataList.splice(index, 1);

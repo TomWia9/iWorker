@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WorkersList } from '../workers/workers-list/workers-list';
+import { User } from '../../shared/user';
 import { StatisticsService } from 'src/app/services/statistics.service';
 import { MatDialog } from '@angular/material/dialog';
 import { SelectWorkerDialogComponent } from './select-worker-dialog/select-worker-dialog.component';
@@ -16,7 +16,7 @@ export class AdminStatisticsComponent implements OnInit {
   chartData: any[] = [];
   chartLabels: string[] = [];
   canShowWorkerStats: boolean = false;
-  selected: WorkersList = new WorkersList();
+  selected: User = new User();
   displayedColumns = ['position','userID', 'name', 'surname', 'ratio'];
   top3 = new MatTableDataSource();
   

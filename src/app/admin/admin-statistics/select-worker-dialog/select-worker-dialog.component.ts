@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { WorkersService } from 'src/app/services/workers.service';
+import { UsersService } from 'src/app/services/users.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { WorkersList } from '../../workers/workers-list/workers-list';
+import { User } from '../../../shared/user';
 
 @Component({
   selector: 'app-select-worker-dialog',
@@ -10,8 +10,8 @@ import { WorkersList } from '../../workers/workers-list/workers-list';
   styleUrls: ['./select-worker-dialog.component.css']
 })
 export class SelectWorkerDialogComponent implements OnInit {
-  workers: WorkersList[];
-  constructor(public dialogRef: MatDialogRef<SelectWorkerDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private workersService: WorkersService) { }
+  workers: User[];
+  constructor(public dialogRef: MatDialogRef<SelectWorkerDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private workersService: UsersService) { }
 
   ngOnInit(): void {
     this.workersService.getWorkersList().subscribe(x => {

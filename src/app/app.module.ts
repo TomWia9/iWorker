@@ -25,11 +25,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavComponent } from './user/sidenav/sidenav.component';
-import { NewRaportComponent } from './user/raports/new-raport/new-raport.component';
+import { NewReportComponent } from './user/reports/new-report/new-report.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PlanComponent } from './user/plan/plan.component';
-import { RaportsListComponent } from './user/raports/raports-list/raports-list.component';
-import { RaportDetailsComponent } from './user/raports/raport-details/raport-details.component';
+import { ReportsListComponent } from './user/reports/reports-list/reports-list.component';
+import { ReportDetailsComponent } from './user/reports/report-details/report-details.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { StatisticsComponent } from './user/statistics/statistics.component';
@@ -46,7 +46,7 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
-import { WorkersListComponent } from './admin/workers/workers-list/workers-list.component';
+import { UserComponent } from './admin/workers/workers-list/workers-list.component';
 import { WorkersComponent } from './admin/workers/workers.component';
 import { DeleteDialogComponent } from './admin/workers/delete-dialog/delete-dialog.component';
 import { EditDialogComponent } from './admin/workers/edit-dialog/edit-dialog.component';
@@ -56,13 +56,13 @@ import { AdminStatisticsComponent } from './admin/admin-statistics/admin-statist
 import { SelectWorkerDialogComponent } from './admin/admin-statistics/select-worker-dialog/select-worker-dialog.component';
 import { UserMessagesComponent } from './user/user-messages/user-messages.component';
 import { UserNewMessageDialogComponent } from './user/user-messages/user-new-message-dialog/user-new-message-dialog.component';
-import { AdminRaportsComponent } from './admin/admin-raports/admin-raports.component';
-import { RaportDialogComponent } from './admin/admin-raports/raport-dialog/raport-dialog.component';
+import { AdminReportsComponent } from './admin/admin-reports/admin-reports.component';
+import { ReportDialogComponent } from './admin/admin-reports/report-dialog/report-dialog.component';
 import { AdminMessagesComponent } from './admin/admin-messages/admin-messages.component';
 import { NewMessageDialogComponent } from './admin/admin-messages/new-message-dialog/new-message-dialog.component';
 import { NewMessageToAllDialogComponent } from './admin/admin-messages/new-message-to-all-dialog/new-message-to-all-dialog.component';
 import { MessageDialogComponent } from './shared/messages/message-dialog/message-dialog.component';
-import { MessageListComponent } from './shared/messages/message-list/message-list.component';
+import { MessageComponent } from './shared/messages/message-list/message-list.component';
 import { SettingsDialogComponent } from './shared/settings-dialog/settings-dialog.component';
 import { RankingListComponent } from './shared/ranking/ranking-list/ranking-list.component';
 import { DeletePlanDialogComponent } from './admin/work-plan/delete-plan-dialog/delete-plan-dialog.component';
@@ -77,10 +77,10 @@ import { SectorsListComponent } from './admin/sectors/sectors-list/sectors-list.
   declarations: [
     AppComponent,
     SidenavComponent,
-    NewRaportComponent,
+    NewReportComponent,
     PlanComponent,
-    RaportsListComponent,
-    RaportDetailsComponent,
+    ReportsListComponent,
+    ReportDetailsComponent,
     LoginComponent,
     StatisticsComponent,
     LineChartComponent,
@@ -94,7 +94,7 @@ import { SectorsListComponent } from './admin/sectors/sectors-list/sectors-list.
     RegisterDialogComponent,
     AdminPanelComponent,
     AdminDashboardComponent,
-    WorkersListComponent,
+    UserComponent,
     WorkersComponent,
     DeleteDialogComponent,
     EditDialogComponent,
@@ -107,9 +107,9 @@ import { SectorsListComponent } from './admin/sectors/sectors-list/sectors-list.
     MessageDialogComponent,
     UserMessagesComponent,
     UserNewMessageDialogComponent,
-    AdminRaportsComponent,
-    RaportDialogComponent,
-    MessageListComponent,
+    AdminReportsComponent,
+    ReportDialogComponent,
+    MessageComponent,
     AdminMessagesComponent,
     SettingsDialogComponent,
     RankingListComponent,

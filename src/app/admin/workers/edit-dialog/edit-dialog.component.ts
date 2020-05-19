@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { WorkersService } from 'src/app/services/workers.service';
+import { UsersService } from 'src/app/services/users.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { WorkersList } from '../workers-list/workers-list';
+import { User } from '../../../shared/user';
 
 @Component({
   selector: 'app-edit-dialog',
@@ -11,11 +11,11 @@ import { WorkersList } from '../workers-list/workers-list';
 })
 export class EditDialogComponent implements OnInit {
   form: FormGroup;
-  workers: WorkersList[];
+  workers: User[];
   selected: boolean = false;
   edited: boolean = null;
-  newData: WorkersList = new WorkersList();
-  constructor(public dialogRef: MatDialogRef<EditDialogComponent>, private workersService: WorkersService, private fb: FormBuilder) { }
+  newData: User = new User();
+  constructor(public dialogRef: MatDialogRef<EditDialogComponent>, private workersService: UsersService, private fb: FormBuilder) { }
   
   ngOnInit(): void {
     this.form = this.fb.group({

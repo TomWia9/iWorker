@@ -3,11 +3,11 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { RegisterDialogComponent } from './register-dialog/register-dialog.component';
-import { WorkersService } from 'src/app/services/workers.service';
-import { WorkersListComponent } from './workers-list/workers-list.component';
+import { UsersService } from 'src/app/services/users.service';
+import { UserComponent } from './workers-list/workers-list.component';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
-import { WorkersList } from './workers-list/workers-list';
+import { User } from '../../shared/user';
 
 @Component({
   selector: 'app-workers',
@@ -16,20 +16,20 @@ import { WorkersList } from './workers-list/workers-list';
 })
 export class WorkersComponent implements OnInit {
   form: FormGroup;
-  @ViewChild('dynamicWorkersListComponent', {read: ViewContainerRef, static: true}) target: ViewContainerRef;
+  @ViewChild('dynamicUserComponent', {read: ViewContainerRef, static: true}) target: ViewContainerRef;
   private componentRef: ComponentRef<any>;
-  workers: WorkersList[];
+  workers: User[];
 
-  constructor(private fb: FormBuilder, public dialog: MatDialog, private router: Router, private workersService: WorkersService, private componentFactoryResolver: ComponentFactoryResolver) { }
+  constructor(private fb: FormBuilder, public dialog: MatDialog, private router: Router, private workersService: UsersService, private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit(): void {
-    this.showWorkersList();
+    this.showUser();
 
     this.form = this.fb.group({
       amount: ''
     })
     
-   this.workersService.getWorkersAmount().subscribe(x => {
+   this.workersService.getWorkersNumber().subscribe(x => {
      this.form = this.fb.group({
        amount: x
      })
@@ -67,7 +67,7 @@ export class WorkersComponent implements OnInit {
    });
   }
 
-  async showWorkersList(){
+  async showUser(){
 
     await this.workersService.getWorkersList().toPromise().then(x => {
       this.workers = x;
@@ -77,7 +77,7 @@ export class WorkersComponent implements OnInit {
      this.componentRef.destroy();
     }
  
-     let childComponent = this.componentFactoryResolver.resolveComponentFactory(WorkersListComponent);
+     let childComponent = this.componentFactoryResolver.resolveComponentFactory(UserComponent);
      this.componentRef = this.target.createComponent(childComponent);    
      this.componentRef.instance.workers = this.workers;
    }

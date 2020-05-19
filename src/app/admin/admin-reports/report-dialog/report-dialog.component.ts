@@ -1,20 +1,20 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { RaportService } from 'src/app/services/raport.service';
+import { ReportService } from 'src/app/services/report.service';
 
 @Component({
-  selector: 'app-raport-dialog',
-  templateUrl: './raport-dialog.component.html',
-  styleUrls: ['./raport-dialog.component.css']
+  selector: 'app-report-dialog',
+  templateUrl: './report-dialog.component.html',
+  styleUrls: ['./report-dialog.component.css']
 })
-export class RaportDialogComponent implements OnInit {
+export class ReportDialogComponent implements OnInit {
   form: FormGroup;
   date: Date;
 
   constructor(
-    public dialogRef: MatDialogRef<RaportDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder, private raportService: RaportService) {}
+    public dialogRef: MatDialogRef<ReportDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder, private reportService: ReportService) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -29,7 +29,7 @@ export class RaportDialogComponent implements OnInit {
       chests: '',
     });
     
-    this.raportService.getDetails(this.data.userID, this.data.raportID).subscribe(x => {
+    this.reportService.getDetails(this.data.userID, this.data.reportID).subscribe(x => {
       this.form = this.fb.group({
         userID: x.userID,
         name: x.name,

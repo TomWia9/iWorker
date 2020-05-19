@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { StatisticsService } from 'src/app/services/statistics.service';
-import { RaportService } from 'src/app/services/raport.service';
+import { ReportService } from 'src/app/services/report.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { RaportDialogComponent } from '../admin-raports/raport-dialog/raport-dialog.component';
+import { ReportDialogComponent } from '../admin-reports/report-dialog/report-dialog.component';
 import { NewMessageToAllDialogComponent } from 'src/app/admin/admin-messages/new-message-to-all-dialog/new-message-to-all-dialog.component';
 
 @Component({
@@ -15,16 +15,16 @@ import { NewMessageToAllDialogComponent } from 'src/app/admin/admin-messages/new
     wait: number = 0;
     chartData: any[] = [];
     chartLabels: string[] = [];
-    raports = new MatTableDataSource();
+    reports = new MatTableDataSource();
     displayedColumns = ['number', 'userID', 'workName'];
 
-  constructor(public dialog: MatDialog, private statisticsService: StatisticsService, private raportService: RaportService) { }
+  constructor(public dialog: MatDialog, private statisticsService: StatisticsService, private reportService: ReportService) { }
 
   ngOnInit(): void {
     this.getChartData();
 
-    this.raportService.getAllRaportsList(1).subscribe(x  => {
-      this.raports = new MatTableDataSource(x); 
+    this.reportService.getAllReportsList(1).subscribe(x  => {
+      this.reports = new MatTableDataSource(x); 
       
   });
   }
@@ -56,9 +56,9 @@ import { NewMessageToAllDialogComponent } from 'src/app/admin/admin-messages/new
 
   navigateTo(row: any) {
 
-    const dialogRef = this.dialog.open(RaportDialogComponent, {
+    const dialogRef = this.dialog.open(ReportDialogComponent, {
       width: '1000px',
-      data: {raportID: row.id, userID: row.userID}
+      data: {reportID: row.id, userID: row.userID}
       
    });
 

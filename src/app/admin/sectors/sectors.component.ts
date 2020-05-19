@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ViewContainerRef, ComponentRef, ComponentFactoryResolver } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { Sector } from './sector';
+import { Sector } from '../../shared/sector';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { SectorsService } from 'src/app/services/sectors.service';
