@@ -13,7 +13,7 @@ export class UsersService {
   constructor(private http: HttpClient) { }
 
   register(newUser: Register): Observable<boolean>{
-    return this.http.post<boolean>('https://localhost:5001/api/register', newUser);
+    return this.http.post<boolean>('https://localhost:5001/api/users/register', newUser);
   }
 
   getWorkersList(): Observable<User[]>{

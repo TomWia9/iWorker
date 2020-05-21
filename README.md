@@ -25,7 +25,7 @@ The app provides a couple of possibilities to manage a fruit collectors workers.
 Every user has a unique *ID* number that can be used to log in to the system. By default there is only *ID* and *password* of employer (*ID*: **0**, *Password*: **admin**), employer may change his password after log in and he can add employees to the system.
 
 ## Installation
-You need to have **Node.js** and **npm installed** on your PC/Mac.
+You need to have **Node.js** and **npm** installed on your PC/Mac.
 
 Then just run `npm install` in the project's root.
 
@@ -38,6 +38,13 @@ Run npm start for a dev server. Navigate to `http://localhost:4200/`. The app wi
 ## Build
 
 Run `npm run build` to build the project. The build artifacts will be stored in the dist/ directory. Use the -prod flag for a production build.
+
+## Screenshots
+![Adding a new report](screen-shots\s1.jpg)
+![Employee Dashboard](screen-shots\s2.jpg)
+![Employer Dashboard](screen-shots\s3.jpg)
+![Workers management](screen-shots\s4.jpg)
+![Statistics](screen-shots\s5.jpg)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit)

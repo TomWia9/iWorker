@@ -1,7 +1,7 @@
 <div class="container">
     <h2>Select the employee whose statistics you want to display</h2>
     <mat-form-field appearance="outline">
-        <mat-label>Pracownik</mat-label>
+        <mat-label>Worker</mat-label>
         <mat-select [(ngModel)]="data.selected">
             <mat-option *ngFor="let worker of workers" [value]="worker">
                 {{ worker.userID }} | {{ worker.name }} {{ worker.surname }}
