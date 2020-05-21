@@ -39,12 +39,26 @@ Run npm start for a dev server. Navigate to `http://localhost:4200/`. The app wi
 
 Run `npm run build` to build the project. The build artifacts will be stored in the dist/ directory. Use the -prod flag for a production build.
 
-## Screenshots
-![Adding a new report](screen-shots\s1.jpg)
-![Employee Dashboard](screen-shots\s2.jpg)
-![Employer Dashboard](screen-shots\s3.jpg)
-![Workers management](screen-shots\s4.jpg)
-![Statistics](screen-shots\s5.jpg)
+# Screenshots
+<details>
+  <summary>Click to expand!</summary>
+  
+  #### Adding a new report
+  <img src="screen-shots/s1.jpg" width="500">
+  
+  #### Employee Dashboard
+  <img src="screen-shots/s2.jpg" width="500">
+
+  #### Employer Dashboard
+  <img src="screen-shots/s3.jpg" width="500">
+  
+  #### Workers management
+  <img src="screen-shots/s4.jpg" width="500">
+  
+  #### Statistics
+  <img src="screen-shots/s5.jpg" width="500">
+  
+</details>
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit)
