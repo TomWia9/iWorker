@@ -7,7 +7,7 @@ import { User } from '../../../shared/user';
   templateUrl: './workers-list.component.html',
   styleUrls: ['./workers-list.component.css']
 })
-export class UserComponent implements OnInit {
+export class WorkersListComponent implements OnInit {
   @Input() workers: User[];
   dataSource;
   displayedColumns = ['userID','name', 'surname'];

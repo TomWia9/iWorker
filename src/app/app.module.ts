@@ -45,7 +45,7 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
-import { UserComponent } from './admin/workers/workers-list/workers-list.component';
+import { WorkersListComponent } from './admin/workers/workers-list/workers-list.component';
 import { WorkersComponent } from './admin/workers/workers.component';
 import { DeleteDialogComponent } from './admin/workers/delete-dialog/delete-dialog.component';
 import { EditDialogComponent } from './admin/workers/edit-dialog/edit-dialog.component';
@@ -93,7 +93,7 @@ import { UserReportsListComponent } from './user/reports/user-reports-list/user-
     RegisterDialogComponent,
     AdminPanelComponent,
     AdminDashboardComponent,
-    UserComponent,
+    WorkersListComponent,
     WorkersComponent,
     DeleteDialogComponent,
     EditDialogComponent,

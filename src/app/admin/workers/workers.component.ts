@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { RegisterDialogComponent } from './register-dialog/register-dialog.component';
 import { UsersService } from 'src/app/services/users.service';
-import { UserComponent } from './workers-list/workers-list.component';
+import { WorkersListComponent } from './workers-list/workers-list.component';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { User } from '../../shared/user';
@@ -16,11 +16,11 @@ import { User } from '../../shared/user';
 })
 export class WorkersComponent implements OnInit {
   form: FormGroup;
-  @ViewChild('dynamicUserComponent', {read: ViewContainerRef, static: true}) target: ViewContainerRef;
+  @ViewChild('dynamicWorkersListComponent', {read: ViewContainerRef, static: true}) target: ViewContainerRef;
   private componentRef: ComponentRef<any>;
   workers: User[];
 
-  constructor(private fb: FormBuilder, public dialog: MatDialog, private router: Router, private workersService: UsersService, private componentFactoryResolver: ComponentFactoryResolver) { }
+  constructor(private fb: FormBuilder, public dialog: MatDialog, private workersService: UsersService, private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit(): void {
     this.showUser();
@@ -77,7 +77,7 @@ export class WorkersComponent implements OnInit {
      this.componentRef.destroy();
     }
  
-     let childComponent = this.componentFactoryResolver.resolveComponentFactory(UserComponent);
+     let childComponent = this.componentFactoryResolver.resolveComponentFactory(WorkersListComponent);
      this.componentRef = this.target.createComponent(childComponent);    
      this.componentRef.instance.workers = this.workers;
    }

@@ -1,4 +1,4 @@
-<mat-form-field *ngIf="showFilter">
+<mat-form-field *ngIf="showFilter == true">
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Szukaj">
 </mat-form-field>
