@@ -7,7 +7,7 @@
     </mat-card-header>
     <mat-card-content class="content">
         <mat-form-field class="formField" appearance="outline">
-            <mat-label>Choose day</mat-label>
+            <mat-label>Select a day</mat-label>
             <input matInput [matDatepicker]="picker" (dateInput)="showPlan()" disabled #dateInput>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker disabled="false"></mat-datepicker>

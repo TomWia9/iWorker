@@ -32,7 +32,6 @@ export class EditDialogComponent implements OnInit {
   }
 
   onSelectChange(event){    
-    console.log(event.value.userID);
     this.selected = true;
   }
 
@@ -42,7 +41,6 @@ export class EditDialogComponent implements OnInit {
       this.newData.userID = value.userID;
       this.newData.name = value.name;
       this.newData.surname = value.surname;
-      console.log(this.newData);
       
       await this.workersService.editWorker(value.worker.userID, this.newData).toPromise().then(x => {
       this.edited = x; //true or false

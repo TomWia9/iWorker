@@ -43,7 +43,6 @@ export class NewReportComponent implements OnInit {
 
   onSubmit(value){
    this.date = this.dateString.nativeElement.value;
-   console.log(this.date);
     if (value.userID != '' && value.name !== '' && value.surname !== '' && value.date !== '' && value.hours !== '' && value.hours <13
         && value.sector !== '' && value.amount !== ''){
           const newReport = value as ReportDetails;
