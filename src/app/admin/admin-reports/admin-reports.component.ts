@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ViewContainerRef, ComponentRef, Component
 import { UsersService } from 'src/app/services/users.service';
 import { User } from '../../shared/user';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { ReportsListComponent } from 'src/app/shared/reports-list/reports-list.component';
+import { ReportsListComponent } from 'src/app/shared/Reports/reports-list/reports-list.component';
 
 @Component({
   selector: 'app-admin-reports',
@@ -14,7 +14,6 @@ export class AdminReportsComponent implements OnInit {
   displayedColumnsForAll = ['number', 'userID', 'date', 'workName'];
   displayedColumns = ['number','date', 'workName'];
   workers: User[] = [];
- // showReportsOfWorker: boolean = false;
   @ViewChild('dynamicReportsListComponent', {read: ViewContainerRef, static: false}) target: ViewContainerRef;
   private componentRef: ComponentRef<any>;
 
@@ -31,9 +30,7 @@ export class AdminReportsComponent implements OnInit {
     })
   }
 
-  onChange(value){
-    //this.showReportsOfWorker = true;
-    //generate raports-lsit    
+  onChange(value){   
     if(this.componentRef){
       this.componentRef.destroy();
      }
@@ -44,6 +41,7 @@ export class AdminReportsComponent implements OnInit {
       this.componentRef.instance.showWorkerNumber = false;
       this.componentRef.instance.displayedColumns = this.displayedColumns;
       this.componentRef.instance.peroid = 60;
+      this.componentRef.instance.changeHeight = '300px';
   }
 
 }

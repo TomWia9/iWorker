@@ -28,8 +28,7 @@ import { SidenavComponent } from './user/sidenav/sidenav.component';
 import { NewReportComponent } from './user/reports/new-report/new-report.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PlanComponent } from './user/plan/plan.component';
-import { ReportsListComponent } from './shared/reports-list/reports-list.component';
-import { ReportDetailsComponent } from './user/reports/report-details/report-details.component';
+import { ReportsListComponent } from './shared/Reports/reports-list/reports-list.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { StatisticsComponent } from './user/statistics/statistics.component';
@@ -57,7 +56,7 @@ import { SelectWorkerDialogComponent } from './admin/admin-statistics/select-wor
 import { UserMessagesComponent } from './user/user-messages/user-messages.component';
 import { UserNewMessageDialogComponent } from './user/user-messages/user-new-message-dialog/user-new-message-dialog.component';
 import { AdminReportsComponent } from './admin/admin-reports/admin-reports.component';
-import { ReportDialogComponent } from './admin/admin-reports/report-dialog/report-dialog.component';
+import { ReportDialogComponent } from './shared/Reports/report-dialog/report-dialog.component';
 import { AdminMessagesComponent } from './admin/admin-messages/admin-messages.component';
 import { NewMessageDialogComponent } from './admin/admin-messages/new-message-dialog/new-message-dialog.component';
 import { NewMessageToAllDialogComponent } from './admin/admin-messages/new-message-to-all-dialog/new-message-to-all-dialog.component';
@@ -81,7 +80,6 @@ import { UserReportsListComponent } from './user/reports/user-reports-list/user-
     NewReportComponent,
     PlanComponent,
     ReportsListComponent,
-    ReportDetailsComponent,
     LoginComponent,
     StatisticsComponent,
     LineChartComponent,

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ReportDetails } from '../user/reports/report-details/reportDetails';
-import { Report } from '../shared/reports-list/report';
+import { ReportDetails } from '../user/reports/new-report/reportDetails';
+import { Report } from '../shared/Reports/reports-list/report';
 import { AllReports } from '../shared/allReports';
 
 @Injectable({
@@ -12,8 +12,8 @@ export class ReportService {
 
   constructor(private http: HttpClient) { }
 
-  getDetails(userID, id): Observable<ReportDetails>{
-    return this.http.get<ReportDetails>(`https://localhost:5001/api/report/${userID}/${id}`);
+  getDetails(id): Observable<ReportDetails>{
+    return this.http.get<ReportDetails>(`https://localhost:5001/api/report/${id}`);
   }
 
   createReport(newReport: ReportDetails): Observable<Number>{

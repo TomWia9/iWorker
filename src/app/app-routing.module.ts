@@ -4,8 +4,6 @@ import { AppComponent } from './app.component';
 import { SidenavComponent } from './user/sidenav/sidenav.component';
 import { NewReportComponent } from './user/reports/new-report/new-report.component';
 import { PlanComponent } from './user/plan/plan.component';
-import { ReportsListComponent } from './shared/reports-list/reports-list.component';
-import { ReportDetailsComponent } from './user/reports/report-details/report-details.component';
 import { LoginComponent } from './login/login.component';
 import { StatisticsComponent } from './user/statistics/statistics.component';
 import { DashboardComponent } from './user/dashboard/dashboard.component';
@@ -38,7 +36,6 @@ const routes: Routes = [
           {path: 'new-report', component: NewReportComponent},
           {path: 'plan', component: PlanComponent},
           {path: 'user-reports-list', component: UserReportsListComponent},
-          {path: 'report/:id', component: ReportDetailsComponent},
           {path: 'statistics', component: StatisticsComponent},
           {path:'statistics/data/:id', component: StatisticsDataComponent},
           {path:'ranking', component: RankingComponent},

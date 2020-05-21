@@ -1,12 +1,12 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ReportService } from 'src/app/services/report.service';
-import { ReportDetails } from '../report-details/reportDetails';
 import { Router } from '@angular/router';
 import { User } from 'src/app/auth/user';
 import { AuthService } from 'src/app/services/auth.service';
 import { SectorsService } from 'src/app/services/sectors.service';
 import { Sector } from 'src/app/shared/sector';
+import { ReportDetails } from './reportDetails';
 
 @Component({
   selector: 'app-new-report',
@@ -18,7 +18,7 @@ export class NewReportComponent implements OnInit {
   sectors: Sector[];
   @ViewChild('dateString', {static: true}) dateString: ElementRef;
   date: Date;
-  cantAdd: boolean = false;
+  success: boolean = null;
   userInfo: User;
 
   constructor(private fb: FormBuilder, private sectorsService: SectorsService, private reportService: ReportService, private authService: AuthService, private router: Router) { }
@@ -46,24 +46,21 @@ export class NewReportComponent implements OnInit {
    console.log(this.date);
     if (value.userID != '' && value.name !== '' && value.surname !== '' && value.date !== '' && value.hours !== '' && value.hours <13
         && value.sector !== '' && value.amount !== ''){
-          this.cantAdd = false;
-          const newReport = value as ReportDetails; 
-          newReport.date = this.date;
-          console.log(newReport);
-          
+          const newReport = value as ReportDetails;
+          newReport.date = this.date;          
           
           this.reportService.createReport(newReport).subscribe(x=> {
             if(x != -1){
-              this.router.navigate(['/report',x]);
+              this.success = true;
             }
             else{
-              this.cantAdd = true;
+              this.success = false;
             }
               
           })
       
       } else{
-        this.cantAdd = true;
+        this.success = false;
       };
   }
   

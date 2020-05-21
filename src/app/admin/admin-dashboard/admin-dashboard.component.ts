@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { StatisticsService } from 'src/app/services/statistics.service';
 import { ReportService } from 'src/app/services/report.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { ReportDialogComponent } from '../admin-reports/report-dialog/report-dialog.component';
+import { ReportDialogComponent } from '../../shared/Reports/report-dialog/report-dialog.component';
 import { NewMessageToAllDialogComponent } from 'src/app/admin/admin-messages/new-message-to-all-dialog/new-message-to-all-dialog.component';
 
 @Component({

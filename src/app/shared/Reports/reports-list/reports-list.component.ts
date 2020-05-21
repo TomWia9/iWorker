@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ReportService } from 'src/app/services/report.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ReportDialogComponent } from '../report-dialog/report-dialog.component';
 
 @Component({
   selector: 'app-reports-list',
@@ -16,21 +17,18 @@ export class ReportsListComponent implements OnInit {
   @Input() allWorkersReports: boolean = false;
   @Input() showWorkerNumber: boolean = true;
   @Input() showDate: boolean = true;
+  @Input() changeHeight: string = '200px';
   reports = new MatTableDataSource();
 
-  constructor(private reportService: ReportService, private router: Router) {}
+  constructor(private reportService: ReportService,  public dialog: MatDialog) {}
 
   ngOnInit(): void {
-    console.log("Inputs: " + "filter: " + this.filter + " userID: " + this.userID + " displayedComlumns: " + this.displayedColumns
-    + " peroid: " + this.peroid + " allReports: " + this.allWorkersReports + " showWorkerNumber: " + this.showWorkerNumber + " showDate: " + this.showDate);
-
     if(this.allWorkersReports == false){
       this.reportService.getReportsList(this.userID, this.peroid).subscribe(x  => {
         this.reports = new MatTableDataSource(x); 
     });
     }
     else{
-      //osobna funkcja
       this.reportService.getAllWorkersReportsList(this.peroid).subscribe(x  => {
         this.reports = new MatTableDataSource(x); 
     });
@@ -43,7 +41,14 @@ export class ReportsListComponent implements OnInit {
   }
 
   navigateTo(row: any) {
-    this.router.navigate(['/report', row.id]);
+    const dialogRef = this.dialog.open(ReportDialogComponent, {
+      width: '1000px',
+      data: {reportID: row.id},
+   });
+
+   dialogRef.afterClosed().subscribe(() => {
+     this.ngOnInit(); 
+   });
   } 
 
 }

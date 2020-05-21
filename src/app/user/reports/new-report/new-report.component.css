@@ -40,9 +40,20 @@
 }
 
 .err {
+    width: 80%;
     padding: 20px;
     background-color: mistyrose;
     border: 1px solid red;
+    font-weight: bold;
+    border-radius: 10px;
+    color: black;
+}
+
+.success {
+    width: 80%;
+    padding: 20px;
+    background-color: forestgreen;
+    border: 1px solid green;
     font-weight: bold;
     border-radius: 10px;
     color: black;

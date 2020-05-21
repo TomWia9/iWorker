@@ -26,10 +26,9 @@ export class ReportDialogComponent implements OnInit {
       amount: '',
       hours: '',
       date: '',
-      chests: '',
     });
     
-    this.reportService.getDetails(this.data.userID, this.data.reportID).subscribe(x => {
+    this.reportService.getDetails(this.data.reportID).subscribe(x => {
       this.form = this.fb.group({
         userID: x.userID,
         name: x.name,
