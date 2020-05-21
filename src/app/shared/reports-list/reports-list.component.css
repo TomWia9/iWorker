@@ -1,28 +1,8 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    margin: 2em;
-    background: #25272a;
-}
-
-.table-container {
-    height: 600px;
-    overflow: auto;
-}
-
-.header {
-    justify-content: center;
-    color: #4E7596;
-}
-
 .table {
     background: #25272a;
     width: 100%;
-}
-
-h1 {
-    font-weight: bold;
-    font-size: 40px;
+    overflow: auto;
+    height: 200px;
 }
 
 mat-header-cell {
@@ -46,12 +26,11 @@ mat-cell {
     cursor: pointer;
 }
 
-.mat-form-field {
-    font-size: 14px;
-    width: 100%;
-}
-
 ::ng-deep.mat-form-field-ripple {
     /*change color of underline when focused*/
     background-color: brown !important;
+}
+
+mat-form-field {
+    width: 100%;
 }

@@ -28,7 +28,7 @@ import { SidenavComponent } from './user/sidenav/sidenav.component';
 import { NewReportComponent } from './user/reports/new-report/new-report.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PlanComponent } from './user/plan/plan.component';
-import { ReportsListComponent } from './user/reports/reports-list/reports-list.component';
+import { ReportsListComponent } from './shared/reports-list/reports-list.component';
 import { ReportDetailsComponent } from './user/reports/report-details/report-details.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
@@ -71,6 +71,7 @@ import { AddSectorDialogComponent } from './admin/sectors/add-sector-dialog/add-
 import { DeleteSectorDialogComponent } from './admin/sectors/delete-sector-dialog/delete-sector-dialog.component';
 import { EditSectorDialogComponent } from './admin/sectors/edit-sector-dialog/edit-sector-dialog.component';
 import { SectorsListComponent } from './admin/sectors/sectors-list/sectors-list.component';
+import { UserReportsListComponent } from './user/reports/user-reports-list/user-reports-list.component';
 
 
 @NgModule({
@@ -119,6 +120,7 @@ import { SectorsListComponent } from './admin/sectors/sectors-list/sectors-list.
     DeleteSectorDialogComponent,
     EditSectorDialogComponent,
     SectorsListComponent,
+    UserReportsListComponent,
   ],
   imports: [
     BrowserModule,

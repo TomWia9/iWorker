@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+    background: #25272a;
+}
+
+.content {
+    height: 600px;
+    overflow: auto;
+}
+
+.header {
+    justify-content: center;
+    color: #4E7596;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 40px;
+}

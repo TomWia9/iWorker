@@ -7,30 +7,7 @@
     <mat-card-content class="content">
         <div class="box">
             <h2>All reports</h2>
-            <mat-form-field>
-                <mat-label>Filter</mat-label>
-                <input matInput (keyup)="applyFilter($event)" placeholder="Szukaj">
-            </mat-form-field>
-            <mat-table class="table" [dataSource]="reports">
-                <ng-container matColumnDef="number">
-                    <mat-header-cell *matHeaderCellDef>Number</mat-header-cell>
-                    <mat-cell *matCellDef="let element; let i = index"><a class="element">{{ i+1 }}</a> </mat-cell>
-                </ng-container>
-                <ng-container matColumnDef="userID">
-                    <mat-header-cell *matHeaderCellDef>Number of worker</mat-header-cell>
-                    <mat-cell *matCellDef="let element; let i = index"><a class="element">{{ element.userID }}</a> </mat-cell>
-                </ng-container>
-                <ng-container matColumnDef="date">
-                    <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
-                    <mat-cell *matCellDef="let element"><a class="element">{{ element.date }}</a> </mat-cell>
-                </ng-container>
-                <ng-container matColumnDef="workName">
-                    <mat-header-cell *matHeaderCellDef>Work</mat-header-cell>
-                    <mat-cell *matCellDef="let element"><a class="element">{{ element.workName }}</a> </mat-cell>
-                </ng-container>
-                <mat-header-row *matHeaderRowDef=" displayedColumnsForAll; sticky: true"></mat-header-row>
-                <mat-row *matRowDef="let row; columns:  displayedColumnsForAll" (click)="navigateTo(row)" class="row-hover"></mat-row>
-            </mat-table>
+            <app-reports-list [displayedColumns]="displayedColumnsForAll" allWorkersReports="true"></app-reports-list>
         </div>
         <div class="box">
             <h2>Employee reports</h2>
@@ -44,28 +21,7 @@
                     </mat-select>
                 </mat-form-field>
             </form>
-            <div *ngIf="showReportsOfWorker">
-                <mat-form-field>
-                    <mat-label>Filter</mat-label>
-                    <input matInput (keyup)="applyFilter($event)" placeholder="Szukaj">
-                </mat-form-field>
-                <mat-table class="table" [dataSource]="reportsOfWorker">
-                    <ng-container matColumnDef="number">
-                        <mat-header-cell *matHeaderCellDef>Number</mat-header-cell>
-                        <mat-cell *matCellDef="let element; let i = index"><a class="element">{{ i+1 }}</a> </mat-cell>
-                    </ng-container>
-                    <ng-container matColumnDef="date">
-                        <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
-                        <mat-cell *matCellDef="let element"><a class="element">{{ element.date }}</a> </mat-cell>
-                    </ng-container>
-                    <ng-container matColumnDef="workName">
-                        <mat-header-cell *matHeaderCellDef>Work</mat-header-cell>
-                        <mat-cell *matCellDef="let element"><a class="element">{{ element.workName }}</a> </mat-cell>
-                    </ng-container>
-                    <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
-                    <mat-row *matRowDef="let row; columns: displayedColumns" (click)="navigateTo(row)" class="row-hover"></mat-row>
-                </mat-table>
-            </div>
+            <template #dynamicReportsListComponent></template>
         </div>
     </mat-card-content>
 </mat-card>

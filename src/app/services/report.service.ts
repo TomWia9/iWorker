@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ReportDetails } from '../user/reports/report-details/reportDetails';
-import { Report } from '../user/reports/report';
+import { Report } from '../shared/reports-list/report';
 import { AllReports } from '../shared/allReports';
 
 @Injectable({
@@ -29,12 +29,12 @@ export class ReportService {
     })
   }
 
-  getReportsList(userID): Observable<Report[]>{
-    return this.http.get<Report[]>(`https://localhost:5001/api/report/${userID}`);
+  getReportsList(userID, peroid): Observable<Report[]>{
+    return this.http.get<Report[]>(`https://localhost:5001/api/report/getReportsList/${userID}/${peroid}`);
   }
 
-  getAllReportsList(peroid): Observable<AllReports[]>{
-    return this.http.get<AllReports[]>(`https://localhost:5001/api/report/getAllReportsList/${peroid}`);
+  getAllWorkersReportsList(peroid): Observable<Report[]>{
+    return this.http.get<Report[]>(`https://localhost:5001/api/report/getAllWorkersReportsList/${peroid}`);
   }
 
 }

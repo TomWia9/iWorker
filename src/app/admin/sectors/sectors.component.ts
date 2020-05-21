@@ -20,7 +20,7 @@ export class SectorsComponent implements OnInit {
   private componentRef: ComponentRef<any>;
   sectors: Sector[];
 
-  constructor(private fb: FormBuilder, public dialog: MatDialog, private router: Router, private sectorsService: SectorsService, private componentFactoryResolver: ComponentFactoryResolver) { }
+  constructor(private fb: FormBuilder, public dialog: MatDialog, private sectorsService: SectorsService, private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit(): void {
 

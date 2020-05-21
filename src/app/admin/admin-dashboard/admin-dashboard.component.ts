@@ -15,18 +15,12 @@ import { NewMessageToAllDialogComponent } from 'src/app/admin/admin-messages/new
     wait: number = 0;
     chartData: any[] = [];
     chartLabels: string[] = [];
-    reports = new MatTableDataSource();
     displayedColumns = ['number', 'userID', 'workName'];
 
-  constructor(public dialog: MatDialog, private statisticsService: StatisticsService, private reportService: ReportService) { }
+  constructor(public dialog: MatDialog, private statisticsService: StatisticsService) { }
 
   ngOnInit(): void {
     this.getChartData();
-
-    this.reportService.getAllReportsList(1).subscribe(x  => {
-      this.reports = new MatTableDataSource(x); 
-      
-  });
   }
 
   getChartData(){

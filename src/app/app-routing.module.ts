@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { SidenavComponent } from './user/sidenav/sidenav.component';
 import { NewReportComponent } from './user/reports/new-report/new-report.component';
 import { PlanComponent } from './user/plan/plan.component';
-import { ReportsListComponent } from './user/reports/reports-list/reports-list.component';
+import { ReportsListComponent } from './shared/reports-list/reports-list.component';
 import { ReportDetailsComponent } from './user/reports/report-details/report-details.component';
 import { LoginComponent } from './login/login.component';
 import { StatisticsComponent } from './user/statistics/statistics.component';
@@ -22,6 +22,7 @@ import { UserMessagesComponent } from './user/user-messages/user-messages.compon
 import { AdminReportsComponent } from './admin/admin-reports/admin-reports.component';
 import { AdminMessagesComponent } from './admin/admin-messages/admin-messages.component';
 import { SectorsComponent } from './admin/sectors/sectors.component';
+import { UserReportsListComponent } from './user/reports/user-reports-list/user-reports-list.component';
 
 const routes: Routes = [
   {
@@ -36,7 +37,7 @@ const routes: Routes = [
           {path: '', component: DashboardComponent},
           {path: 'new-report', component: NewReportComponent},
           {path: 'plan', component: PlanComponent},
-          {path: 'reports-list', component: ReportsListComponent},
+          {path: 'user-reports-list', component: UserReportsListComponent},
           {path: 'report/:id', component: ReportDetailsComponent},
           {path: 'statistics', component: StatisticsComponent},
           {path:'statistics/data/:id', component: StatisticsDataComponent},
